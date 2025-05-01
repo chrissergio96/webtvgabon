@@ -1,0 +1,33 @@
+.podcast-page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .podcast-page h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .podcast-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .podcast-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .podcast-card h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .podcast-card audio {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
