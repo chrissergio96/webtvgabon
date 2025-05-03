@@ -56,6 +56,19 @@ Pour marquer définitivement le retour du Gabon au sein de l’Union africaine, 
         </p>
 
       },
+      {
+        id: 6,
+        titre: "Port-Gentil : il vole pour assurer le trousseau de sa copine",
+        image: "https://urlr.me/QmRaYB", 
+        resume: "Un compatriote répondant au nom de Yorith Christian Nzaou Moundounga a opté pour le vol afin de payer les soins médicaux nécessaires pour la naissance de son futur enfant. Un acte dont il en paye désormais les frais à la prison du Château à Port-Gentil dans la province de l’Ogooué-Maritime nous apprend le site d’information Ogooué-Maritime Infos dans son article publié ce 30 avril 2025. ",
+        contenu: <p>
+           Déterminé à accompagner sa compagne jusqu’à l’accouchement malgré l’absence de moyens financiers, Yorith Christian Nzaou Moundounga, un compatriote résidant à Port-Gentil n’a eu d’autre choix que de mettre à voler. Au cours de son interrogatoire à la Police judiciaire après son interpellation, ce dernier à reconnu avoir dérobé un matelas à ressorts et un sac d’ustensiles de cuisine dans une maison en construction dans son quartier, derrière la SEEG. Un acte pourtant puni et condamné par le législateur gabonais. <br/>
+           <strong>La facilité, un mauvais conseiller</strong> <br/>
+A la question de savoir les raisons qui l’ont motivé à agir de la sorte, Yorith Christian Nzaou Moundounga a expliqué que son intention était de revendre les objets pour obtenir l’argent permettant de couvrir les examens médicaux de sa petite amie, enceinte de huit mois.<strong> « En ce moment, je ne fais aucune activité. Elle n’a fait aucun suivi médical, et cela peut être dangereux. J’ai volé pour éviter cela. Mais je regrette mon acte » </strong>, a poursuivi le futur papa en reconnaissant avec amertume qu’il a fait une grossière erreur en volant ces effets. <br/>
+Selon le récit livré par OMI, le jeune homme âgé de 24 ans a été interpellé après que le propriétaire du domicile ai constaté qu’il était l’autre du cambriolage qu’il avait subi. Après avoir déposé une plainte auprès de la Police judiciaire, Yorith Christian Nzaou Moundounga a été interpellé à son domicile, où il vit avec ses parents. Il a reconnu les faits devant les enquêteurs. Malgré ses remords, le jeune homme  été placé sous mandat de dépôt à la prison centrale de Port-Gentil, où il devra méditer sur son sort.
+        </p>
+
+      },
   ];
 
   // Trouver l'article correspondant à l'ID

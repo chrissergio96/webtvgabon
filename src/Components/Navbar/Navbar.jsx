@@ -21,6 +21,7 @@ const Navbar = () => {
           <li><a href="/podcasts">Podcasts</a></li>
           <li><a href="/videos">Vidéos</a></li>
           <li><a href="/live">Live</a></li>
+  
         </ul>
 
         {/* Hamburger pour mobile */}

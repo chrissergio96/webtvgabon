@@ -102,6 +102,7 @@ nav {
   font-weight: 500;
 }
 
+
 /* Responsive uniquement mobile */
 @media (max-width: 768px) {
   .nav-links {
