@@ -5,75 +5,107 @@ const videos = [
   {
     id: 1,
     titre: "Discours du Maire – Rentrée 2025",
-    description: "Message du Maire sur les perspectives de l’année à venir.",
+    description: "Message du Maire sur les perspectives de l’année.",
     lien: "https://www.youtube.com/embed/8pUi7s2QwwI",
+    miniature: "https://img.youtube.com/vi/8pUi7s2QwwI/hqdefault.jpg",
+    categorie: "Institutionnel",
   },
   {
     id: 2,
-    titre: "Documentaire sur le patrimoine du 2e arrondissement",
-    description: "Retour sur les trésors culturels et historiques.",
-    lien: "https://www.youtube.com/embed/kQ_mnaEAZ5I",
+    titre: "Gabon Culture :",
+    description: " Black History Arts, C’est parti pour un mois de renaissance vers la créativité .",
+    lien: "https://www.youtube.com/embed/YYLvdUEfdag",
+    miniature: "https://www.youtube.com/embed/YYLvdUEfdag",
+    categorie: "Culture",
   },
   {
     id: 3,
-    titre: "Interview avec les jeunes entrepreneurs locaux",
-    description: "Focus sur les porteurs de projets accompagnés par la mairie.",
+    titre: "Interview avec les jeunes entrepreneurs",
+    description: "Les projets locaux accompagnés par la mairie.",
     lien: "https://www.youtube.com/embed/tgbNymZ7vqY",
+    miniature: "https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg",
+    categorie: "Économie",
+  },
+  {
+    id: 4,
+    titre: "Investiture du nouveau Président Élu du Gabon  ",
+    description: "Arrivée du Président de la République à Libreville.",
+    lien: "https://www.youtube.com/embed/c5VKRt__bEw",
+    miniature: "https://www.youtube.com/embed/c5VKRt__bEw",
+    categorie: "Politique",
+  },
+  {
+    id: 5,
+    titre: "Gabon : Quelle suite pour le Gabon ?",
+    description: "Les projets locaux accompagnés par la mairie.",
+    lien: "https://www.youtube.com/embed/LFYw1UB1nZo",
+    miniature: "https://www.youtube.com/embed/LFYw1UB1nZo",
+    categorie: "Politique",
   },
 ];
 
+
 const Video = () => {
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('Toutes');
+  const [search, setSearch] = useState('');
 
-  const openModal = (video) => {
-    setSelectedVideo(video);
-  };
-
-  const closeModal = () => {
-    setSelectedVideo(null);
-  };
+  const filteredVideos = videos.filter(video => {
+    const matchCategory =
+      selectedCategory === 'Toutes' || video.categorie === selectedCategory;
+    const matchSearch =
+      video.titre.toLowerCase().includes(search.toLowerCase()) ||
+      video.description.toLowerCase().includes(search.toLowerCase());
+    return matchCategory && matchSearch;
+  });
 
   return (
-    <div className="videos-container">
-      <h1 className="videos-title">📹 Nos Vidéos</h1>
-      <div className="videos-grid">
-        {videos.map((video) => (
-          <div key={video.id} className="video-card">
-            <div className="video-frame">
-              <iframe
-                src={video.lien}
-                title={video.titre}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="video-info">
-              <h2>{video.titre}</h2>
-              <p>{video.description}</p>
-              <button className="btn-watch" onClick={() => openModal(video)}>
-                ▶ Regarder
-              </button>
-            </div>
-          </div>
+    <div className="videos-section">
+      <h1 className="videos-title">Nos Vidéos</h1>
+
+      {/* Barre de recherche */}
+      <input
+        type="text"
+        placeholder="Rechercher une vidéo..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search-bar"
+      />
+
+      {/* Filtrage par catégorie */}
+      <div className="filter-bar">
+        {['Toutes', 'Institutionnel', 'Culture', 'Économie', 'Politique'].map((cat) => (
+          <button
+            key={cat}
+            className={`filter-button ${selectedCategory === cat ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(cat)}
+          >
+            {cat}
+          </button>
         ))}
       </div>
 
-      {/* Fenêtre modale */}
-      {selectedVideo && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <iframe
-              src={selectedVideo.lien + "?autoplay=1"}
-              title={selectedVideo.titre}
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            ></iframe>
-            <button className="modal-close" onClick={closeModal}>✖</button>
-          </div>
-        </div>
-      )}
+      {/* Grille de vidéos */}
+      <div className="videos-grid">
+        {filteredVideos.length > 0 ? (
+          filteredVideos.map((video) => (
+            <div key={video.id} className="video-card video-card-modern">
+              <iframe
+                src={video.lien}
+                title={video.titre}
+                className="video-frame"
+                allowFullScreen
+              ></iframe>
+              <div className="video-info">
+                <h2>{video.titre}</h2>
+                <p>{video.description}</p>
+              </div>
+              
+            </div>
+          ))
+        ) : (
+          <p className="no-results">Aucune vidéo ne correspond à votre recherche.</p>
+        )}
+      </div>
     </div>
   );
 };

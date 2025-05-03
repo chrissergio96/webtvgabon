@@ -1,5 +1,5 @@
 import React from 'react';
-import Accueils from '../Components/Accueil/Accueils.jsx';
+import Home from '../Components/Accueil/Home.jsx';
 
 
 
@@ -7,7 +7,7 @@ function Accueil() {
 
     return (
       <div>
-       <Accueils/>
+       <Home/>
 
       </div>
       
