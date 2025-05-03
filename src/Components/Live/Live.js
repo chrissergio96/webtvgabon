@@ -7,7 +7,7 @@ const Live = () => {
       <h2>🔴 En Direct</h2>
       <div className="live-video">
         <iframe
-          src="https://www.youtube.com/embed/6qJ4g3J66EA?autoplay=1"
+          src="https://www.youtube.com/embed/tZyEV76ahH0"
           title="Live Video"
           frameBorder="0"
           allow="autoplay; encrypted-media"
