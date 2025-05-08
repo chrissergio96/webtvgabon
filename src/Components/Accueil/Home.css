@@ -585,20 +585,30 @@ section h2 {
   margin-bottom: 20px;
   color: #ccc;
 }
-
 .newsletter-form {
-  display: flex;
+  display: block;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .newsletter-form input[type="email"] {
   padding: 10px;
   font-size: 16px;
-  width: 250px;
+  width: 200px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+.newsletter-form label{
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+.newsletter-form label textarea{
+  width: 75%;
+  height: 60px;
 }
 
 .newsletter-form button {
