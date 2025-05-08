@@ -162,6 +162,8 @@ const Home = () => {
         <h2>Inscription à la newsletter</h2>
         <p>Recevez les dernières actualités directement dans votre boîte mail.</p>
         <form className="newsletter-form" action="https://formspree.io/f/mldbbjkq" method="POST">
+        <label>
+        Adresse mail:
           <input
             type="email"
             name="email"
@@ -169,6 +171,11 @@ const Home = () => {
             required
             aria-label="Adresse e-mail"
           />
+           </label>
+        <label>
+          Votre message:
+          <textarea name="message"></textarea>
+        </label>
           <button type="submit">S'inscrire</button>
         </form>
       </section>
