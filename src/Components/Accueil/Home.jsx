@@ -50,10 +50,6 @@ const Home = () => {
       title: "Actualité nationale",
     },
     {
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3iiXtYWPzA675fZCH6yqz370y8JNgstv4AlTL9rRAlcj4GSEQ_WyYpfarzTSsNr1O3U&usqp=CAU",
-      title: "Politique",
-    },
-    {
       src: "https://www.gabonreview.com/wp-content/uploads/2025/05/Adesina-Oligui-445x300.jpg",
       title: "Sport",
     },
