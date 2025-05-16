@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';  // Pour le routage
 import './Articles.css';
+import { div } from 'framer-motion/client';
 
 const articles = [
   {
@@ -69,6 +70,7 @@ const articl = [
 
 const Articles = () => {
   return (
+    <div>
     <div className="articles-container">
     <div className='artic'>
     {articles.map(article => (
@@ -78,7 +80,10 @@ const Articles = () => {
             <h2>{article.titre}</h2>
             <p>{article.resume}</p>
             <Link to={`/article/${article.id}`} className="btn-voir-plus">
-              Voir plus
+              <span>
+                Voir plus
+              <svg id='svgy' xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill="green" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414"/></svg>
+              </span> 
             </Link>
           </div>
         </div>
@@ -92,7 +97,10 @@ const Articles = () => {
             <h2>{article.titre}</h2>
             <p>{article.resume}</p>
             <Link to={`/article/${article.id}`} className="btn-voir-plus">
-              Voir plus
+            <span>
+                Voir plus
+              <svg id='svgy' xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill="green" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414"/></svg>
+              </span> 
             </Link>
           </div>
         </div>
@@ -100,6 +108,11 @@ const Articles = () => {
     </div>
      
     </div>
+     {/* Bouton retour à la page d'accueil */}
+     <div className="retour-accueil">
+     <Link to="/" className="btn-retour">← Retour à l'accueil</Link>
+   </div>
+   </div>
   );
 };
 

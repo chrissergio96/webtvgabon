@@ -8,10 +8,12 @@ import DetailsArticles from './Pages/DetailsArticles.js';
 import Accueil from './Pages/Accueil.js';
 import Videos from './Pages/Videos.js';
 import Directe from './Pages/Directe.js';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop.js';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
       <Route path="/" element={<Accueil />} />
