@@ -6,7 +6,7 @@
 
 .videos-title {
   text-align: center;
-  color: #2a7f62;
+  color: red;
   margin-bottom: 20px;
   font-size: 2rem;
 }
@@ -40,7 +40,7 @@
 
 .filter-button.active,
 .filter-button:hover {
-  background: #2a7f62;
+  background: red;
   color: #fff;
 }
 
@@ -82,7 +82,7 @@
 
 .video-info h2 {
   font-size: 1.1rem;
-  color: #2a7f62;
+  color: red;
   margin: 0;
 }
 
@@ -155,7 +155,7 @@
 
 .video-info h2 {
   font-size: 1.1rem;
-  color: #2a7f62;
+  color: red;
   margin: 0;
 }
 

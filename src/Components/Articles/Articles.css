@@ -50,7 +50,7 @@
 
 .article-content h2 {
   font-size: 1.2rem;
-  color: #2a7f62;
+  color: red;
   margin-bottom: 10px;
 }
 
@@ -61,8 +61,7 @@
 }
 
 .btn-voir-plus {
-  background-color: #2a7f62;
-  color: white;
+  color: green;
   padding: 8px 12px;
   text-align: center;
   text-decoration: none;
@@ -71,9 +70,40 @@
   align-self: flex-start;
   transition: background-color 0.3s ease;
 }
+#svgy{
+  padding-top: 5px;
+  margin-left: 5px;
+}
+.btn-voir-plus span{
+  display: flex;
+  width: max-content;
+  justify-content: space-between;
+  padding: 5px;
+}
+
 
 .btn-voir-plus:hover {
   background-color: #1f5a42;
+  color: white;
+}
+.retour-accueil {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-retour {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: darkgreen;
 }
 
 /* ✅ VERSION MOBILE */
