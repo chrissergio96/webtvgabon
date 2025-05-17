@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'; // Permet de récupérer les paramètres dans l'URL
-import './ArticlePage.css'
+import './ArticlePage.css';
+import { Link } from 'react-router-dom';
 
 // Définir une fonction pour récupérer un article par son id
 const ArticlePage = () => {
@@ -8,10 +9,22 @@ const ArticlePage = () => {
   const articles = [
     {
       id: 1,
-      titre: "Lancement du Mois de la Culture Gabonaise",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjWRrJUmuYy26kWAsW_wFGvRFcaDRwLyhomg&s",
-      resume: "Retour sur les moments forts de l'ouverture officielle à Libreville...",
-      contenu: "Voici le contenu complet de l'article... [détails du Mois de la Culture Gabonaise]",
+      titre: "Libreville-Rome: Oligui Nguema à l’inauguration du pontificat du pape Léon XIV",
+      image: "https://www.gabonreview.com/wp-content/uploads/2025/05/Oligui1_n.jpg",
+      resume: "Le président de la République, Brice Clotaire Oligui Nguema, prendra part le 18 mai 2025, à Rome, à la messe inaugurale du pontificat du pape Léon XIV. Une cérémonie liturgique de grande portée symbolique, à laquelle assistent de nombreux chefs d’État et représentants internationaux, soulignant l’importance diplomatique et spirituelle de l’événement.",
+      contenu: <p>
+Le président de la République, Brice Clotaire Oligui Nguema, prendra part le 18 mai 2025, à Rome, à la messe inaugurale du pontificat du pape Léon XIV. © D.R. <br/>
+Le dimanche 18 mai 2025, la basilique Saint-Pierre de Rome et l’esplanade attenante accueillent l’un des événements les plus solennels de la vie de l’Église catholique : l’inauguration officielle du pontificat du pape Léon XIV, 267e successeur de l’apôtre Pierre. À cette occasion, le chef de l’État gabonais, Brice Clotaire Oligui Nguema, fait partie des nombreuses personnalités présentes au Vatican pour accompagner ce moment fondateur du nouveau ministère pétrinien.<br/>
+Le déplacement du président gabonais s’inscrirait dans une démarche de respect des liens historiques unissant le Gabon au Saint-Siège, mais aussi dans une volonté d’affirmer la place du pays dans les grandes rencontres internationales à caractère spirituel et diplomatique.<br/><br/>
+<strong>Une présence politique à forte portée symbolique</strong> <br/>
+La participation du président gabonais à cet événement témoigne de l’intérêt accordé par les autorités gabonaises aux dynamiques religieuses internationales, mais aussi de leur engagement envers le dialogue interreligieux et les valeurs de paix, de justice et de solidarité portées par l’Église catholique. Le Gabon, dont une large part de la population est de confession catholique, entretient des relations diplomatiques stables avec le Saint-Siège depuis plus de cinquante ans.
+<img src='https://www.gabonreview.com/wp-content/uploads/2025/05/oLIGUI2_n.jpg' alt=''></img>
+<em>Le déplacement du président gabonais s’inscrirait dans une démarche de respect des liens historiques unissant le Gabon au Saint-Siège. © D.R.</em> <br/><br/>
+En assistant à cette cérémonie de haute portée spirituelle, Brice Clotaire Oligui Nguema réaffirme également l’ancrage du Gabon dans une tradition de respect des croyances et de reconnaissance des figures d’autorité morale sur la scène internationale. Dans un monde traversé par de nombreuses fractures, la présence du président gabonais à Rome s’inscrit comme un acte de diplomatie douce, où la foi, la culture et la politique se rejoignent pour affirmer les principes universels de fraternité et d’espérance. <br/><br/>
+<strong>Une cérémonie riche de symboles et de traditions</strong> <br/>
+<p>La messe d’ouverture du pontificat, prévue à 10 heures, marque l’entrée officielle du pape Léon XIV dans ses fonctions de pasteur de l’Église universelle. Cette cérémonie rassemblera quelque 250 000 fidèles, ainsi que plus de 200 délégations étrangères. Parmi les dirigeants annoncés figurent la présidente de la Commission européenne Ursula von der Leyen, le président israélien Isaac Herzog, le président ukrainien Volodymyr Zelensky, ou encore le premier ministre français François Bayrou.</p>
+<p>Le rite d’inauguration débute dans la basilique, devant le tombeau de saint Pierre, avant de se poursuivre sur la place Saint-Pierre. Pendant la liturgie, le pape reçoit le pallium, étole en laine symbolisant son rôle de bon pasteur, et l’anneau du pêcheur, emblème de sa mission apostolique. Le Collège des cardinaux lui prête ensuite obéissance, dans un geste d’unité et de communion ecclésiale, avant que le souverain pontife ne délivre la bénédiction Urbi et Orbi, adressée à la ville de Rome et au monde entier.</p>
+</p>,
     },
     {
       id: 2,
@@ -83,6 +96,10 @@ Selon le récit livré par OMI, le jeune homme âgé de 24 ans a été interpell
       <h1>{article.titre}</h1>
       <img src={article.image} alt={article.titre} className="article-detail-image" />
       <p>{article.contenu}</p>
+       {/* Bouton retour à la page d'accueil */}
+     <div className="retour-accueil">
+     <Link to="/articles" className="btn-retour">← Page précédente</Link>
+   </div>
     </div>
   );
 };
