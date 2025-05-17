@@ -38,24 +38,24 @@ const Home = () => {
   }, []);
 
   const breakingNews = [
-    "Élections présidentielles : taux de participation record",
-    "Coupe du Monde : la France en finale",
+    " Adéquation Formation – Emploi : Levée de voile sur les métiers de l’Enseignement technique et Professionnel",
+    "Sylvia Bongo et Nourredine Bongo Valentin en liberté provisoire pour des raisons médicales",
     "Climat : sommet international à Paris"
   ];
 
   
   const imagesWithTitles = [
     {
-      src: "https://i.la-croix.com/1400x933/smart/2025/05/03/2066068-le-president-elu-du-gabon-brice-clotaire-oligui-ng.jpg",
-      title: "Actualité nationale",
+      src: "https://www.gabonreview.com/wp-content/uploads/2025/05/forestiere1.jpg",
+      title: "La Forestière : les épouses des paramilitaires des Eaux et Forêts s’organisent pour agir",
     },
     {
-      src: "https://www.gabonreview.com/wp-content/uploads/2025/05/Adesina-Oligui-445x300.jpg",
-      title: "Sport",
+      src: "https://www.gabonreview.com/wp-content/uploads/2025/05/Charles-Street-Mayfair_Ali-Bongo.jpg",
+      title: "De Libreville à Mayfair à Londres : l’exil doré du clan Bongo prend forme",
     },
     {
-      src: "https://www.gabonreview.com/wp-content/uploads/2025/05/passation1.jpg",
-      title: "Environnement",
+      src: "https://www.gabonreview.com/wp-content/uploads/2025/05/FB_IMG_1747398524351.jpg",
+      title: "Diplomatie : Régis Immongault reçoit les orientations d’Oligui Nguema",
     },
   ];
  
@@ -65,11 +65,12 @@ const Home = () => {
       {/* Breaking News - ticker moderne */}
       <section className="breaking-news" data-aos="fade-down">
         <div className="news-ticker">
+        <span class="flash-icon"></span>
           <span className="ticker-label">FLASH INFO :</span>
           <div className="ticker-wrapper">
             <div className="ticker-content">
               {breakingNews.map((item, index) => (
-                <span key={index} className="ticker-item">{item} • </span>
+                <span key={index} className="ticker-item">• {item} • </span>
               ))}
             </div>
           </div>

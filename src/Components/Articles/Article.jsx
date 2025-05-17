@@ -6,9 +6,9 @@ import { div } from 'framer-motion/client';
 const articles = [
   {
     id: 1,
-    titre: "Lancement du Mois de la Culture Gabonaise",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjWRrJUmuYy26kWAsW_wFGvRFcaDRwLyhomg&s",
-    resume: "Retour sur les moments forts de l'ouverture officielle à Libreville...",
+    titre: "Libreville-Rome: Oligui Nguema à l’inauguration du pontificat du pape Léon XIV",
+    image: "https://www.gabonreview.com/wp-content/uploads/2025/05/Oligui1_n.jpg",
+    resume: "Le président de la République, Brice Clotaire Oligui Nguema, prendra part le 18 mai 2025, à Rome...",
   },
   {
     id: 2,
