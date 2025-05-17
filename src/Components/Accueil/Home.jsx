@@ -122,7 +122,9 @@ const Home = () => {
       <section className="focus-section" data-aos="fade-up">
         <h2>À la loupe</h2>
         <div className="focus-card">
-          <img src="https://www.gabonreview.com/wp-content/uploads/2025/05/passation1.jpg" alt="Analyse" />
+          <div className='focusimg'>
+
+          </div>
           <div>
             <h3>Analyse</h3>
             <p>Crise politique au Gabon : quels enjeux pour la stabilité sous-régionale ?</p>
@@ -176,7 +178,7 @@ const Home = () => {
     {/* reCAPTCHA */}
     <div
       className="g-recaptcha"
-      data-sitekey="6LeU4DQrAAAAAJwWnHGD-F4CeWcjm0fWBVAW4hzo"
+      data-sitekey="6LdOXz4rAAAAAFuiTr3Vn_Fnvk468JJH0hjaBw4K"
     ></div>
 
     <label>
