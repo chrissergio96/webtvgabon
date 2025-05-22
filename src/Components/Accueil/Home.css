@@ -1,9 +1,13 @@
 .home-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f8f8;
+  background-color: white;
   color: black;
   padding: 0;
   margin: 0;
+}
+.home-container .hel{
+  color: red;
+
 }
 
 .ticker {
@@ -81,30 +85,95 @@ section h2 {
   padding: 30px 20px;
   background-color: #fff;
 }
+.focusmere{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.focusmere2{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2%;
+}
+.focus-card a {
+ color: black;
+ text-decoration: none;
 
+
+}
+.focus-card a:hover{
+  color: red;
+}
 .focus-card {
   display: flex;
-  gap: 20px;
   align-items: center;
-  background: #f4f4f4;
-  border-radius: 8px;
+  width: 32.5%;
   padding: 15px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  justify-content: space-around;
+  position: relative;
+
+}
+.focustext{
+  width: 40%;
 }
 
-
-.focusimg{
-  width: 180px;
-  height: 100px;
-  background-image: url('https://www.gabonreview.com/wp-content/uploads/2025/05/passation1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: cover;
+.focusimg2{
+ background-image: url("https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-20-at-13.39.04.jpeg");
+ background-size: cover;
+ width: 40%;
+ background-position: center;
+ height: 100px;
 }
-
+.focusimg1{
+  background-image: url("https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-20-at-14.20.18.jpeg");
+ background-size: cover;
+ width: 40%;
+ background-position: center;
+ height: 100px;
+}
+.focusimg3{
+  background-image: url("https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-20-at-12.41.24.jpeg");
+ background-size: cover;
+ width: 40%;
+ background-position: center;
+ height: 100px;
+}
+.focusimg4{
+  background-image: url("https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-20-at-11.57.25.jpeg");
+ background-size: cover;
+ width: 40%;
+ background-position: center;
+ height: 100px;
+}
+.focusimg5{
+  background-image: url("https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-20-at-05.39.47-1.jpeg");
+ background-size: cover;
+ width: 40%;
+ background-position: center;
+ height: 100px;
+}
+.focusimg6{
+  background-image: url("https://gabonactu.com/wp-content/uploads/2023/09/drapeau-gabonais.jpg");
+ background-size: cover;
+ width: 40%;
+ background-position: center;
+ height: 100px;
+}
+.date{
+  color: gray;
+}
 .focus-card h3 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 13px;
   color: red;
+  text-transform: uppercase;
+}
+.focus-card p{
+  font-weight: bold;
+  font-size: 14px;
 }
 
 /* Vidéos */
@@ -284,7 +353,7 @@ section h2 {
   height: 10px;
   border-radius: 50%;
   background-color: red;
-  border: 2px solid #c80000;
+  border: 2px solid red;
   animation: blink-a 1s infinite;
 }
 
@@ -302,6 +371,8 @@ section h2 {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-top: 8px;
+  
 }
 
 
@@ -325,8 +396,7 @@ section h2 {
 .ticker-content {
   display: inline-block;
   white-space: nowrap;
-  animation: scrollTicker 45s linear infinite;
-}
+  animation: scroll-left 40s linear infinite;}
 
 .ticker-item {
   margin-right: 50px;
@@ -352,17 +422,17 @@ section h2 {
 *, ::after, ::before {
     box-sizing: border-box;
 }
-
-
-
-@keyframes scrollTicker {
-  0% {
+@keyframes scroll-left {
+  from {
     transform: translateX(100%);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
+
+
+
 
 /* Responsive uniquement mobile */
 @media (max-width: 768px) {
@@ -545,34 +615,78 @@ section h2 {
 .focus-section {
   background-color: #fff;
 }
+.focusmere{
+  display: block;
+}
+.focusmere2{
+  display: block;
+}
 
 .focus-card {
-  display: block;
+  display:block;
   gap: 20px;
   align-items: center;
   background: #ffffff;
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  width: 100%;
+  margin-bottom: 8px;
 
 }
 
-.focus-card img {
+.focusimg1 {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 6px;
 }
 
+.focustext{
+  width: 100%;
+}
+
+.focusimg2{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.focusimg3{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.focusimg4{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.focusimg5{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.focusimg6{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
 .focus-card h3 {
-  margin: 0 0 8px;
   font-size: 18px;
   color: red;
+  text-align: justify;
 }
 .focus-card p {
   
-  font-size: 14px;
+  font-size: 16px;
   color: black;
+  text-align: justify;
   
 }
 
@@ -703,7 +817,15 @@ section h2 {
 .newsletter-form button:hover {
   background-color: #c30000;
 }
-
+.focus-card a {
+  color: black;
+  text-decoration: none;
+ 
+ 
+ }
+ .focus-card a:hover{
+   color: red;
+ }
 
   }
 

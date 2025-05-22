@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 // Composant séparé pour le carrousel
 const ImageCarousel = ({ images }) => {
@@ -22,8 +23,8 @@ const ImageCarousel = ({ images }) => {
     <section className="carousel-container" data-aos="fade-up">
       <div
         className="carousel-image"
-        style={{ backgroundImage: `url(${currentImage.src})` }}
-      >
+        style={{ backgroundImage: `url("${currentImage.src}")` }}
+        >
         <div className="carousel-title">
           <h2>{currentImage.title}</h2>
         </div>
@@ -65,8 +66,8 @@ const Home = () => {
       {/* Breaking News - ticker moderne */}
       <section className="breaking-news" data-aos="fade-down">
         <div className="news-ticker">
-        <span class="flash-icon"></span>
-          <span className="ticker-label">FLASH INFO :</span>
+        <span className="flash-icon"></span>
+        <span className="ticker-label">FLASH INFO :</span>
           <div className="ticker-wrapper">
             <div className="ticker-content">
               {breakingNews.map((item, index) => (
@@ -94,25 +95,31 @@ const Home = () => {
         <div className="stories-grid">
           {[
             {
-              title: 'Politique',
-              image: 'https://www.gabonreview.com/wp-content/uploads/2025/05/passation1.jpg',
-              description: 'Libreville : Adrien Nguema Mba succède à Rapontchombo à la tête de l’hôtel de ville',
+              title: 'Sécurité - Société',
+              image: 'https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-20-at-14.20.18.jpeg',
+              description: 'Gabon : Immongault appelle les policiers à proscrire le racket et les contrôles abusifs',
+              date: '20 mai 2025 à 12h13min',
+
             },
             {
-              title: 'Sport',
-              image: 'https://www.gabonreview.com/wp-content/uploads/2025/04/Akanda-FC-1536x864.jpeg',
-              description: 'National Foot 2 : Avec six mois d’impayés de salaire, Akanda FC vit la dure',
+              title: 'International - Justice - Politique',
+              image: 'https://gabonactu.com/wp-content/uploads/2023/09/drapeau-gabonais.jpg',
+              description: 'Affaire Île Mbanié : Le Gabon appelle au bon voisinage, la population sous le choc',
+              date: '20 mai 2025 ',
+
             },
             {
-              title: 'Environnement',
-              image: 'https://www.gabonreview.com/wp-content/uploads/2025/04/Wani25430.jpg',
-              description: 'Gabon, la Green and Blue Valley d’Afrique en devenir',
+              title: 'Economie',
+              image: 'https://gabonactu.com/wp-content/uploads/2025/05/Kouakoua.jpg',
+              description: 'Alain Claude Kouakoua désigné président de la FEG',
+              date: '20 mai 2025 ',
             },
           ].map((story, index) => (
             <article key={index} className="story-card">
               <img src={story.image} alt={story.title} />
               <h3>{story.title}</h3>
               <p>{story.description}</p>
+              <p>{story.date}</p>
             </article>
           ))}
         </div>
@@ -120,15 +127,100 @@ const Home = () => {
 
       {/* À la loupe */}
       <section className="focus-section" data-aos="fade-up">
-        <h2>À la loupe</h2>
-        <div className="focus-card">
-          <div className='focusimg'>
+        <h2>Actualités récentes</h2>
 
+        <div className='focusmere'>
+        <div className="focus-card">
+        <div className='focusimg1' ></div>
+
+          <div className='focustext'>
+          <Link to='articles'>
+
+            <h3>Sécurité - Société </h3>
+            <p>Racket: Les policiers dans le collimateur du ministre de tutelle</p>  <br />
+            </Link>
+
+            <div className='date'>20 Mai 2025</div>
           </div>
-          <div>
-            <h3>Analyse</h3>
-            <p>Crise politique au Gabon : quels enjeux pour la stabilité sous-régionale ?</p>
+        </div>
+
+        <div className="focus-card">
+        <div className='focusimg2' ></div>
+
+          <div className='focustext'>
+          <Link to='articles'>
+
+            <h3>Education</h3>
+            <p>Le Gabon lance son premier Concours national de dictée</p>  <br />
+            </Link>
+
+            <div className='date'>20 Mai 2025</div>
           </div>
+          </div>
+
+          
+        <div className="focus-card">
+        <div className='focusimg3' ></div>
+
+          <div className='focustext'>
+          <Link to='articles'>
+
+            <h3>Football - Sport</h3>
+            <p>La FIFA clôt l’enquête sur le transfert d’Aaron Boupendza de Zamalek au Rapid Bucarest</p> <br />
+            </Link>
+
+            <div className='date'>20 Mai 2025</div>
+          </div>
+          </div>
+         
+          
+        </div>
+        <div className='focusmere2'>
+
+        <div className="focus-card">
+        <div className='focusimg4' ></div>
+
+          <div className='focustext'>
+          <Link to='articles'>
+
+            <h3>⁠Coopération Education</h3>
+            <p>  Gabon-Japon : des salles de classe pour les écoles de Ntoum 1 et Kango 2</p> <br />
+            </Link>
+
+            <div className='date'>20 Mai 2025</div>
+          </div>
+        </div>
+
+        <div className="focus-card">
+        <div className='focusimg5' ></div>
+
+          <div className='focustext'>
+          <Link to='articles'>
+
+            <h3>Société</h3>
+            <p> SOGEVAL : Marthe Eunice Bakoukou aux commandes</p> <br />
+            </Link>
+
+            <div className='date'>20 Mai 2025</div>
+          </div>
+          </div>
+
+          
+        <div className="focus-card">
+        <div className='focusimg6' ></div>
+
+          <div className='focustext'>
+          <Link to='articles'>
+
+            <h3>International Justice Politique</h3>
+            <p>Affaire Île Mbanié : Le Gabon appelle au bon voisinage, la population sous le choc</p> <br />
+            </Link>
+
+            <div className='date'>20 Mai 2025</div>
+          </div>
+          </div>
+         
+          
         </div>
       </section>
 
@@ -144,6 +236,7 @@ const Home = () => {
           ].map((video, index) => (
             <div key={index} className="video-card">
               <iframe
+                loading="lazy"
                 src={video.src}
                 title={`Vidéo ${index + 1}`}
                 frameBorder="0"

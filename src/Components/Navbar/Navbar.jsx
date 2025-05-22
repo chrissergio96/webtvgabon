@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import Webtv from '../../Images/WEB TV GABON.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,9 @@ const Navbar = () => {
   return (
     <nav className="mere">
       <div className="bold">
+      <Link to='/'>
         <img src={Webtv} alt="Logo" />
+            </Link>
 
         {/* Liens visibles sur desktop */}
         <ul className="nav-links">
