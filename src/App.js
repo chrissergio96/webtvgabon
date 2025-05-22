@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar/Navbar.jsx';
 import Articles from './Pages/Articles.js';
 import Podcasts from './Pages/Podcasts.js';
 import DetailsArticles from './Pages/DetailsArticles.js';
@@ -14,7 +13,6 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Navbar />
       <Routes>
       <Route path="/" element={<Accueil />} />
       <Route path="/articles" element={<Articles />} />
