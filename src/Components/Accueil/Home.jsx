@@ -3,86 +3,46 @@ import './Home.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
+import Carousel from '../Caroussel/Carousel';
 
-// Composant séparé pour le carrousel
-const ImageCarousel = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 8000);
-
-   return () => clearInterval(interval);
-  }, [images.length]);
-
-  const currentImage = images[currentIndex];
-  return (
-    <section className="carousel-container" data-aos="fade-up">
-      <div
-        className="carousel-image"
-        style={{ backgroundImage: `url("${currentImage.src}")` }}
-        >
-        <div className="carousel-title">
-          <h2>{currentImage.title}</h2>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const breakingNews = [
-    " Adéquation Formation – Emploi : Levée de voile sur les métiers de l’Enseignement technique et Professionnel",
-    "Sylvia Bongo et Nourredine Bongo Valentin en liberté provisoire pour des raisons médicales",
-    "Climat : sommet international à Paris"
-  ];
+ 
 
-  
-  const imagesWithTitles = [
-    {
-      src: "https://www.gabonreview.com/wp-content/uploads/2025/05/forestiere1.jpg",
-      title: "La Forestière : les épouses des paramilitaires des Eaux et Forêts s’organisent pour agir",
-    },
-    {
-      src: "https://www.gabonreview.com/wp-content/uploads/2025/05/Charles-Street-Mayfair_Ali-Bongo.jpg",
-      title: "De Libreville à Mayfair à Londres : l’exil doré du clan Bongo prend forme",
-    },
-    {
-      src: "https://www.gabonreview.com/wp-content/uploads/2025/05/FB_IMG_1747398524351.jpg",
-      title: "Diplomatie : Régis Immongault reçoit les orientations d’Oligui Nguema",
-    },
-  ];
  
 
   return (
     <div className="home-container">
-      {/* Breaking News - ticker moderne */}
-      <section className="breaking-news" data-aos="fade-down">
-        <div className="news-ticker">
-        <span className="flash-icon"></span>
-        <span className="ticker-label">FLASH INFO :</span>
-          <div className="ticker-wrapper">
-            <div className="ticker-content">
-              {breakingNews.map((item, index) => (
-                <span key={index} className="ticker-item">• {item} • </span>
-              ))}
-            </div>
+
+      <section className= 'plusieurs'>
+        <div className='plus1'>
+        <Carousel />
+
+        </div>
+        <div className='plus2'>
+        </div>
+        
+        <div className='plus3'>
+          <div className='plus3enf'>
+          <h1>ÉCONOMIE</h1>
+          <h4>Après la suspension des missions, Oyima tape dans le portemonnaie des anciens du régime</h4>
+          <p>24 mai 2025 </p>
+          </div>
+          <div className='plus3en'>
+          <h1>ÉCONOMIE</h1>
+          <h4>Bonne cadence pour les chantiers présidentiels à Akébé</h4>
+          <p>23 mai 2025 </p>
           </div>
         </div>
       </section>
 
-     {/* Carrousel */}
-     <ImageCarousel images={imagesWithTitles} />
-
       {/* Editorial */}
-      <section className="editorial-section" data-aos="fade-up">
+      <section className="editorial-section" >
         <h2>Éditorial</h2>
         <p>
           Découvrez l’analyse de nos experts sur les grands enjeux du moment : politique, société, environnement et économie. Chaque jour, un regard approfondi sur l’actualité nationale et internationale.
@@ -90,7 +50,7 @@ const Home = () => {
       </section>
 
       {/* À la Une */}
-      <section className="top-stories" data-aos="fade-up">
+      <section className="top-stories" >
         <h2>À la Une</h2>
         <div className="stories-grid">
           {[
@@ -126,7 +86,7 @@ const Home = () => {
       </section>
 
       {/* À la loupe */}
-      <section className="focus-section" data-aos="fade-up">
+      <section className="focus-section">
         <h2>Actualités récentes</h2>
 
         <div className='focusmere'>
@@ -225,7 +185,7 @@ const Home = () => {
       </section>
 
       {/* Vidéos */}
-      <section className="video-section" data-aos="fade-up">
+      <section className="video-section" >
         <h2>Dernières Vidéos</h2>
         <div className="video-grid">
           {[
@@ -249,7 +209,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="newsletter-section" data-aos="fade-up">
+      <section className="newsletter-section">
   <h2>Inscription à la newsletter</h2>
   <p>Recevez les dernières actualités directement dans votre boîte mail.</p>
   <form
@@ -285,7 +245,7 @@ const Home = () => {
 
 
       {/* Footer */}
-      <footer className="footer" data-aos="fade-up">
+      <footer className="footer">
         <hr />
         <p>&copy; 2025 Votre Média. Tous droits réservés.</p>
         <div className="social-links">
