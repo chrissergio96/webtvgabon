@@ -9,7 +9,96 @@
   color: red;
 
 }
+.plusieurs{
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-around;
+  height: 350px;
+}
+.plus2{
+  width: 25%;
+  height: 310px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+  background-image: url('https://gabonactu.com/wp-content/uploads/2025/05/PDG-6.jpg')
+}
+.plus1{
+  width: 40%;
+  height: 300px;
+}
 
+.plus3{
+  width: 30%;
+  height: 450px;
+  overflow: hidden;
+  display: block;
+}
+.plus3enf{
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-bottom:10px ;
+  padding: 10px;
+  margin-right: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('https://gabonactu.com/wp-content/uploads/2025/05/Henri-Claude-Oyima-1.jpg');
+
+ 
+}
+.plus3enf h1{
+  color: white;
+  background-color: blue;
+  font-size: 16px;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+}
+.plus3enf h4{
+  color: white;
+}
+.plus3enf p{
+  color: white;
+  background-color: red;
+  width: 50%;
+  text-align: center;
+}
+
+.plus3en{
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('https://gabonactu.com/wp-content/uploads/2025/05/Akebe-chantiers.jpg');
+
+ 
+}
+.plus3en h1{
+  color: white;
+  background-color: blue;
+  font-size: 16px;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+}
+.plus3en h4{
+  color: white;
+}
+.plus3en p{
+  color: white;
+  background-color: red;
+  width: 50%;
+  text-align: center;
+}
 .ticker {
   display: flex;
   align-items: center;
@@ -348,88 +437,6 @@ section h2 {
   font-size: 2rem;
 }
 
-.flash-icon {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: red;
-  border: 2px solid red;
-  animation: blink-a 1s infinite;
-}
-
-@keyframes blink-a {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.5); }
-}
-/* BREAKING NEWS - MODERNE TICKER */
-.news-ticker {
-  background-color: white;
-  color: red;
-  padding: 0.5em 1em;
-  font-weight: bold;
-  text-transform: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-  
-}
-
-
-.ticker-label {
-  font-weight: bold;
-  margin-right: 15px;
-  white-space: nowrap;
-  background-color: red;
-  color: white;
-  height: 25px;
-  width: 10%;
-  padding-left: 3px;
-}
-
-.ticker-wrapper {
-  overflow: hidden;
-  flex: 1;
-  position: relative;
-}
-
-.ticker-content {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 40s linear infinite;}
-
-.ticker-item {
-  margin-right: 50px;
-  font-size: 16px;
-  display: inline-block;
-  font-weight: bold;
-}
-
-
-.top-stories-bar .top-stories-label .flash-icon {
-    position: absolute;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    background-color: white;
-    top: 50%;
-    margin-top: -5px;
-    left: 10px;
-    z-index: 2;
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-}
-@keyframes scroll-left {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 
 
 
@@ -437,99 +444,52 @@ section h2 {
 /* Responsive uniquement mobile */
 @media (max-width: 768px) {
   
-  /* -------- CAROUSEL -------- */
-.carousel-container {
-  width: 100%;
-  height: 220px;
-  position: relative;
-  overflow: hidden;
+  .plusieurs {
+    flex-direction: column;
+    height: auto;
+  }
+  .plus1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .plus2 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .plus3 {
+    width: 100%;
+    height: max-content;
+    margin-bottom: 10px;
+  }
+  .plus3enf h1, .plus3enf p,
+.plus3en h1, .plus3en p {
+  text-shadow: 1px 1px 2px black;
 }
 
-.carousel-image {
+.plus3enf, .plus3en {
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 2s ease-in-out;
-  display: flex;
-  align-items: flex-end;
+  height: 150px;
   justify-content: center;
-}
-
-.carousel-title {
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  display: flex;
-}
-
-.carousel-title h2 {
-  margin: 0;
-  font-size: 14px;
-}
-/* BREAKING NEWS - MODERNE TICKER */
-.news-ticker {
-  background-color: white;
-  color: red;
-  padding: 0.5em 1em;
-  font-weight: bold;
-  text-transform: none;
-  display: flex;
   align-items: center;
-  gap: 10px;
+  margin: 0 auto 10px auto;
+  padding: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+ 
+  .plus3enf h4{
+    color: white;
+  }
+ 
+  
+ 
+  
+  .plus3en h4{
+    color: white;
+  }
+ 
 
-.ticker-label {
-  font-weight: bold;
-  white-space: nowrap;
-  background-color: red;
-  color: white;
-  height: 25px;
-  width: 35%;
-  padding-left: 3px;
-}
-
-
-.ticker-wrapper {
-  overflow: hidden;
-  flex: 1;
-  position: relative;
-}
-
-.ticker-content {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scrollTicker 45s linear infinite;
-}
-
-.ticker-item {
-  margin-right: 50px;
-  font-size: 16px;
-  display: inline-block;
-  font-weight: bold;
-}
-
-
-.top-stories-bar .top-stories-label .flash-icon {
-    position: absolute;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    background-color: white;
-    top: 50%;
-    margin-top: -5px;
-    left: 10px;
-    z-index: 2;
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-}
 .home-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f8f8;
@@ -538,15 +498,7 @@ section h2 {
   margin: 0;
 }
 
-.ticker {
-  display: flex;
-  align-items: center;
-}
 
-.ticker span {
-  margin-right: 10px;
-  width: 10%;
-}
 
 /* Section Titre */
 section h2 {
@@ -787,13 +739,27 @@ section h2 {
 }
 
 .newsletter-form input[type="email"] {
-  padding: 10px;
-  font-size: 16px;
-  width: 65%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-
+  width: 100%;
+  max-width: 350px;
 }
+.plus3enf::before,
+.plus3en::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.057);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.plus3enf h1, .plus3enf h4, .plus3enf p,
+.plus3en h1, .plus3en h4, .plus3en p {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 5px;
+}
+
 .newsletter-form label{
   display: flex;
   width: 100%;

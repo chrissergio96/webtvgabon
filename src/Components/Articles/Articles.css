@@ -7,7 +7,7 @@
   width: 95%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 20px;
+  position: relative;
 }
 .artic{
   width: 50%;
