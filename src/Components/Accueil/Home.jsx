@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 import Carousel from '../Caroussel/Carousel';
+import Caroussele from '../Caroussele/Caroussele';
 
 
 
@@ -21,13 +22,24 @@ const Home = () => {
 
       <section className= 'plusieurs'>
         <div className='plus1'>
+        <h2>A LA UNE</h2>
+
         <Carousel />
 
         </div>
+        <div className='plus21'>
+        <h2>POLITIQUE</h2>
+
         <div className='plus2'>
+          <h1>SANTÉ - SOCIÉTÉ</h1>
+          <h4>Insalubrité dans les marchés : Le mythe de Sisyphe</h4>
+          <p>24 mai 2025 </p>
+          
         </div>
-        
+        </div>
         <div className='plus3'>
+        <h2>ÉCONOMIE</h2>
+
           <div className='plus3enf'>
           <h1>ÉCONOMIE</h1>
           <h4>Après la suspension des missions, Oyima tape dans le portemonnaie des anciens du régime</h4>
@@ -43,10 +55,9 @@ const Home = () => {
 
       {/* Editorial */}
       <section className="editorial-section" >
-        <h2>Éditorial</h2>
-        <p>
-          Découvrez l’analyse de nos experts sur les grands enjeux du moment : politique, société, environnement et économie. Chaque jour, un regard approfondi sur l’actualité nationale et internationale.
-        </p>
+        <h2>ANNONCES</h2>
+       
+        <Caroussele/>
       </section>
 
       {/* À la Une */}
