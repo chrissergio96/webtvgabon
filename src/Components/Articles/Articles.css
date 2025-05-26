@@ -7,7 +7,6 @@
   width: 95%;
   margin-right: auto;
   margin-left: auto;
-  position: relative;
 }
 .artic{
   width: 50%;
@@ -126,7 +125,10 @@
   .article-content p {
     font-size: 0.9rem;
   }
-
+  .btn-voir-plus span{
+    display: flex;
+    justify-content: space-around;
+  }
   .btn-voir-plus {
     align-self: center;
   }
@@ -145,5 +147,8 @@
 .artic{
   width: 90%;
 
+}
+#svgy{
+  margin-left: 5px;
 }
 }
