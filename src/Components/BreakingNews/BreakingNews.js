@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 
 const BreakingNews = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 5000 });
   }, []);
 
   const breakingNews = [

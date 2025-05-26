@@ -17,18 +17,44 @@
   height: 350px;
 }
 .plus2{
-  width: 25%;
+  width: 100%;
   height: 310px;
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 8px;
-  background-image: url('https://gabonactu.com/wp-content/uploads/2025/05/PDG-6.jpg')
+  padding: 10px;
+  background-image: url('https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-25-at-17.14.10.jpeg')
 }
+.plus2 h1{
+  color: white;
+  background-color: blue;
+  font-size: 16px;
+  width: 50%;
+  padding: 5px;
+  margin-top: 50%;
+  text-align: center;
+}
+.plus2 h4{
+  color: white;
+}
+.plus2 p{
+  color: white;
+  background-color: red;
+  width: 30%;
+  margin-top: 10px;
+  text-align: center;
+}
+
 .plus1{
   width: 40%;
   height: 300px;
 }
-
+.plus21{
+  width: 25%;
+  height: 450px;
+  overflow: hidden;
+  display: block;
+}
 .plus3{
   width: 30%;
   height: 450px;
@@ -64,7 +90,8 @@
 .plus3enf p{
   color: white;
   background-color: red;
-  width: 50%;
+  width: 30%;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -96,8 +123,9 @@
 .plus3en p{
   color: white;
   background-color: red;
-  width: 50%;
+  width: 30%;
   text-align: center;
+  margin-top: 10px;
 }
 .ticker {
   display: flex;
@@ -118,6 +146,8 @@ section h2 {
 .editorial-section {
   padding: 30px 20px;
   background-color: #fff;
+  display: block;
+  width: 100%;
 }
 
 .editorial-content {
@@ -450,16 +480,37 @@ section h2 {
   }
   .plus1 {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .plus2 {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .plus2 h1{
+    text-shadow: 1px 1px 2px black;
+
+  }
+  .plus2 h4{
+    color: white;
+  }
+  .plus2 p{
+    text-shadow: 1px 1px 2px black;
+
+  }
+  .plus21{
+    width: 100%;
+    overflow: hidden;
+    height: max-content;
+    display: block;
   }
   .plus3 {
-    width: 100%;
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
     height: max-content;
-    margin-bottom: 10px;
   }
   .plus3enf h1, .plus3enf p,
 .plus3en h1, .plus3en p {
@@ -481,13 +532,7 @@ section h2 {
   .plus3enf h4{
     color: white;
   }
- 
-  
- 
-  
-  .plus3en h4{
-    color: white;
-  }
+
  
 
 .home-container {
