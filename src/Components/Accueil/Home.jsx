@@ -4,7 +4,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 import Carousel from '../Caroussel/Carousel';
+
 import Caroussele from '../Caroussele/Caroussele';
+import TopStories from '../TopStories/TopStories';
 
 
 
@@ -13,7 +15,8 @@ const Home = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
- 
+  AOS.init({ duration: 1000, once: true });
+
 
  
 
@@ -55,50 +58,19 @@ const Home = () => {
 
       {/* Editorial */}
       <section className="editorial-section" >
-        <h2>ANNONCES</h2>
+        <h2 style={{textTransform:'uppercase'}}>Annonces</h2>
        
         <Caroussele/>
       </section>
 
       {/* À la Une */}
       <section className="top-stories" >
-        <h2>À la Une</h2>
-        <div className="stories-grid">
-          {[
-            {
-              title: 'Sécurité - Société',
-              image: 'https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-20-at-14.20.18.jpeg',
-              description: 'Gabon : Immongault appelle les policiers à proscrire le racket et les contrôles abusifs',
-              date: '20 mai 2025 à 12h13min',
-
-            },
-            {
-              title: 'International - Justice - Politique',
-              image: 'https://gabonactu.com/wp-content/uploads/2023/09/drapeau-gabonais.jpg',
-              description: 'Affaire Île Mbanié : Le Gabon appelle au bon voisinage, la population sous le choc',
-              date: '20 mai 2025 ',
-
-            },
-            {
-              title: 'Economie',
-              image: 'https://gabonactu.com/wp-content/uploads/2025/05/Kouakoua.jpg',
-              description: 'Alain Claude Kouakoua désigné président de la FEG',
-              date: '20 mai 2025 ',
-            },
-          ].map((story, index) => (
-            <article key={index} className="story-card">
-              <img src={story.image} alt={story.title} />
-              <h3>{story.title}</h3>
-              <p>{story.description}</p>
-              <p>{story.date}</p>
-            </article>
-          ))}
-        </div>
+       <TopStories/>
       </section>
 
       {/* À la loupe */}
       <section className="focus-section">
-        <h2>Actualités récentes</h2>
+        <h2 style={{textTransform:'uppercase'}}>Actualités récentes</h2>
 
         <div className='focusmere'>
         <div className="focus-card">
@@ -197,7 +169,7 @@ const Home = () => {
 
       {/* Vidéos */}
       <section className="video-section" >
-        <h2>Dernières Vidéos</h2>
+        <h2 style={{textTransform:'uppercase'}}>Dernières Vidéos</h2>
         <div className="video-grid">
           {[
             { src: "https://www.youtube.com/embed/c5VKRt__bEw", desc: "Investiture du nouveau Président Élu du Gabon / Arrivée du Président de la République à Libreville." },
@@ -221,7 +193,7 @@ const Home = () => {
       </section>
 
       <section className="newsletter-section">
-  <h2>Inscription à la newsletter</h2>
+  <h2 style={{textTransform:'uppercase'}}>Inscription à la newsletter</h2>
   <p>Recevez les dernières actualités directement dans votre boîte mail.</p>
   <form
     className="newsletter-form"
