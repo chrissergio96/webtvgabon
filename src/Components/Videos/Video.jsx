@@ -42,6 +42,31 @@ const videos = [
     miniature: "https://www.youtube.com/embed/LFYw1UB1nZo",
     categorie: "Politique",
   },
+  {
+    id: 6,
+    titre: "Îlots disputés : ",
+    description: "Îlots disputés : la CIJ donne raison à la Guinée équatoriale face au Gabon",
+    lien: "https://www.youtube.com/embed/oq2XgME-JBw?si=AkLHSTjd-kRGKdOX" ,
+    miniature: "https://www.youtube.com/embed/oq2XgME-JBw?si=AkLHSTjd-kRGKdOX" ,
+    categorie: "Politique",
+  },
+  {
+    id: 7,
+    titre: "Henri-Claude Oyima : entretien exclusif",
+    description: "Henri-Claude Oyima : entretien exclusif",
+    lien: "https://www.youtube.com/embed/qq8iMCckbFI?si=7NuiLVI1IDqna9nM",
+    miniature: "https://www.youtube.com/embed/qq8iMCckbFI?si=7NuiLVI1IDqna9nM",
+    categorie: "Economie",
+  },
+  {
+    id: 8,
+    titre: "GABON / FAIT-DIVERS :",
+    description: "Un individu profane la tombe de son père et s’empare du crâne",
+    lien: "https://www.youtube.com/embed/lD1bAseBlRY?si=Bibu2akPLKyfDUIj",
+    miniature: "https://www.youtube.com/embed/lD1bAseBlRY?si=Bibu2akPLKyfDUIj",
+    categorie: "Faits Divers",
+  },
+
 ];
 
 
@@ -73,7 +98,7 @@ const Video = () => {
 
       {/* Filtrage par catégorie */}
       <div className="filter-bar">
-        {['Toutes', 'Institutionnel', 'Culture', 'Économie', 'Politique'].map((cat) => (
+        {['Toutes', 'Institutionnel','Culture', 'Économie','Faits Divers'  ,'Politique'].map((cat) => (
           <button
             key={cat}
             className={`filter-button ${selectedCategory === cat ? 'active' : ''}`}
