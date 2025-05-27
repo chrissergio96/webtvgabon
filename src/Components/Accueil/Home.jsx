@@ -22,13 +22,13 @@ const Home = () => {
 
       <section className= 'plusieurs'>
         <div className='plus1'>
-        <h2>A LA UNE</h2>
+        <h2>À LA UNE</h2>
 
         <Carousel />
 
         </div>
         <div className='plus21'>
-        <h2>POLITIQUE</h2>
+        <h2>SANTÉ</h2>
 
         <div className='plus2'>
           <h1>SANTÉ - SOCIÉTÉ</h1>
