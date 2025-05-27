@@ -8,11 +8,16 @@ import Accueil from './Pages/Accueil.js';
 import Videos from './Pages/Videos.js';
 import Directe from './Pages/Directe.js';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop.js';
+import { SearchProvider } from './Components/SearchContent/SearchContent.js';
+import AllNav from './Components/AllNav/AllNav.js';
 
 function App() {
   return (
+    <SearchProvider>
     <Router>
       <ScrollToTop />
+      <AllNav/>
+
       <Routes>
       <Route path="/" element={<Accueil />} />
       <Route path="/articles" element={<Articles />} />
@@ -23,6 +28,7 @@ function App() {
 
       </Routes>
     </Router>
+    </SearchProvider>
   );
 }
 
