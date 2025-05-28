@@ -10,11 +10,13 @@
 
 }
 .plusieurs{
-  width: 100%;
+  width: 98%;
   display: flex;
   margin-top: 20px;
   justify-content: space-around;
   height: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .plus2{
   width: 100%;
@@ -147,7 +149,9 @@ section h2 {
   padding: 30px 10px;
   background-color: #fff;
   display: block;
-  width: 100%;
+  width: 98.5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .editorial-content {
@@ -551,13 +555,13 @@ section h2 {
 section h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  border-left: 5px solid #c30000;
+  border-left: 5px solid red;
   padding-left: 10px;
 }
 
 /* Éditorial */
 .editorial-section {
-  padding: 30px 20px;
+  padding: 30px 10px;
   background-color: #fff;
 }
 
@@ -694,7 +698,7 @@ section h2 {
 
 /* Vidéos */
 .video-section {
-  padding: 30px 20px;
+  padding: 20px 20px;
   background-color: #fff;
 }
 
