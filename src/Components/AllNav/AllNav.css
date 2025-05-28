@@ -44,7 +44,7 @@
     animation: marquee 18s linear infinite;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #b91c1c; /* Rouge foncé */
+    color: red;/* Rouge foncé */
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -52,7 +52,7 @@
   
   /* Icône d’alerte (optionnel) */
   .allnav-icon {
-    color: #ef4444; /* Rouge vif */
+    color: red;/* Rouge vif */
     animation: pulse 2s infinite;
   }
   
@@ -71,7 +71,7 @@
   .blink {
     animation: blink 1s infinite;
     font-weight: bold;
-    color: #dc2626; /* Rouge intense */
+    color: red;/* Rouge intense */
   }
   
   
