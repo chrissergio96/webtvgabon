@@ -17,10 +17,11 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: red;
-    border: 2px solid red;
+    background-color: #e11d48;
+    border: 2px solid #e11d48;
     animation: blink-a 1s infinite;
   }
+  
   
   @keyframes blink-a {
     0%, 100% { opacity: 1; transform: scale(1); }
@@ -28,29 +29,31 @@
   }
   /* BREAKING NEWS - MODERNE TICKER */
   .news-ticker {
-    background-color: white;
-    color: red;
-    padding: 0.5em 1em;
-    font-weight: bold;
+    background-color: #f8f9fa; /* un fond doux */
+    color: #e11d48; /* rouge chic */
+    padding: 0.6em 1em;
+    font-weight: 600;
     text-transform: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    border-bottom: 1px solid #e5e7eb;
     position: relative;
     z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
   }
-  
   
   .ticker-label {
     font-weight: bold;
-    margin-right: 15px;
     white-space: nowrap;
-    background-color: red;
+    background-color: #e11d48;
     color: white;
-    height: 25px;
-    width: 10%;
-    padding-left: 3px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
   }
+  
   
   .ticker-wrapper {
     overflow: hidden;
@@ -61,15 +64,15 @@
   .ticker-content {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-left 40s linear infinite;}
-  
-  .ticker-item {
-    margin-right: 50px;
-    font-size: 16px;
-    display: inline-block;
-    font-weight: bold;
-  }
-  
+    animation: scroll-left 40s linear infinite; 
+}
+
+    .ticker-wrapper:hover .ticker-content {
+        animation-play-state: paused;
+        cursor: pointer;
+      }
+      
+
   
   .top-stories-bar .top-stories-label .flash-icon {
       position: absolute;
@@ -96,6 +99,25 @@
     }
   }
   
+  
+  .news-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+    vertical-align: middle;
+    border: 2px solid #e11d48; /* Rouge chic */
+  }
+  
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 60px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #991b1b; /* rouge profond */
+  }
   
   
   
@@ -133,28 +155,27 @@
   }
   /* BREAKING NEWS - MODERNE TICKER */
   .news-ticker {
-    background-color: white;
-    color: red;
-    padding: 0.5em 1em;
-    font-weight: bold;
-    text-transform: none;
-    display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 5px;
-    position: relative;
-    z-index: 999;
-    
+    gap: 8px;
+    padding: 0.4em;
   }
   
   
   .ticker-label {
-    font-weight: bold;
-    white-space: nowrap;
-    background-color: red;
-    color: white;
-    height: 25px;
-    width: max-content;
-    padding: 2px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .ticker-item {
+    margin-right: 30px;
+    font-size: 14px;
+  }
+
+  .news-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
   }
   
   .ticker-wrapper {
@@ -167,13 +188,6 @@
     display: inline-block;
     white-space: nowrap;
     animation: scroll-left 60s linear infinite;}
-  
-  .ticker-item {
-    margin-right: 50px;
-    font-size: 16px;
-    display: inline-block;
-    font-weight: bold;
-  }
   
   
   .top-stories-bar .top-stories-label .flash-icon {
