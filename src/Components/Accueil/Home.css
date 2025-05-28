@@ -561,7 +561,7 @@ section h2 {
 
 /* Éditorial */
 .editorial-section {
-  padding: 30px 20px;
+  padding: 30px 10px;
   background-color: #fff;
 }
 
@@ -698,7 +698,7 @@ section h2 {
 
 /* Vidéos */
 .video-section {
-  padding: 30px 20px;
+  padding: 20px 20px;
   background-color: #fff;
 }
 
