@@ -10,11 +10,13 @@
 
 }
 .plusieurs{
-  width: 100%;
+  width: 98%;
   display: flex;
   margin-top: 20px;
   justify-content: space-around;
   height: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .plus2{
   width: 100%;
@@ -147,7 +149,9 @@ section h2 {
   padding: 30px 10px;
   background-color: #fff;
   display: block;
-  width: 100%;
+  width: 98.5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .editorial-content {
