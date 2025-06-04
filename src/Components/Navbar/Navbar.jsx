@@ -16,7 +16,7 @@ const Navbar = () => {
     { name: 'Articles', path: '/articles' },
     { name: 'Podcasts', path: '/podcasts' },
     { name: 'Vidéos', path: '/videos' },
-    { name: 'Live', path: '/live' },
+    { name: 'Directe', path: '/directe' },
     { name: 'Actualités', path: '/actualites' },
   ];
 
