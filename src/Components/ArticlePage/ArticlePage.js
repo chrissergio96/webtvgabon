@@ -1,8 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'; // Permet de récupérer les paramètres dans l'URL
 import './ArticlePage.css';
-import { Link } from 'react-router-dom';
-import { p } from 'framer-motion/client';
+
 
 // Définir une fonction pour récupérer un article par son id
 const ArticlePage = () => {
@@ -287,10 +286,7 @@ L’objectif affiché est clair : permettre à BW Energy Gabon de mieux piloter 
       <h1>{article.titre}</h1>
       <img src={article.image} alt={article.titre} className="article-detail-image" />
       <p>{article.contenu}</p>
-      {/* Bouton retour à la page d'accueil */}
-     <div className="retour-accueil">
-     <Link to="/articles" className="btn-retour">← Page précédente</Link>
-   </div>
+     
     </div>
   );
 };
