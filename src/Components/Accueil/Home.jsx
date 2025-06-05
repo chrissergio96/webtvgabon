@@ -4,10 +4,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 import Carousel from '../Caroussel/Carousel';
-
 import Caroussele from '../Caroussele/Caroussele';
 import TopStories from '../TopStories/TopStories';
-
 
 
 const Home = () => {
@@ -64,9 +62,7 @@ const Home = () => {
       </section>
 
       {/* À la Une */}
-      <section className="top-stories" >
        <TopStories/>
-      </section>
 
       {/* À la loupe */}
       <section className="focus-section">
@@ -172,8 +168,8 @@ const Home = () => {
         <h2 style={{textTransform:'uppercase'}}>Dernières Vidéos</h2>
         <div className="video-grid">
           {[
-            { src: "https://www.youtube.com/embed/c5VKRt__bEw", desc: "Investiture du nouveau Président Élu du Gabon / Arrivée du Président de la République à Libreville." },
-            { src: "https://www.youtube.com/embed/LFYw1UB1nZo", desc: "Gabon : Quelle suite pour le Gabon ?" },
+            { src: "https://www.youtube.com/embed/c5VKRt__bEw", desc: "Investiture du nouveau Président Élu du Gabon" },
+            { src: "https://www.youtube.com/embed/LFYw1UB1nZo", desc: "Gabon: Les projets locaux accompagnés par la mairie" },
             { src: "https://www.youtube.com/embed/Ixm3hiLIQUA", desc: "Communiqué n°072 du CTRI du 01 mai 2025" },
             { src: "https://www.youtube.com/embed/Ixm3hiLIQUA", desc: "Communiqué n°072 du CTRI du 01 mai 2025" },
           ].map((video, index) => (

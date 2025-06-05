@@ -9,7 +9,7 @@ const AllNav = () => {
   return (
     <div className="allnav-container">
       {/* Logo */}
-      <div>
+      <div className="mere-allnav">
         <Link to="/">
         <img src={Logo} alt="Logo" className="allnav-logo" />
         </Link>
