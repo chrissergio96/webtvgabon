@@ -36,7 +36,7 @@ const videos = [
   },
   {
     id: 5,
-    titre: "Gabon : Quelle suite pour le Gabon ?",
+    titre: "Gabon : Quelle suite pour le Gabon ? ",
     description: "Les projets locaux accompagnés par la mairie.",
     lien: "https://www.youtube.com/embed/LFYw1UB1nZo",
     miniature: "https://www.youtube.com/embed/LFYw1UB1nZo",

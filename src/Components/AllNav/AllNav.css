@@ -73,5 +73,93 @@
     font-weight: bold;
     color: red;/* Rouge intense */
   }
+ 
+/* ✅ VERSION MOBILE */
+@media screen and (max-width: 768px) {
+    
   
+/* Container principal */
+.allnav-container {
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    background-color: white; /* Rouge très clair */
+    border-bottom: 1px solid #fecaca; /* Rouge pâle */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  body{
+    background-color: white;
+  }
+  
+  /* Logo */
+  .allnav-logo {
+    height: 140px;  /* Taille du logo */
+    width: auto;
+    object-fit: contain;
+    background: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .mere-allnav{
+    width:40%;
+    margin-left: auto;
+    margin-right: auto;
+   }
+  
+  /* Zone d’annonce texte */
+  .allnav-message-box {
+    flex: 1;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    border: 1px solid #fecaca;
+    border-radius: 0.375rem; /* 6px */
+    overflow: hidden;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  /* Animation de défilement horizontale (marquee) */
+  @keyframes marquee {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .allnav-marquee {
+    white-space: nowrap;
+    animation: marquee 18s linear infinite;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: red;/* Rouge foncé */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Icône d’alerte (optionnel) */
+  .allnav-icon {
+    color: red;/* Rouge vif */
+    animation: pulse 2s infinite;
+  }
+  
+  /* Animation de pulsation de l’icône */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  
+  /* Mot ALERTE qui clignote */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .blink {
+    animation: blink 1s infinite;
+    font-weight: bold;
+    color: red;/* Rouge intense */
+  }
+     
+  }
   
