@@ -1,13 +1,28 @@
 .home-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: white;
   color: black;
   padding: 0;
   margin: 0;
+  background: #f0f0f0;
+  display:flex;
 }
 .home-container .hel{
   color: red;
 
+}
+.main-content {
+  
+}
+
+.sidebar-ads {
+  flex: 1;
+  margin-left: 20px;
+  position: sticky; /* Reste visible quand on scroll */
+  top: 100px;
+}
+.meresection{
+  flex: 3;
+  width:80%
 }
 .plusieurs{
   width: 98%;
@@ -173,10 +188,8 @@ section h2 {
 }
 
 .story-card {
-  background: #f9f9f9;
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -312,7 +325,7 @@ section h2 {
 }
 
 .video-card {
-  background: #f0f0f0;
+  background: white;
   padding: 10px;
   border-radius: 8px;
   transition: box-shadow 0.3s ease;
