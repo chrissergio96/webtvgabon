@@ -4,7 +4,6 @@
   /* À la Une */
 .top-stories {
     padding: 0 20px;
-    background-color: #fff;
   }
   
   .stories-grid {
@@ -16,7 +15,7 @@
   .story-card {
     background: white;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
@@ -34,13 +33,16 @@
   .story-card h3 {
     font-size: 18px;
     margin: 15px 10px 5px;
-    color: red;
+    color: white;
+    width: max-content;
+    padding: 5px;
   }
   
   .story-card p {
-    font-size: 14px;
+    font-size: 19px;
     padding: 0 10px 15px;
     line-height: 1.5;
+
   }
   
 /* Responsive uniquement mobile */
