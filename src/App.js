@@ -10,6 +10,7 @@ import Directe from './Pages/Directe.js';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop.js';
 import { SearchProvider } from './Components/SearchContent/SearchContent.js';
 import AllNav from './Components/AllNav/AllNav.js';
+import Footer from './Components/Footer/Footer.js';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/live" element={<Directe />} />
 
       </Routes>
+      <Footer/>
     </Router>
     </SearchProvider>
   );

@@ -1,0 +1,49 @@
+.ad-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.ad-slot img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Formats */
+.ad-slot.banner {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.ad-slot.sidebar {
+  width: 300px;
+  height: 600px;
+  margin-bottom: 20px;
+}
+
+.ad-slot.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 90%;
+  z-index: 9999;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.ad-slot .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

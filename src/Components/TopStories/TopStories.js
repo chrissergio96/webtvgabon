@@ -4,31 +4,31 @@ import './TopStories.css'
 const TopStories = () => {
   const allStories = [
     {
-      title: 'Economie-Société',
+      title: <h1 style={{background:'yellow', padding:'5px'}}>Economie - Société</h1>,
       image: 'https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-27-at-02.45.33.jpeg',
       description: 'Ouverture des travaux de la 2ᵉ édition des Rencontres Africaines de Libreville sur la Prévention des Risques Professionnels (RALI PRP)',
       date: '27 mai 2025 à 12h13min',
     },
     {
-      title: 'Economie',
+      title: <h1 style={{background:'orange', padding:'5px'}}>Economie</h1>,
       image: 'https://gabonactu.com/wp-content/uploads/2021/05/Afrijet.jpg',
       description: 'Vie chère : AFRIJET / FLYGABON appelle à la révision des taxes passagers',
       date: '27 mai 2025',
     },
     {
-      title: 'Football - Sport ',
+      title: <h1 style={{background:'blue', padding:'5px'}}>Football - Sport</h1>,
       image: 'https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-26-at-18.12.08.jpeg',
       description: 'Le Gabon accueille la dépouille d’Aaron Boupendza dans une profonde émotion nationale',
       date: '26 mai 2025',
     },
     {
-      title: 'Nécrologie',
+      title: <h1 style={{background:'green', padding:'5px'}}>Nécrologie</h1>,
       image: 'https://gabonactu.com/wp-content/uploads/2025/05/idriss.jpg',
       description: 'Idriss Firmin Ngari s’est éteint',
       date: '27 mai 2025',
     },
     {
-      title: 'Politique',
+      title: <h1 style={{background:'red', padding:'5px'}}>Politique</h1>,
       image: 'https://gabonactu.com/wp-content/uploads/2025/05/murielle-2.jpg',
       description: 'SEEG : l’État met fin à la gestion provisoire, la société retrouve son autonomie',
       date: '27 mai 2025',
@@ -61,7 +61,7 @@ const TopStories = () => {
             <img src={story.image} alt={story.title} />
             <h3>{story.title}</h3>
             <p>{story.description}</p>
-            <p>{story.date}</p>
+            <strong><p>{story.date}</p></strong>
           </article>
         ))}
       </div>
