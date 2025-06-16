@@ -11,9 +11,10 @@ const podcasts = [
   },
   {
     id: 2,
-    titre: "Paroles de Jeunes",
-    audio: "/audios/jeunes.mp3",
-    description: "Les jeunes gabonais s'expriment sur leurs ambitions et défis.",
+    photo:"https://www.youtube.com/embed/vAaeie-kg0Y",
+    titre: "Activités Portuaires",
+    audio: "https://www.youtube.com/embed/vAaeie-kg0Y",
+    description: "l'urgence de réglementer le métier de transitaire au Gabon",
   },
 ];
 

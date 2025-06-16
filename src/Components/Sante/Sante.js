@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import './Articles.css';
+import './Sante.css';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 
-const Articles = () => {
+const Sante = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -79,14 +79,7 @@ const Articles = () => {
           image: "https://gabonactu.com/wp-content/uploads/2024/01/Barro1.jpg",
           resume: "Voici la liste des membres du gouvernement nommé le 5 mai 2025...",
           date: "22 Mai 2025"
-        },
-         {
-          id: 11,
-          titre: "[🔴𝗘𝗖𝗢𝗡𝗢𝗠𝗜𝗘] 𝗨𝗻𝗲 𝗠𝗼𝗯𝗶𝗹𝗶𝘀𝗮𝘁𝗶𝗼𝗻 𝗥𝗲𝗰𝗼𝗿𝗱 𝗲𝘁 𝘂𝗻𝗲 𝗩𝗶𝘀𝗶𝗯𝗶𝗹𝗶𝘁é 𝗔𝗰𝗰𝗿𝘂𝗲 𝗽𝗼𝘂𝗿 𝗹𝗲 𝗖𝗣𝗘𝗚",
-          image: "https://www.gabonreview.com/wp-content/uploads/2025/05/Oligui1_n.jpg",
-          resume: "Le président de la République, Brice Clotaire Oligui Nguema, prendra part le 18 mai 2025, à Rome...",
-          date: "24 Mai 2025"
-        },
+        }
       ];
       setArticles(data);
     };
@@ -96,7 +89,7 @@ const Articles = () => {
 
   return (
     <div className="articles-wrapper">
-      <h1 style={{ textAlign: 'center' }}>Nos Articles</h1>
+      <h1 style={{ textAlign: 'center' }}>Nos Articles santé</h1>
 
       <div className="articles-container">
         {articles.map(article => (
@@ -128,4 +121,4 @@ const Articles = () => {
   );
 };
 
-export default Articles;
+export default Sante;
