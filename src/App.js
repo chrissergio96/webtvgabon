@@ -11,6 +11,8 @@ import ScrollToTop from './Components/ScrollToTop/ScrollToTop.js';
 import { SearchProvider } from './Components/SearchContent/SearchContent.js';
 import AllNav from './Components/AllNav/AllNav.js';
 import Footer from './Components/Footer/Footer.js';
+import Santé from './Pages/Santé.js';
+import Économie from './Pages/Économie.js';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
 
       <Routes>
       <Route path="/" element={<Accueil />} />
+      <Route path="/santé" element={<Santé />} />
+      <Route path="/économie" element={< Économie/>} />
       <Route path="/articles" element={<Articles />} />
         <Route path="/podcasts" element={<Podcasts />} />
         <Route path="/article/:id" element={<DetailsArticles />} />

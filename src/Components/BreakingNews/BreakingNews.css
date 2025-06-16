@@ -48,10 +48,12 @@
     white-space: nowrap;
     background-color: red;
     color: white;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 6px ;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     font-size: 14px;
     letter-spacing: 0.5px;
+    text-align: center;
   }
   
   
@@ -64,7 +66,7 @@
   .ticker-content {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-left 40s linear infinite; 
+    animation: scroll-left 60s linear infinite; 
 }
 
     .ticker-wrapper:hover .ticker-content {

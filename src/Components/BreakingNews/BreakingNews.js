@@ -9,16 +9,26 @@ const BreakingNews = () => {
   }, []);
   const breakingNews = [
     {
-      text: "Zita Oligui Nguema célèbre la fête des mères avec les épouses des Personnels de la Garde Républicaine",
-      image: "https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-26-at-15.32.17.jpeg",
+      text: "Le Gabon sur la liste noire de 25 nouveaux pays africains interdits d’entrer aux USA",
+      image: "https://gabonactu.com/wp-content/uploads/2020/12/passeport-Gabonais.jpg",
     },
     {
-      text: "Sylvia Bongo et Nourredine Bongo Valentin en liberté provisoire pour des raisons médicales",
-      image: "https://gabonactu.com/wp-content/uploads/2025/05/murielle-2.jpg",
+      text: "Plaine Orety : Oligui Nguema nuitamment sur les ruines et face aux sans abris",
+      image: "https://gabonactu.com/wp-content/uploads/2025/06/plaine-orety.jpg",
     },
     {
-      text: "Femmes et jeunes : L’Etat, le PNUD et l’IBSA poussent à l’indépendance financière",
-      image: "https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-27-at-14.03.59.jpeg",
+      text: "La 1 Gabonaise : Streaming made in Gabon",
+      image: "https://gabonactu.com/wp-content/uploads/2025/06/Capture-decran-2025-06-15-a-21.36.12.png",
+    }
+    ,
+    {
+      text: "Appel à candidature pour Alassane Dramane Ouattara : la diaspora Ivoirienne au Gabon mobilisée",
+      image: "https://gabonactu.com/wp-content/uploads/2025/06/IMG-20250615-WA0030.jpg",
+    }
+      ,
+    {
+      text: "Déguerpissement à Plaine Oréty : Ndong Sima portera plainte contre les acteurs de la société civile",
+      image: "https://gabonactu.com/wp-content/uploads/2025/06/RNS1.jpg",
     }
   ];
   
@@ -28,7 +38,7 @@ const BreakingNews = () => {
       <section className="breaking-news" data-aos="fade-down">
         <div className="news-ticker">
           <span className="flash-icon"></span>
-          <span className="ticker-label">FLASH INFO :</span>
+          <span className="ticker-label"><h4>FLASH INFO :</h4></span>
           <div className="ticker-wrapper">
             <div className="ticker-content">
             {breakingNews.map((item, index) => (

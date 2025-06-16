@@ -28,12 +28,12 @@ En assistant à cette cérémonie de haute portée spirituelle, Brice Clotaire O
     },
     {
       id: 2,
+      titre: "La dépouille de Boupendza arrive à Libreville le 26 mai",
       image: "https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-20-at-12.41.24.jpeg",
       resume: "La dépouille de l’ancien international gabonais, Aaron Boupendza arrive à Libreville le lundi 26 mai prochain par un vol régulier de la compagnie Turkish, selon une source familiale.",
       contenu: <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>Société - Sports </strong>
-        <h1>La dépouille de Boupendza arrive à Libreville le 26 mai</h1>
-        <em>22 mai 2025</em> <br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>Société - Sports </strong> <br/>
+        <em>Port-Gentil le, 22 mai 2025</em> <br/><br/>
         <strong>La dépouille de l’ancien international gabonais, Aaron Boupendza arrive à Libreville le lundi 26 mai prochain par un vol régulier de la compagnie Turkish, selon une source familiale.</strong><br/>
         <p>Des obsèques dignes seront organisées en mémoire des services que ce talentueux footballeur gabonais a rendu à la nation, a récemment annoncé le ministre des Sports Patrick Barbera Isaac.</p> <br/>
         <p>Le gouvernement gabonais et la famille biologique du défunt ont planifié le programme qui prévoit des cérémonies officielles, des hommages sportifs et une mobilisation populaire attendue autour de ce moment de mémoire collective.</p> <br/>
@@ -45,12 +45,12 @@ En assistant à cette cérémonie de haute portée spirituelle, Brice Clotaire O
     },
     {
         id: 3,
+        titre: "Mbanié : un compte rendu exhaustif sera présenté au Parlement et au gouvernement (Oligui Nguema)",
         image: "https://gabonactu.com/wp-content/uploads/2025/05/carte-Gabon-Guinee-equatoriale.jpg", // tronqué ici
         resume: "Dans une publication sur son compte Facebook, le président gabonais Brice Clotaire Oligui Nguema a promis qu’un compte rendu exhaustif sera présenté aux deux chambres du Parlement ainsi qu’au gouvernement, dans une démarche de transparence totale suite à la décision de la Cour de justice international (CJI) qui a dans sa décision le 19 mai dernier attribué l’île Mbanié et les îlots Cocotier et Cogna à la Guinée Equatoriale.",
         contenu:  <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>Politique </strong>
-        <h1>Mbanié : un compte rendu exhaustif sera présenté au Parlement et au gouvernement (Oligui Nguema)</h1>
-        <em>22 mai 2025</em> <br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>Politique </strong><br/>
+        <em>Port-Gentil le, 22 mai 2025</em> <br/><br/>
         <strong>Dans une publication sur son compte Facebook, le président gabonais Brice Clotaire Oligui Nguema a promis qu’un compte rendu exhaustif sera présenté aux deux chambres du Parlement ainsi qu’au gouvernement, dans une démarche de transparence totale suite à la décision de la Cour de justice international (CJI) qui a dans sa décision le 19 mai dernier attribué l’île Mbanié et les îlots Cocotier et Cogna à la Guinée Equatoriale.</strong><br/>
         <p>
         « Un compte rendu exhaustif sera présenté aux deux chambres du Parlement ainsi qu’au gouvernement, dans une démarche de transparence totale que notre administration s’est engagée à maintenir. Je vous demande, en attendant, de faire preuve de retenue et de sagesse », a notamment écrit le président gabonais.
@@ -68,12 +68,12 @@ Oligui Nguema dit attendre auparavant « le retour de nos deux vaillants experts
       },
       {
         id: 4,
+        titre: "Pétrole : BW Energy reprend le contrôle du navire de production FPSO BW Adolo",
         image: "https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-21-at-16.08.25.jpeg",
         resume: "Depuis ce mardi, la gestion opérationnelle du FPSO BW Adolo, navire de production pétrolière offshore situé au large de Port-Gentil, est assurée par BW Energy Gabon SA. La filiale locale reprend le contrôle de cette infrastructure stratégique, en service depuis 2018.",
         contenu:  <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>Economie </strong>
-        <h1>Pétrole : BW Energy reprend le contrôle du navire de production FPSO BW Adolo</h1>
-        <em>22 mai 2025</em> <br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>Economie </strong><br/>
+        <em>Port-Gentil le, 22 mai 2025</em> <br/><br/>
         <strong>Depuis ce mardi, la gestion opérationnelle du FPSO BW Adolo, navire de production pétrolière offshore situé au large de Port-Gentil, est assurée par BW Energy Gabon SA. La filiale locale reprend le contrôle de cette infrastructure stratégique, en service depuis 2018.</strong><br/>
         <p>
         L’information relayée sur le site d’information spécialisé GlobeNewswire, indique que BW Energy Gabon prend désormais en main les opérations et la maintenance du navire, à la place de BW Offshore, ancien exploitant norvégien qui conserve la propriété du FPSO et poursuit sa location dans les mêmes conditions, hors services techniques.        
@@ -99,9 +99,8 @@ L’objectif affiché est clair : permettre à BW Energy Gabon de mieux piloter 
         image: "https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-21-at-12.25.54.jpeg", 
         resume: "Le Gabon, aux côtés de la Commission de la Communauté économique des États de l’Afrique Centrale (CEEAC), dont le siège est basé à Libreville et plusieurs autres délégations africaines prennent part, ce mercredi à Bruxelles, à la troisième réunion ministérielle, préparatoire du prochain Sommet Union africaine (UA) et Union européenne (UE).",
         contenu:  <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>⁠Coopération - Diplomatie</strong>
-        <h1>UA – UE : Le Gabon sur la table des discussions ministérielles à Bruxelles</h1>
-        <em>21 mai 2025</em> <br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>⁠Coopération - Diplomatie</strong><br/>
+        <em>Port-Gentil le, 21 mai 2025</em> <br/><br/>
         <strong>Le Gabon, aux côtés de la Commission de la Communauté économique des États de l’Afrique Centrale (CEEAC), dont le siège est basé à Libreville et plusieurs autres délégations africaines prennent part, ce mercredi à Bruxelles, à la troisième réunion ministérielle, préparatoire du prochain Sommet Union africaine (UA) et Union européenne (UE).</strong><br/>
         <img src='	https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-21-at-12.26.55.jpeg' alt='' style={{width:'60%'}}></img> <br/>
         <p> Une séquence des discussions UA – UE à Bruxelles @ DR          </p> <br/>
@@ -127,12 +126,12 @@ L’objectif affiché est clair : permettre à BW Energy Gabon de mieux piloter 
       },
       {
         id: 6,
+        titre: "Pétrole et gaz : Quelles solutions pour renforcer la sécurité au travail ?",
         image: "https://gabonactu.com/wp-content/uploads/2025/05/Petrole.jpg",
         resume: "La capitale gabonaise abritera du 25 au 29 mai 2025, la 2ᵉ édition des Rencontres Africaines de Libreville sur la Prévention des Risques Professionnels (RALI PRP) dans le secteur pétrolier et les activités connexes. ",
         contenu:  <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>Economie - Environnement</strong>
-        <h1>Pétrole et gaz : Quelles solutions pour renforcer la sécurité au travail ?</h1>
-        <em>22 mai 2025</em> <br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>Economie - Environnement</strong><br/>
+        <em> Port-Gentil le, 22 mai 2025</em> <br/><br/>
         <strong>La capitale gabonaise abritera du 25 au 29 mai 2025, la 2ᵉ édition des Rencontres Africaines de Libreville sur la Prévention des Risques Professionnels (RALI PRP) dans le secteur pétrolier et les activités connexes.</strong><br/>
         <p> Cet atelier sous-régional portera sur le thème : <strong> « La gouvernance de la sécurité et santé au travail dans l’industrie du pétrole, du gaz et activités connexes : état des lieux et perspectives en 2025 ».  </strong>      </p> <br/>
         <p>
@@ -150,12 +149,12 @@ L’objectif affiché est clair : permettre à BW Energy Gabon de mieux piloter 
       
       {
         id: 7,
+        titre: "Modèle économique du projet eGabon-SIS : les experts proposent un prélèvement de 10% dans les recettes propres des structures hospitalières ",
         image: "https://gabonactu.com/wp-content/uploads/2025/05/eGabon1.jpg",
         resume: "Les experts participants à l’atelier de validation du modèle économique du projet eGabon-SIS tenu mercredi 21 mai 2025 à Libreville, ont proposé un prélèvement de 10% dans les recettes propres des structures hospitalières du Gabon pour maintenir le financement de ce système d’information de santé après le financement de la Banque Mondiale qui arrivera à échéance dans quelques années.",
         contenu:  <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>Santé</strong>
-        <h1>Modèle économique du projet eGabon-SIS : les experts proposent un prélèvement de 10% dans les recettes propres des structures hospitalières </h1>
-        <em>21 mai 2025 </em> <br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>Santé</strong><br/>
+        <em>Port-Gentil le, 21 mai 2025 </em> <br/><br/>
         <strong>Les experts participants à l’atelier de validation du modèle économique du projet eGabon-SIS tenu mercredi 21 mai 2025 à Libreville, ont proposé un prélèvement de 10% dans les recettes propres des structures hospitalières du Gabon pour maintenir le financement de ce système d’information de santé après le financement de la Banque Mondiale qui arrivera à échéance dans quelques années.</strong><br/>
         <p> « Ce que nous retenons dans ce modèle économique c’est que nous faisons une proposition d’un prélèvement de 10% des recettes propres des différentes structures hospitalières impactées par le système », a indiqué le Dr Gaétan Moukoumbi Lipenghet, spécialiste en économie de santé.    </p> <br/>
         <p>
@@ -181,9 +180,8 @@ L’objectif affiché est clair : permettre à BW Energy Gabon de mieux piloter 
         image: "https://gabonactu.com/wp-content/uploads/2025/05/Noureddin-a-Londres-.jpg",
         resume: "La capitale gabonaise abritera du 25 au 29 mai 2025, la 2ᵉ édition des Rencontres Africaines de Libreville sur la Prévention des Risques Professionnels (RALI PRP) dans le secteur pétrolier et les activités connexes. ",
         contenu:  <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>International - Politique</strong>
-        <h1>Noureddin Bongo à Londres, Ali Bongo et Sylvia toujours à Luanda</h1>
-        <em>20 mai 2025</em> <br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>International - Politique</strong><br/>
+        <em>Port-Gentil le, 20 mai 2025</em> <br/><br/>
         <strong>Noureddin Bongo Valentin est arrivé à Londres vendredi soir en provenance de Luanda en Angola où se trouvent toujours son père Ali Bongo et sa mère Sylvia Bongo, a confié à la rédaction de Gabonactu.com une source bien informée.</strong><br/>
         <p> « Il est arrivé vendredi soir à Londres. Il a retrouvé son épouse et ses garçons », a précisé la source qui a préféré l’anonymat.   </p> <br/>
         <p>
@@ -207,9 +205,8 @@ L’objectif affiché est clair : permettre à BW Energy Gabon de mieux piloter 
         image: "https://gabonactu.com/wp-content/uploads/2025/05/Transfo.jpg",
         resume: "La capitale gabonaise abritera du 25 au 29 mai 2025, la 2ᵉ édition des Rencontres Africaines de Libreville sur la Prévention des Risques Professionnels (RALI PRP) dans le secteur pétrolier et les activités connexes. ",
         contenu:  <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>Economie - Environnement</strong>
-        <h1>Une voiture s’encastre dans un transfo de la SEEG et plonge une partie des Charbonnages dans le noir</h1>
-        <em>20 mai 2025</em> <br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>Economie - Environnement</strong> <br/>
+        <em>20 mai 2025</em> <br/> <br/>
         <strong>Un véhicule a violemment percuté mardi un poste de distribution d’électricité de la SEEG au Camp de Gaulle plongeant une partie du quartier Charbonnages dans le noir.</strong><br/>
         <p>
           Selon un communiqué de la SEEG, le choc a détruit tous les équipements du poste dont un transformateur de 630 Kva. La destruction de ces équipements a provoqué une coupure d’électricité dans la zone située entre le rond-point Camp de Gaulle et les Charbonnages. <br/> <br/>
@@ -223,13 +220,14 @@ L’objectif affiché est clair : permettre à BW Energy Gabon de mieux piloter 
       ,
       {
         id: 10,
+        titre: " Rappel : liste des membres du gouvernement gabonais (5 mai 2025)",
         image: "https://gabonactu.com/wp-content/uploads/2024/01/Barro1.jpg",
         resume: "Voici la liste des membres du gouvernement nommé par décret présidentiel par le chef de l’Etat, Brice Clotaire Oligui Nguema dont le Vice-Président du gouvernement est Alexandre Barro Chambrier.",
         contenu:  <p>
-        <strong style={{color:'red',textTransform:'uppercase' }}>Politique</strong>
-        <h1>Rappel : liste des membres du gouvernement gabonais (5 mai 2025)</h1>
-        <em>22 mai 2025</em> <br/>
-        <strong>Voici la liste des membres du gouvernement nommé par décret présidentiel par le chef de l’Etat, Brice Clotaire Oligui Nguema dont le Vice-Président du gouvernement est Alexandre Barro Chambrier.</strong><br/><br/>
+        <strong style={{color:'red',textTransform:'uppercase' }}>Politique</strong> <br/>
+                <em>Port-Gentil le, 22 mai 2025</em><br/><br/>
+        <h1>Voici la liste des membres du gouvernement nommé par décret présidentiel par le chef de l’Etat, Brice Clotaire Oligui Nguema dont le Vice-Président du gouvernement est Alexandre Barro Chambrier.</h1>
+         <br/>
         
         <p>1 - Ministre d’Etat, ministre de l’Economie, des Finances, de la Dette et des Participations, chargé de la lutte contre la vie chère : Henri-Claude Oyima </p> <br/>
         <p>2 - Ministre d’Etat, ministre de l’Education nationale, de l’Instruction civique et de la formation professionnelle : Camélia Ntoutoume-Leclercq </p> <br/>
@@ -260,14 +258,28 @@ L’objectif affiché est clair : permettre à BW Energy Gabon de mieux piloter 
         <p>27 - Ministre de l’Entrepreneuriat, du Commerce et des PME-PMI : Zenaba Gninga Chaning </p> <br/>
         <p>28 - Ministre de l’Agriculture, de l’Elevage et du Développement rural : Odette Polo </p> <br/>
         <p>29 - Ministre de la Femme, de la Famille et de la Protection de l’enfance : Elodie Diane Fouefoue </p> <br/>
-        <p>30 - Ministre de la Jeunesse, des Sports, du Rayonnement culturel et des Arts, chargé de la vie associative : Dr. Armande Longo </p> 
-
-
-
+        <p>30 - Ministre de la Jeunesse, des Sports, du Rayonnement culturel et des Arts, chargé de la vie associative : Dr. Armande Longo .</p> 
         
-
       </p>
       },
+      
+      {
+        id: 11,
+        titre: "[🔴𝗘𝗖𝗢𝗡𝗢𝗠𝗜𝗘] 𝗨𝗻𝗲 𝗠𝗼𝗯𝗶𝗹𝗶𝘀𝗮𝘁𝗶𝗼𝗻 𝗥𝗲𝗰𝗼𝗿𝗱 𝗲𝘁 𝘂𝗻𝗲 𝗩𝗶𝘀𝗶𝗯𝗶𝗹𝗶𝘁é 𝗔𝗰𝗰𝗿𝘂𝗲 𝗽𝗼𝘂𝗿 𝗹𝗲 𝗖𝗣𝗘𝗚",
+        image: "https://gabonactu.com/wp-content/uploads/2025/05/Transfo.jpg",
+        resume: "Avec près d'une trentaine d'exposants et une forte mobilisation de la population port-gentillaise, la Chambre de Commerce n'a pas désempli la semaine du 24 au 31 mai 2025. ",
+        contenu:  <p>
+        <strong style={{color:'red',textTransform:'uppercase' }}>Faits Divers</strong> <br/>
+        <h1>Une voiture s’encastre dans un transfo de la SEEG et plonge une partie des Charbonnages dans le noir</h1>
+         <br/>
+        <strong>Un véhicule a violemment percuté mardi un poste de distribution d’électricité de la SEEG au Camp de Gaulle plongeant une partie du quartier Charbonnages dans le noir.</strong><br/>
+        <p>
+      L'objectif du CPEG Collectif des Petites Entreprises Gabonaises  était clair : 
+       offrir une visibilité maximale aux exposants et aux entrepreneurs locaux, et force est de constater que la mission a été accomplie.        </p><br/>
+       <em>11 juin 2025</em>      </p>
+      
+      }
+      
 
 
 

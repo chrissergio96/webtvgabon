@@ -2,48 +2,72 @@ import React, { useState } from 'react';
 import './Video.css';
 
 const videos = [
-  {
-    id: 1,
-    titre: "Discours du Maire – Rentrée 2025",
-    description: "Message du Maire sur les perspectives de l’année.",
-    lien: "https://www.youtube.com/embed/8pUi7s2QwwI",
-    miniature: "https://img.youtube.com/vi/8pUi7s2QwwI/hqdefault.jpg",
+   {
+    titre: "Port-Gentil",
+    description: "𝗨𝗻𝗲 𝗠𝗼𝗯𝗶𝗹𝗶𝘀𝗮𝘁𝗶𝗼𝗻 𝗥𝗲𝗰𝗼𝗿𝗱 𝗲𝘁 𝘂𝗻𝗲 𝗩𝗶𝘀𝗶𝗯𝗶𝗹𝗶𝘁é 𝗔𝗰𝗰𝗿𝘂𝗲 𝗽𝗼𝘂𝗿 𝗹𝗲 𝗖𝗣𝗘𝗚",
+    lien: "https://www.youtube.com/embed/pf-xpwrhN4Q?si=xkp19ZMtroUN2ae_",
+    miniature: "https://www.youtube.com/embed/pf-xpwrhN4Q?si=xkp19ZMtroUN2ae_",
     categorie: "Institutionnel",
   },
+  
   {
-    id: 2,
-    titre: "Gabon Culture :",
-    description: " Black History Arts, C’est parti pour un mois de renaissance vers la créativité .",
-    lien: "https://www.youtube.com/embed/YYLvdUEfdag",
-    miniature: "https://www.youtube.com/embed/YYLvdUEfdag",
+    titre: "Port-Gentil",
+    description: "FIN DES JEUX SCOLAIRES édition 2025",
+    lien: "https://www.youtube.com/embed/urlspq7gI3E?si=iQyXOrc-Xzp9zSmc",
+    miniature: "https://www.youtube.com/embed/urlspq7gI3E?si=iQyXOrc-Xzp9zSmc",
     categorie: "Culture",
   },
+   {
+    titre: "Environnement",
+    description: "C𝗼𝘂𝗽 𝗱'𝗲𝗻𝘃𝗼𝗶 𝗱𝗲 𝗹𝗮 𝗦𝗲𝗺𝗮𝗶𝗻𝗲 𝗱𝗲 𝗹'𝗘𝗻𝘃𝗶𝗿𝗼𝗻𝗻𝗲𝗺𝗲𝗻𝘁 à 𝗣𝗼𝗿𝘁-𝗚𝗲𝗻𝘁𝗶𝗹",
+    lien: "https://www.youtube.com/embed/q_NosOEQCm8?si=GDOHi3O7O0VcLzGu",
+    miniature: "https://www.youtube.com/embed/q_NosOEQCm8?si=GDOHi3O7O0VcLzGu",
+    categorie: "Environnement",
+  },
+    {
+    titre: "Culture",
+    description: "COUPE MWANAS OGOOUEE MARITIME 2025𝗹",
+    lien: "https://www.youtube.com/embed/OU5mXZEB_wk?si=11ObJdQzAkn1Sy9r",
+    miniature: "https://www.youtube.com/embed/OU5mXZEB_wk?si=11ObJdQzAkn1Sy9r",
+    categorie: "Culture",
+  },
+ 
   {
-    id: 3,
+    titre: "Gabon Religion :",
+    description: " 𝗟'É𝗴𝗹𝗶𝘀𝗲 𝗠𝗗𝗢 𝗠𝗼𝗻𝘁 𝗱𝗲𝘀 𝗢𝗹𝗶𝘃𝗶𝗲𝗿𝘀 𝗖é𝗹è𝗯𝗿𝗲 𝘂𝗻 𝗔𝗻 𝗱𝗲 𝗙𝗼𝗶 à 𝗢𝗺𝗯𝗼𝘂é.",
+    lien: "https://www.youtube.com/embed/jNNAJjHe6kQ?si=Fz3qulkvl8zl2iLO",
+    miniature: "https://www.youtube.com/embed/jNNAJjHe6kQ?si=Fz3qulkvl8zl2iLO",
+    categorie: "Religion",
+  },
+  {
     titre: "Interview avec les jeunes entrepreneurs",
     description: "Les projets locaux accompagnés par la mairie.",
     lien: "https://www.youtube.com/embed/tgbNymZ7vqY",
     miniature: "https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg",
     categorie: "Économie",
   },
-  {
-    id: 4,
-    titre: "Investiture du nouveau Président Élu du Gabon  ",
-    description: "Arrivée du Président de la République à Libreville.",
-    lien: "https://www.youtube.com/embed/c5VKRt__bEw",
-    miniature: "https://www.youtube.com/embed/c5VKRt__bEw",
-    categorie: "Politique",
+    {
+    titre: "Journee Sportive",
+    description: "CSB 0 - 1 MANGASPORT national foot 21è journée",
+    lien: "https://www.youtube.com/embed/4R-lx3OmwpM?si=tjiH90f4lLfXhOW4",
+    miniature: "https://www.youtube.com/embed/4R-lx3OmwpM?si=tjiH90f4lLfXhOW4",
+    categorie: "Sport",
   },
   {
-    id: 5,
-    titre: "Gabon : Quelle suite pour le Gabon ? ",
-    description: "Les projets locaux accompagnés par la mairie.",
-    lien: "https://www.youtube.com/embed/LFYw1UB1nZo",
-    miniature: "https://www.youtube.com/embed/LFYw1UB1nZo",
-    categorie: "Politique",
+    titre: "Social",
+    description: "L'Association NCTINA’ZIZO au chevet des jeunes mères et de la communauté",
+    lien: "https://www.youtube.com/embed/bSczeDLRu34?si=lJ9u14YEa1LWEatO",
+    miniature: "https://www.youtube.com/embed/bSczeDLRu34?si=lJ9u14YEa1LWEatO",
+    categorie: "Social",
   },
   {
-    id: 6,
+    titre: "Environnement",
+    description: "𝗦𝗲𝗺𝗮𝗶𝗻𝗲 𝗱𝗲 𝗹'𝗘𝗻𝘃𝗶𝗿𝗼𝗻𝗻𝗲𝗺𝗲𝗻𝘁 dans la commune d'Omboué",
+    lien: "https://www.youtube.com/embed/MPXzMKoN9n8?si=ZGdFVGmZTh276yig",
+    miniature: "https://www.youtube.com/embed/MPXzMKoN9n8?si=ZGdFVGmZTh276yig",
+    categorie: "Environnement",
+  },
+  {
     titre: "Îlots disputés : ",
     description: "Îlots disputés : la CIJ donne raison à la Guinée équatoriale face au Gabon",
     lien: "https://www.youtube.com/embed/oq2XgME-JBw?si=AkLHSTjd-kRGKdOX" ,
@@ -51,19 +75,31 @@ const videos = [
     categorie: "Politique",
   },
   {
-    id: 7,
-    titre: "Henri-Claude Oyima : entretien exclusif",
-    description: "Henri-Claude Oyima : entretien exclusif",
-    lien: "https://www.youtube.com/embed/qq8iMCckbFI?si=7NuiLVI1IDqna9nM",
-    miniature: "https://www.youtube.com/embed/qq8iMCckbFI?si=7NuiLVI1IDqna9nM",
-    categorie: "Economie",
+    titre: "Elections Presidentielles",
+    description: "𝗨𝗻 𝗰𝗮𝗻𝗱𝗶𝗱𝗮𝘁, 𝘂𝗻 𝗽𝗿𝗼𝗷𝗲𝘁: 𝗹'𝗢𝗴𝗼𝗼𝘂é-𝗠𝗮𝗿𝗶𝘁𝗶𝗺𝗲 é𝘁𝗮𝗶𝘁 à 𝗹'é𝗰𝗼𝘂𝘁𝗲",
+    lien: "https://www.youtube.com/embed/ZgYnkxeQBjg?si=1pGvOeTPn_vCT5zE",
+    miniature: "https://www.youtube.com/embed/ZgYnkxeQBjg?si=1pGvOeTPn_vCT5zE",
+    categorie: "Politique",
   },
   {
-    id: 8,
     titre: "GABON / FAIT-DIVERS :",
     description: "Un individu profane la tombe de son père et s’empare du crâne",
     lien: "https://www.youtube.com/embed/lD1bAseBlRY?si=Bibu2akPLKyfDUIj",
     miniature: "https://www.youtube.com/embed/lD1bAseBlRY?si=Bibu2akPLKyfDUIj",
+    categorie: "Faits Divers",
+  },
+  {
+    titre: "GABON / Elections Presidentielles :",
+    description: "Investiture du nouveau Président Élu du Gabon/ Arrivée du Président de la République à Libreville.",
+    lien: "https://www.youtube.com/embed/c5VKRt__bEw?si=a9R5Shv3AMPhVG6r",
+    miniature: "https://www.youtube.com/embed/c5VKRt__bEw?si=a9R5Shv3AMPhVG6r",
+    categorie: "Politique",
+  },
+   {
+    titre: "REVELATION WEB-TV/AU GABON:",
+    description: "DES PROCHES COLLABORATEURS D'ALI BONGO ÉPINGLÉS AVEC DES SACS",
+    lien: "https://www.youtube.com/embed/8Jvb0_pzmYw?si=Zp0YGuPpX64DUH8y",
+    miniature: "https://www.youtube.com/embed/8Jvb0_pzmYw?si=Zp0YGuPpX64DUH8y",
     categorie: "Faits Divers",
   },
 
@@ -98,7 +134,7 @@ const Video = () => {
 
       {/* Filtrage par catégorie */}
       <div className="filter-bar">
-        {['Toutes', 'Institutionnel','Culture', 'Économie','Faits Divers'  ,'Politique'].map((cat) => (
+        {['Toutes', 'Institutionnel','Culture', 'Économie','Faits Divers', 'Religion','Environnement','Social'  ,'Politique'].map((cat) => (
           <button
             key={cat}
             className={`filter-button ${selectedCategory === cat ? 'active' : ''}`}
