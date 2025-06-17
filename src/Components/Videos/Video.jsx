@@ -3,13 +3,19 @@ import './Video.css';
 
 const videos = [
    {
-    titre: "Port-Gentil",
-    description: "𝗨𝗻𝗲 𝗠𝗼𝗯𝗶𝗹𝗶𝘀𝗮𝘁𝗶𝗼𝗻 𝗥𝗲𝗰𝗼𝗿𝗱 𝗲𝘁 𝘂𝗻𝗲 𝗩𝗶𝘀𝗶𝗯𝗶𝗹𝗶𝘁é 𝗔𝗰𝗰𝗿𝘂𝗲 𝗽𝗼𝘂𝗿 𝗹𝗲 𝗖𝗣𝗘𝗚",
+    titre: "  Conférence d'Orientation Annuelle à ISTA",
+    description: "Le 14 juin 2025, un événement crucial s'est déroulé pour les jeunes esprits de l’ISTA Institut des Sciences Techniques et Appliquées.",
+    lien: "https://www.youtube.com/embed/ReLKHndzkWc?si=s_iOL6gzyxCIAqIl",
+    miniature: "https://www.youtube.com/embed/ReLKHndzkWc?si=s_iOL6gzyxCIAqIl",
+    categorie: "Education",
+  },
+   {
+    titre: "𝗨𝗻𝗲 𝗠𝗼𝗯𝗶𝗹𝗶𝘀𝗮𝘁𝗶𝗼𝗻 𝗥𝗲𝗰𝗼𝗿𝗱 𝗲𝘁 𝘂𝗻𝗲 𝗩𝗶𝘀𝗶𝗯𝗶𝗹𝗶𝘁é 𝗔𝗰𝗰𝗿𝘂𝗲 𝗽𝗼𝘂𝗿 𝗹𝗲 𝗖𝗣𝗘𝗚",
+    description: "Avec près d'une trentaine d'exposants et une forte mobilisation de la population port-gentillaise, la Chambre de Commerce n'a pas désempli la semaine du 24 au 31 mai 2025. ",
     lien: "https://www.youtube.com/embed/pf-xpwrhN4Q?si=xkp19ZMtroUN2ae_",
     miniature: "https://www.youtube.com/embed/pf-xpwrhN4Q?si=xkp19ZMtroUN2ae_",
     categorie: "Institutionnel",
   },
-  
   {
     titre: "Port-Gentil",
     description: "FIN DES JEUX SCOLAIRES édition 2025",

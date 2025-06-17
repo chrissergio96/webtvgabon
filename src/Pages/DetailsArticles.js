@@ -1,7 +1,7 @@
 import React from 'react';
-import ArticlePage from '../Components/ArticlePage/ArticlePage';
 import Navbar from '../Components/Navbar/Navbar';
 import BackButton from '../Components/BackButton/BackButton';
+import DetailsArticle from '../Components/ArticlePage/DetailsArticle';
 
 
 
@@ -10,7 +10,7 @@ function DetailsArticles() {
     return (
       <div>
         <Navbar />
-       <ArticlePage/>
+       <DetailsArticle/>
        <BackButton/>
 
       </div>
