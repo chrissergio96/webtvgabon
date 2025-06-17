@@ -39,8 +39,7 @@ const ListeArticles = () => {
       {articles.map(article => (
         <div key={article.id} className="admin-article-card">
           <h3>{article.titre}</h3>
-          <image sr>{article.image}</image>
-          <p><strong>Auteur :</strong> {article.auteur}</p>
+         <img src={article.image} alt={article.titre} />          <p><strong>Auteur :</strong> {article.auteur}</p>
           <p><strong>Date :</strong> {article.date}</p>
           <div className="admin-actions">
             <button onClick={() => handleEdit(article.id)}>Modifier</button>
