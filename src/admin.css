@@ -1,0 +1,79 @@
+.admin-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f8f8f8;
+}
+
+.admin-login-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+.admin-login-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin-login-form input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.admin-login-form button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.dashboard-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 300px;
+  margin: auto;
+}
+
+.dashboard-buttons button {
+  padding: 1rem;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #0b5ed7;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.dashboard-buttons button:hover {
+  background-color: #084298;
+}
+
+button.danger {
+  background-color: #dc3545;
+}
+
+button.danger:hover {
+  background-color: #bb2d3b;
+}

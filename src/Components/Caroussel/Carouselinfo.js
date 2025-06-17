@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Carousel.css';
+import './Carouselinfo.css';
 import { Link } from 'react-router-dom';
 
 const slides = [
@@ -32,7 +32,7 @@ const slides = [
   },
 ];
 
-const Carousel = () => {
+const Carouselinfo = () => {
   const [index, setIndex] = useState(0);
   const total = slides.length;
 
@@ -67,4 +67,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Carouselinfo;

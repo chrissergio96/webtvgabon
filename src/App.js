@@ -13,6 +13,12 @@ import AllNav from './Components/AllNav/AllNav.js';
 import Footer from './Components/Footer/Footer.js';
 import Santé from './Pages/Santé.js';
 import Économie from './Pages/Économie.js';
+import PopUp from './Components/PopUp/PopUp.js';
+import Login from './login.js';
+import Dashboard from './Admin/Dashboard.js';
+import AddArticle from './Admin/AddArticle.js';
+import EditArticle from './Admin/EditArticle.js';
+import ListeArticles from './Admin/ListeArticles.js';
 
 function App() {
   return (
@@ -20,8 +26,13 @@ function App() {
     <Router>
       <ScrollToTop />
       <AllNav/>
-
+      <PopUp />
       <Routes>
+      <Route path="/admin/liste-articles" element={<ListeArticles />} />
+      <Route path="/admin/login" element={<Login />} />
+      <Route path="/admin/add-article" element={<AddArticle />} />
+      <Route path="/admin/dashboard" element={<Dashboard />} />
+      <Route path="/admin/edit-article/:id" element={<EditArticle />} />
       <Route path="/" element={<Accueil />} />
       <Route path="/santé" element={<Santé />} />
       <Route path="/économie" element={< Économie/>} />
@@ -30,6 +41,8 @@ function App() {
         <Route path="/article/:id" element={<DetailsArticles />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="/live" element={<Directe />} />
+        <Route path="/admin/modifier-article/:id" element={<EditArticle />} />
+
 
       </Routes>
       <Footer/>

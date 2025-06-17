@@ -3,7 +3,7 @@ import './Home.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
-import Carousel from '../Caroussel/Carousel';
+import Carouselinfo from '../Caroussel/Carouselinfo';
 import Caroussele from '../Caroussele/Caroussele';
 import TopStories from '../TopStories/TopStories';
 import Newlester from '../Newlester/Newlester';
@@ -14,27 +14,17 @@ const Home = () => {
  useEffect(() => {
   AOS.init({ duration: 1000, once: true });
 }, []);
-const [showPop, setShowPop] = useState(false);
 
-useEffect(() => {
-  const timer = setTimeout(() => setShowPop(true), 5000);
-  return () => clearTimeout(timer);
-}, []);
 
   return (
     <div className="home-container">
-          {showPop && (
-      <div className="popup-ad">
-        <button className="close-btn" onClick={()=>setShowPop(false)}>×</button>
-        <img src="https://via.placeholder.com/600x400?text=PUB%20POPUP" alt="Pub Popup"/>
-      </div>
-    )}
+        
     <section className="meresection">
       <section className= 'plusieurs'>
         <div className='plus1'>
         <h2>À LA UNE</h2>
 
-        <Carousel />
+        <Carouselinfo />
         
 
         </div>
