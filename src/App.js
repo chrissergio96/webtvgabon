@@ -19,6 +19,19 @@ import Dashboard from './Admin/Dashboard.js';
 import AddArticle from './Admin/AddArticle.js';
 import EditArticle from './Admin/EditArticle.js';
 import ListeArticles from './Admin/ListeArticles.js';
+import AddTopStories from './Admin/AddTopStories.js';
+import ListeTopStories from './Admin/ListeTopStories.js';
+import EditTopStory from './Admin/EditTopStory.js';
+import TopStoryDetail from './Components/TopStoryDetail/TopStoryDetail.js';
+import AddFocusArticle from './Admin/AddFocusArticle.js';
+import ListeFocus from './Admin/ListeFocus.js';
+import AddVideo from './Admin/AddVideo.js';
+import ListeVideos from './Admin/ListeVideos.js';
+import EditVideo from './Admin/EditVideo.js';
+import EditFocusArticle from './Admin/EditFocusArticle.js';
+import AddAllVideo from './Admin/AddAllVideo.js';
+import EditAllVideo from './Admin/EditAllVideo.js';
+import ListeAllVideo from './Admin/ListeAllVideo.js';
 
 function App() {
   return (
@@ -33,6 +46,21 @@ function App() {
       <Route path="/admin/add-article" element={<AddArticle />} />
       <Route path="/admin/dashboard" element={<Dashboard />} />
       <Route path="/admin/edit-article/:id" element={<EditArticle />} />
+      <Route path="/admin/add-topstory" element={<AddTopStories />} />
+      <Route path="/admin/liste-topstories" element={<ListeTopStories />} />
+      <Route path="/admin/edit-topstory/:id" element={<EditTopStory />} />
+      <Route path="/topstory/:id" element={<TopStoryDetail />} />
+      <Route path="/admin/add-focus" element={<AddFocusArticle />} />
+      <Route path="/admin/liste-focus" element={<ListeFocus />} />
+      <Route path="/admin/add-video" element={<AddVideo />} />
+      <Route path="/admin/liste-videos" element={<ListeVideos />} />
+      <Route path="/admin/modifier-video/:id" element={<EditVideo />} />
+      <Route path="/admin/modifier-focus/:id" element={<EditFocusArticle />} />
+      <Route path="/admin/add-allvideo" element={<AddAllVideo />} />
+      <Route path="/admin/modifier-allvideo/:id" element={<EditAllVideo />} />
+      <Route path="/admin/liste-allvideos" element={<ListeAllVideo />} />
+
+
       <Route path="/" element={<Accueil />} />
       <Route path="/santé" element={<Santé />} />
       <Route path="/économie" element={< Économie/>} />
