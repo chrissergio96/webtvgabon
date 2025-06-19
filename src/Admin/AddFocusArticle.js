@@ -32,7 +32,7 @@ const AddFocusArticle = () => {
 
   return (
     <div className="form-container">
-      <h2>Ajouter un article Focus</h2>
+      <h2>Ajouter un article Récent</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
