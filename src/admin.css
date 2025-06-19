@@ -115,6 +115,67 @@
   background-color: #991b1b;
   box-shadow: 0 10px 24px rgba(153, 27, 27, 0.3);
 }
+.admin-card p strong {
+  font-style: italic;
+  color: #333;
+}
+
+
+.sidebar-ads {
+  flex: 1;
+  flex-direction: column;
+  width: 10%;
+  position: sticky; /* Reste visible quand on scroll */
+}
+
+
+
+.sidebar-ads .ads-list {
+  display: flex;
+  flex-direction: column;
+  animation: scrollAds 15s linear reverse;
+}
+
+.sidebar-ads a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.ad-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.ad-img:hover {
+  transform: scale(1.02);
+}
+/* Effet de flottement pour les publicités */
+@keyframes float-ad {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.sidebar-ads .ad-img {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 300px; /* Ajuste selon ta sidebar */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: float-ad 4s ease-in-out infinite;
+  background: white;
+  padding:10px;
+}
+
 
 
 .forgot-password {
@@ -337,4 +398,16 @@ button.edit {
 
 button.edit:hover {
   background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .sidebar-ads {
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  position: sticky; /* Reste visible quand on scroll */
+}
+.sidebar-ads .ad-img{
+  width: 100%;
+}
 }

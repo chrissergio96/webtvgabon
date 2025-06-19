@@ -46,6 +46,13 @@ const Dashboard = () => {
   <button onClick={() => navigate('/admin/add-allvideo')}>➕ Ajouter une Vidéo ( page video)</button>
    <button onClick={() => navigate('/admin/add-video')}>➕ Ajouter une Vidéo(page d'accueil)</button>
   <button onClick={() => navigate('/admin/add-focus')}>➕ Ajouter un article recent(page d'accueil)</button>
+  <button onClick={() => navigate('/admin/add-carousel')}>➕ Ajouter un slide Carousel Info</button>
+  <button onClick={() => navigate('/admin/add-pub')}>➕ Ajouter une publicité</button>
+  <button onClick={() => navigate('/admin/add-podcast')}>➕ Ajouter un Podcast</button>
+  <button onClick={() => navigate('/admin/liste-podcasts')}>📝 Gerer les Podcasts</button>
+
+<button onClick={() => navigate('/admin/add-caroussele')}>➕ Ajouter une annonce</button>
+<button onClick={() => navigate('/admin/liste-caroussele')}>📝 Gérer les annonces</button>
 
   <button onClick={() => navigate('/admin/liste-topstories')}>📝 Gérer les Top Stories</button>
   <button onClick={() => navigate('/admin/liste-focus')}>📝 Gérer les artiles recents</button>
@@ -53,9 +60,9 @@ const Dashboard = () => {
   <button onClick={() => navigate('/admin/liste-videos')}>📝 Gérer les Vidéos</button>
 
   <button onClick={() => navigate('/admin/liste-allvideos')}>📝 Gérer les Vidéos (Toutes les videos de la page video)</button>
+  <button onClick={() => navigate('/admin/liste-publicite')}>📝 Gérer les Publicités</button>
 
   <button onClick={() => navigate('/admin/liste-articles')}>📝 Gérer les articles(Tous les articles de la page article)</button>
-  <button onClick={() => navigate('/admin/top-stories')}>📰 Gérer Top Stories</button>
   <button onClick={handleLogout} className="danger">🚪 Se déconnecter</button>
 </div>
 

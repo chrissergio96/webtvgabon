@@ -9,6 +9,7 @@ const AddFocusArticle = () => {
   const [titre, setTitre] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
+  const [auteur, setAuteur] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -19,6 +20,7 @@ const AddFocusArticle = () => {
         titre,
         description,
         image,
+        auteur, // 👈 nouveau champ
         date: serverTimestamp(),
       });
       alert('Article Focus ajouté !');
@@ -45,6 +47,14 @@ const AddFocusArticle = () => {
           onChange={(e) => setDescription(e.target.value)}
           required
         />
+        <input
+  type="text"
+  placeholder="Nom de l’auteur"
+  value={auteur}
+  onChange={(e) => setAuteur(e.target.value)}
+  required
+/>
+
         <input
           type="text"
           placeholder="URL de l’image"

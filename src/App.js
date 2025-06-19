@@ -32,6 +32,13 @@ import EditFocusArticle from './Admin/EditFocusArticle.js';
 import AddAllVideo from './Admin/AddAllVideo.js';
 import EditAllVideo from './Admin/EditAllVideo.js';
 import ListeAllVideo from './Admin/ListeAllVideo.js';
+import AddCarouselItem from './Admin/AddCarouselItem.js';
+import AddPublicite from './Admin/AddPublicite.js';
+import ListePublicite from './Admin/ListePublicite.js';
+import AddCarousseleAnnonce from './Admin/AddCarousseleAnnonce.js';
+import ListeCarousseleAnnonce from './Admin/ListeCarousseleAnnonce.js';
+import AddPodcast from './Admin/AddPodcast.js';
+import ListePodcasts from './Admin/ListePodcasts.js';
 
 function App() {
   return (
@@ -59,7 +66,15 @@ function App() {
       <Route path="/admin/add-allvideo" element={<AddAllVideo />} />
       <Route path="/admin/modifier-allvideo/:id" element={<EditAllVideo />} />
       <Route path="/admin/liste-allvideos" element={<ListeAllVideo />} />
+      <Route path="/admin/add-carousel" element={<AddCarouselItem />} />
+      <Route path="/admin/add-pub" element={<AddPublicite />} />
+      <Route path="/admin/liste-publicite" element={<ListePublicite />} />
+      <Route path="/admin/add-caroussele" element={<AddCarousseleAnnonce />} />
+      <Route path="/admin/liste-caroussele" element={<ListeCarousseleAnnonce />} />
+      <Route path="/admin/add-podcast" element={<AddPodcast />} />
+      <Route path="/admin/liste-podcasts" element={<ListePodcasts />} />
 
+      
 
       <Route path="/" element={<Accueil />} />
       <Route path="/santé" element={<Santé />} />
