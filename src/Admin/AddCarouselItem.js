@@ -43,7 +43,7 @@ const AddCarouselItem = () => {
 
   return (
     <div className="form-container">
-      <h2>Ajouter un slide Carousel</h2>
+      <h2>Ajouter une info internationnal ou autres (1er carousel)</h2>
       <form onSubmit={handleSubmit}>
         <input name="secteur" placeholder="Secteur" value={slide.secteur} onChange={handleChange} required/>
         <input name="title" placeholder="Titre" value={slide.title} onChange={handleChange} required/>

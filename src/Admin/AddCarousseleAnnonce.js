@@ -33,7 +33,7 @@ const AddCarousseleAnnonce = () => {
 
   return (
     <div className="form-container">
-      <h2>Ajouter une annonce (Carrousel)</h2>
+      <h2>Ajouter une annonce , fait divers , vente(2e carousel)</h2>
       <form onSubmit={handleSubmit}>
         <input name="secteur" placeholder="Secteur (ex: Football)" value={secteur} onChange={e => setSecteur(e.target.value)} required />
         <input name="title" placeholder="Titre" value={title} onChange={e => setTitle(e.target.value)} required />

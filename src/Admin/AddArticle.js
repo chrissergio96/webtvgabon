@@ -48,7 +48,7 @@ sessionStorage.setItem('isLoggedIn', 'true');
   return (
     <div className="admin-login-container">
       <form className="admin-login-form" onSubmit={handleSubmit}>
-        <h2>Ajouter un article</h2>
+        <h2>Ajouter un article(page article)</h2>
 
         <input
           type="text"
