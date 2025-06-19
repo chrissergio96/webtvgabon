@@ -29,7 +29,7 @@
   
   .captions {
     position: absolute;
-    bottom: 20px;
+    bottom: 60px;
    margin-left: auto;
    margin-right: auto;
    width: 100%;
@@ -81,6 +81,7 @@
     background-color: transparent;
     top: 30%;
   }
+  
   
 /* ✅ VERSION MOBILE */
 @media screen and (max-width: 768px) {

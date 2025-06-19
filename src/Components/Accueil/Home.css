@@ -13,13 +13,6 @@
 
 }
 
-
-.sidebar-ads {
-  flex: 1;
-  flex-direction: column;
-  width: 15%;
-  position: sticky; /* Reste visible quand on scroll */
-}
  #pubimg{
         width:100%;
         height:  max-content;

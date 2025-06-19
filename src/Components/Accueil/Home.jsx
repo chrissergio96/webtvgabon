@@ -4,15 +4,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 import Carouselinfo from '../Caroussel/Carouselinfo';
-import Caroussele from '../Caroussele/Caroussele';
 import TopStories from '../TopStories/TopStories';
 import Newlester from '../Newlester/Newlester';
 import { db } from '../../firebaseConf';
 import { collection, getDocs } from 'firebase/firestore';
+import AdsSidebar from '../AdsSidebar/AdsSidebar';
+import CarousseleAnnonce from '../Caroussele/CarousseleAnnonce';
 
 const Home = () => {
   const [focusArticles, setFocusArticles] = useState([]);
   const [videos, setVideos] = useState([]);
+  const [ads, setAds] = useState([]);
+
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -32,6 +35,21 @@ const Home = () => {
       });
       setFocusArticles(data);
     };
+    const fetchAds = async () => {
+  const snapshot = await getDocs(collection(db, 'publicite'));
+  const data = snapshot.docs.map(doc => {
+    const d = doc.data();
+    return {
+      id: doc.id,
+      image: d.image,
+      url: d.url,
+      // si tu veux un ordre précis :
+      date: d.date?.toDate ? d.date.toDate() : null
+    };
+  });
+  setAds(data);
+};
+
 
     const fetchVideos = async () => {
       const snapshot = await getDocs(collection(db, 'videos'));
@@ -83,8 +101,8 @@ const Home = () => {
         {/* Editorial */}
         <section className="editorial-section" style={{ display: 'flex' }}>
           <div>
-            <h2 style={{ textTransform: 'uppercase' }}>Annonces</h2>
-            <Caroussele />
+            <h2 style={{ textTransform: 'uppercase' }}>Annonces - Faits Divers - Ventes</h2>
+            <CarousseleAnnonce />
           </div>
         </section>
 
@@ -152,37 +170,8 @@ const Home = () => {
         <Newlester />
 
       </section>
-   {/* Espace pour les pubs */}
-<aside className="sidebar-ads">
-  {/* Ici tu peux afficher un slot Ads, popup ou iframe */}
-  <a data-no-instant="1" href="http://www.canalplus-afrique.com/gabon" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2025/06/GABON_ACTU_300X300.jpg" alt="" />
-  </a>
-  <a data-no-instant="1" href="https://comilog.eramet.com/" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2025/04/ERAMET_Campagne_2025_300x250px.jpg" alt="" />
-  </a>
-  <a data-no-instant="1" href="https://e.cnss.ga/" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2025/03/WEB-eCNSS-1.png" alt="" />
-  </a>
-  <a data-no-instant="1" href="http://economiesafricainesmagazine.com/" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2025/01/COUV-Insert-EA20-Kiosque-actuellement.png" alt="" />
-  </a>
-  <a data-no-instant="1" href="https://www.moov-africa.ga/" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2024/11/GABON-ACTU-500x600-1.jpg" alt="" />
-  </a>
-  <a data-no-instant="1" href="https://www.flygabon.online/" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2024/10/GIF-FLYGABON.gif" alt="" />
-  </a>
-  <a data-no-instant="1" href="https://moovbox.ga/" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2024/08/GABON-ACTU-1.jpg" alt="" />
-  </a>
-  <a data-no-instant="1" href="https://africa.visa.com/products/visa-spend-clarity.html" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-23-at-10.51.52.jpeg" alt="" />
-  </a>
-  <a data-no-instant="1" href="https://comilog.eramet.com/" rel="noopener" className="a2t-link" target="_blank" aria-label="GABON_ACTU_300X300">
-    <img decoding="async" id="pubimg" src="https://gabonactu.com/wp-content/uploads/2023/12/300x250px-1-2.jpg" alt="" />
-  </a>
-</aside>
+
+<AdsSidebar/>
   
 
     </div>
