@@ -89,6 +89,7 @@ const Home = () => {
               </Link>
             </div>
             <div className='plus3en'>
+             
               <Link to='/économie'>
                 <h1>ÉCONOMIE</h1>
                 <h4>Bonne cadence pour les chantiers présidentiels à Akébé</h4>
@@ -102,6 +103,7 @@ const Home = () => {
         <section className="editorial-section" style={{ display: 'flex' }}>
           <div>
             <h2 style={{ textTransform: 'uppercase' }}>Annonces - Faits Divers - Ventes</h2>
+   
             <CarousseleAnnonce />
           </div>
         </section>
@@ -171,7 +173,7 @@ const Home = () => {
 
       </section>
 
-<AdsSidebar/>
+     <AdsSidebar/>
   
 
     </div>
