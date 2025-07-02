@@ -37,6 +37,7 @@ const CarousseleAnnonce = () => {
           <div className="carousel-items" key={slide.id}>
             <img src={slide.image} alt={slide.title} />
             <div className="captions">
+           
               <h2 className="secteur">{slide.secteur}</h2>
               <h3>{slide.title}</h3>
               <Link to={slide.link}>Lire l'article</Link>
