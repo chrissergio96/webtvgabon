@@ -131,7 +131,7 @@
   width: 100%;
   transition: transform 0.2s ease;
   display: flex;
-  height: 300px;
+  height: max-content;
   margin-bottom: 10px;
   flex-direction: column;
 }
