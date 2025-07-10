@@ -49,7 +49,10 @@ const Dashboard = () => {
 
 
     <button onClick={() => navigate('/admin/add-article')}>➕ Ajouter un article(page article)</button>
+        <button onClick={() => navigate('/admin/add-sante-article')}>➕ Ajouter un article santé(page Santé)</button>
     <button onClick={() => navigate('/admin/add-allvideo')}>➕ Ajouter une Vidéo ( page video)</button>
+
+    
 
   <button onClick={() => navigate('/admin/add-pub')}>➕ Ajouter une publicité</button>
   <button onClick={() => navigate('/admin/add-podcast')}>➕ Ajouter un Podcast(pas dispo)</button>
@@ -64,6 +67,8 @@ const Dashboard = () => {
 
   <button onClick={() => navigate('/admin/liste-allvideos')} id='listes'>📝 Gérer les Vidéos (Toutes les videos de la page video)</button>
   <button onClick={() => navigate('/admin/liste-publicite')} id='listes'>📝 Gérer les Publicités</button>
+  <button onClick={() => navigate('/admin/liste-sante')} id='listes'>📝 Gérer les articles santé</button>
+
 
   <button onClick={() => navigate('/admin/liste-articles')} id='listes'>📝 Gérer les articles(Tous les articles de la page article)</button>
   <button onClick={handleLogout} className="danger">🚪 Se déconnecter</button>
