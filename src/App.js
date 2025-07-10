@@ -39,6 +39,10 @@ import AddCarousseleAnnonce from './Admin/AddCarousseleAnnonce.js';
 import ListeCarousseleAnnonce from './Admin/ListeCarousseleAnnonce.js';
 import AddPodcast from './Admin/AddPodcast.js';
 import ListePodcasts from './Admin/ListePodcasts.js';
+import SanteDetail from './Components/SanteDetail/SanteDetail.js';
+import AddSanteArticle from './Admin/AddSanteArticle.js';
+import EditSanteArticle from './Admin/EditSanteArticle.js';
+import ListeArticleSante from './Admin/ListeArticleSante.js';
 
 function App() {
   return (
@@ -73,11 +77,15 @@ function App() {
       <Route path="/admin/liste-caroussele" element={<ListeCarousseleAnnonce />} />
       <Route path="/admin/add-podcast" element={<AddPodcast />} />
       <Route path="/admin/liste-podcasts" element={<ListePodcasts />} />
+      <Route path="/admin/add-sante-article" element={<AddSanteArticle />} />
+      <Route path="/admin/liste-sante" element={<ListeArticleSante />} />
+
 
       
 
       <Route path="/" element={<Accueil />} />
       <Route path="/santé" element={<Santé />} />
+      <Route path="/sante/:id" element={<SanteDetail />} />
       <Route path="/économie" element={< Économie/>} />
       <Route path="/articles" element={<Articles />} />
         <Route path="/podcasts" element={<Podcasts />} />
@@ -85,6 +93,7 @@ function App() {
         <Route path="/videos" element={<Videos />} />
         <Route path="/live" element={<Directe />} />
         <Route path="/admin/modifier-article/:id" element={<EditArticle />} />
+        <Route path="/admin/sante/edit/:id" element={<EditSanteArticle />} />
 
 
       </Routes>
