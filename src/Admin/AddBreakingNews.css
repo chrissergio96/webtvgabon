@@ -1,0 +1,108 @@
+.admin-login-container2 {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-form2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-login-form2 h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-login-form2 input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.admin-login-form2 button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.admin-login-form2 button:hover {
+  background-color: #0056b3;
+}
+
+.admin-login-form2 .danger {
+  background-color: #dc3545;
+}
+
+.admin-login-form2 .danger:hover {
+  background-color: #a71d2a;
+}
+
+.admin-login-container2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-login-container2 li {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.admin-login-container2 li img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.admin-login-container2 li button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.admin-login-container2 li button:nth-child(2) {
+  background-color: #ffc107; /* Modifier */
+  color: black;
+}
+
+.admin-login-container2 li button:nth-child(2):hover {
+  background-color: #e0a800;
+}
+
+.admin-login-container2 li button:nth-child(3) {
+  background-color: #dc3545; /* Supprimer */
+  color: white;
+}
+
+.admin-login-container2 li button:nth-child(3):hover {
+  background-color: #a71d2a;
+}
+
+.admin-login-container2 h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #444;
+}

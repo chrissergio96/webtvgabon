@@ -43,6 +43,8 @@ import SanteDetail from './Components/SanteDetail/SanteDetail.js';
 import AddSanteArticle from './Admin/AddSanteArticle.js';
 import EditSanteArticle from './Admin/EditSanteArticle.js';
 import ListeArticleSante from './Admin/ListeArticleSante.js';
+import PrivateRoute from './PrivateRoute.js';
+import AddBreakingNews from './Admin/AddBreakingNews.js';
 
 function App() {
   return (
@@ -55,7 +57,6 @@ function App() {
       <Route path="/admin/liste-articles" element={<ListeArticles />} />
       <Route path="/admin/login" element={<Login />} />
       <Route path="/admin/add-article" element={<AddArticle />} />
-      <Route path="/admin/dashboard" element={<Dashboard />} />
       <Route path="/admin/edit-article/:id" element={<EditArticle />} />
       <Route path="/admin/add-topstory" element={<AddTopStories />} />
       <Route path="/admin/liste-topstories" element={<ListeTopStories />} />
@@ -81,7 +82,30 @@ function App() {
       <Route path="/admin/liste-sante" element={<ListeArticleSante />} />
 
 
-      
+      <Route
+        path="/admin/dashboard"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      />
+      <Route
+  path="/admin/add-breakingnews"
+  element={
+    <PrivateRoute>
+      <AddBreakingNews />
+    </PrivateRoute>
+  }
+/>
+<Route
+  path="/admin/liste-breakingnews"
+  element={
+    <PrivateRoute>
+      <AddBreakingNews /> {/* tu peux réutiliser le même composant */}
+    </PrivateRoute>
+  }
+/>
 
       <Route path="/" element={<Accueil />} />
       <Route path="/santé" element={<Santé />} />
