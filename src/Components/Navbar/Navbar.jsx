@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Navbar.css';
 import { FaSearch } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,7 +11,21 @@ const Navbar = () => {
   const [filteredPages, setFilteredPages] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const navigate = useNavigate();
+ const [isSticky, setIsSticky] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Active sticky après 50px de scroll
+      if (window.scrollY > 50) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const pages = [
     { name: 'Articles', path: '/articles' },
     { name: 'Podcasts', path: '/podcasts' },
@@ -60,9 +74,10 @@ const Navbar = () => {
       }
     }
   };
+  
 
   return (
-    <nav className="merenav">
+    <nav className={`merenav ${isSticky ? 'fixed-nav' : ''}`}>
       <div className="bold">
         <div className="search-container" style={{ position: 'relative' }}>
           <FaSearch className="search-icon" onClick={handleIconClick} />

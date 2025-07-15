@@ -126,7 +126,14 @@
   /* Responsive uniquement mobile */
   @media (max-width: 768px) {
     
-   
+     @keyframes scroll-left {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
   /* BREAKING NEWS - MODERNE TICKER */
   .ticker {
     display: flex;
@@ -189,7 +196,7 @@
   .ticker-content {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-left 60s linear infinite;}
+    animation: scroll-left 50s linear infinite;}
   
   
   .top-stories-bar .top-stories-label .flash-icon {
