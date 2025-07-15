@@ -59,7 +59,7 @@
   background-repeat: no-repeat;
   margin-right: 8px;
   padding: 10px;
-  background-image: url('https://gabonactu.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-25-at-17.14.10.jpeg')
+  background-image: url('https://gabonactu.com/wp-content/uploads/2025/07/Ma-banniere2.jpg')
 }
 .plus2 h1{
   color: white;
@@ -76,8 +76,9 @@
 .plus2 p{
   color: white;
   background-color: red;
-  width: 40%;
+  width: max-content;
   margin-top: 10px;
+  padding: 2px;
   text-align: center;
 }
 .plus2 a{
@@ -132,7 +133,8 @@
 .plus3enf p{
   color: white;
   background-color: red;
-  width: 40%;
+  width: max-content;
+  padding: 2px;
   margin-top: 10px;
   text-align: center;
 }
@@ -165,14 +167,12 @@
 .plus3en p{
   color: white;
   background-color: red;
-  width: 40%;
+  width: max-content;
+  padding: 2px;
   text-align: center;
   margin-top: 10px;
 }
-.ticker {
-  display: flex;
-  align-items: center;
-}
+
 
 
 

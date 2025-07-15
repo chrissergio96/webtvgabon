@@ -73,9 +73,9 @@ const Home = () => {
             <h2>SANTÉ</h2>
             <div className='plus2'>
               <Link to='/santé'>
-                <h1>SANTÉ - SOCIÉTÉ</h1>
-                <h4>Insalubrité dans les marchés : Le mythe de Sisyphe</h4>
-                <p>24 mai 2025 </p>
+                <h1>SANTÉ</h1>
+                <h4>La Première Dame Zita Oligui Nguema au chevet des malades de l’hôpital Amissa Bongo de Franceville</h4>
+                <p>14 juillet 2025 </p>
               </Link>
             </div>
           </div>
