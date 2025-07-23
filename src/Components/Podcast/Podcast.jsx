@@ -3,14 +3,9 @@ import React, { useState, useEffect } from 'react';
 import './Podcast.css';
 
 const PODCASTS = [
+ 
   {
     id: 1,
-    title: "L'avenir du numérique au Gabon",
-    desc: "Un podcast sur les enjeux et opportunités du digital dans le pays.",
-    mediaUrl: "https://www.youtube.com/embed/vAaeie-kg0Y"
-  },
-  {
-    id: 2,
     title: "Activités Portuaires",
     desc: "L'urgence de réglementer le métier de transitaire au Gabon",
     mediaUrl: "https://www.youtube.com/embed/vAaeie-kg0Y"

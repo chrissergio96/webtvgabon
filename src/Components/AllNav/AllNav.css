@@ -6,14 +6,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 1rem;
-    background-color: white; /* Rouge très clair */
     border-bottom: 1px solid #fecaca; /* Rouge pâle */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  body{
-    background-color: white;
-  }
-  
+ 
   /* Logo */
   .allnav-logo {
     height: 140px;  /* Taille du logo */
