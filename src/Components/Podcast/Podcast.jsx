@@ -10,6 +10,12 @@ const PODCASTS = [
     desc: "L'urgence de réglementer le métier de transitaire au Gabon",
     mediaUrl: "https://www.youtube.com/embed/vAaeie-kg0Y"
   },
+   {
+    id: 2,
+    title: "Activités Portuaires",
+    desc: "L'urgence de réglementer le métier de transitaire au Gabon",
+    mediaUrl: "/EP01_Laika_Mba_la_transformation_digitale_entre_Libreville_et_10_28_2024-15.mp3"
+  },
 ];
 
 const Podcast = () => {
