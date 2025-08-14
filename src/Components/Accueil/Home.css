@@ -56,7 +56,7 @@
   background-repeat: no-repeat;
   margin-right: 8px;
   padding: 10px;
-  background-image: url('https://gabonactu.com/wp-content/uploads/2025/07/Ma-banniere2.jpg')
+  background-image: url('https://gabonactu.com/wp-content/uploads/2025/08/materiel-medical-pog.jpg')
 }
 .plus2 h1{
   color: white;
@@ -69,6 +69,7 @@
 }
 .plus2 h4{
   color: white;
+  text-shadow: 1px 1px #333;
 }
 .plus2 p{
   color: white;
@@ -112,7 +113,7 @@
   margin-right: auto;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('https://gabonactu.com/wp-content/uploads/2025/05/Henri-Claude-Oyima-1.jpg');
+  background-image: url('https://gabonactu.com/wp-content/uploads/2025/08/Tresor-public-de-Kango.jpg');
 
  
 }
@@ -126,6 +127,8 @@
 }
 .plus3enf h4{
   color: white;
+  text-shadow: 1px 1px #333;
+
 }
 .plus3enf p{
   color: white;
@@ -146,7 +149,7 @@
   padding: 10px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('https://gabonactu.com/wp-content/uploads/2025/05/Akebe-chantiers.jpg');
+  background-image: url('https://gabonactu.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-14-at-11.38.17.jpeg');
 
  
 }
@@ -160,6 +163,7 @@
 }
 .plus3en h4{
   color: white;
+  text-shadow: 1px 1px #333;
 }
 .plus3en p{
   color: white;

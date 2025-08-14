@@ -74,8 +74,8 @@ const Home = () => {
             <div className='plus2'>
               <Link to='/santé'>
                 <h1>SANTÉ</h1>
-                <h4>La Première Dame Zita Oligui Nguema au chevet des malades de l’hôpital Amissa Bongo de Franceville</h4>
-                <p>14 juillet 2025 </p>
+                <h4>Des potences, unité de production d’oxygène, groupe électrogène pour le CHR de Port-Gentil</h4>
+                <p>10 août 2025</p>
               </Link>
             </div>
           </div>
@@ -84,16 +84,16 @@ const Home = () => {
             <div className='plus3enf'>
               <Link to='/économie'>
                 <h1>ÉCONOMIE</h1>
-                <h4>Après la suspension des missions, Oyima tape dans le portemonnaie des anciens du régime</h4>
-                <p>24 mai 2025 </p>
+                <h4>Trésor Public : 𝗶𝗻𝗮𝘂𝗴𝘂𝗿ation d𝗲 𝗹𝗮 p𝗲𝗿𝗰𝗲𝗽𝘁𝗶𝗼𝗻 𝗱𝗲 𝗞𝗮𝗻𝗴𝗼</h4>
+                <p>14 août 2025 </p>
               </Link>
             </div>
             <div className='plus3en'>
              
               <Link to='/économie'>
                 <h1>ÉCONOMIE</h1>
-                <h4>Bonne cadence pour les chantiers présidentiels à Akébé</h4>
-                <p>23 mai 2025 </p>
+                <h4>Lutte contre la vie chère : le Gabon créé une centrale d’achat des denrées alimentaires</h4>
+                <p>13 août 2025 </p>
               </Link>
             </div>
           </div>
