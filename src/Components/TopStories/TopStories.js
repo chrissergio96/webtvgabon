@@ -46,7 +46,7 @@ const TopStories = () => {
           >
             <img src={story.image} alt={story.category} />
             <h3 style={{ background: story.categoryColor, padding: '5px' }}>{story.category}</h3>
-            <h1 style={{ background: 'none', padding: '5px' }}>{story.titre}</h1>
+            <h1 style={{ background: 'none', padding: '5px',fontSize:'20px' }}>{story.titre}</h1>
             <p>
               {story.description.length > 100
                 ? story.description.slice(0, 100) + '...'
