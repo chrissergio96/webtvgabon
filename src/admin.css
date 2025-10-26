@@ -374,6 +374,92 @@
   background: #d93636;
 }
 
+/* ====== Responsive Design ====== */
+@media screen and (max-width: 1024px) {
+  .admin-form-container {
+    max-width: 90%;
+    padding: 25px 30px;
+  }
+
+  .liste-live-container {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .admin-form-container {
+    padding: 20px;
+    margin: 30px 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .admin-form-container h2 {
+    font-size: 22px;
+  }
+  .admin-articles-container {
+  max-width: max-content;
+  background: #f9f9f9;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+  .admin-form-container input[type="text"],
+  .admin-form-container input[type="url"],
+  .admin-form-container input[type="date"] {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .admin-form-container button {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+
+  .liste-live-container {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+
+  .live-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .live-item span {
+    font-size: 15px;
+  }
+
+  .live-item button {
+    align-self: flex-end;
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .admin-form-container h2 {
+    font-size: 20px;
+  }
+
+  .admin-form-container button {
+    font-size: 14px;
+  }
+
+  .live-item {
+    gap: 10px;
+  }
+  .admin-articles-container {
+  max-width: max-content;
+  background: #f9f9f9;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+}
+
 
 .sidebar-ads .ads-list {
   display: flex;
@@ -432,7 +518,7 @@
   font-size: 0.9rem;
 }
 .admin-articles-container {
-  max-width: 900px;
+  max-width: max-content;
   margin: 40px auto;
   padding: 20px 30px;
   background: #f9f9f9;
@@ -453,7 +539,7 @@
   box-shadow: 0 6px 15px rgba(0,0,0,0.07);
   border-radius: 10px;
   padding: 20px 25px;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 25px;
