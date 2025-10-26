@@ -70,6 +70,8 @@ div {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     touch-action: manipulation;
 }
+
+
   
   /* Responsive : adaptation pour les petits écrans */
   @media screen and (max-width: 768px) {
