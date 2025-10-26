@@ -57,6 +57,8 @@ const Dashboard = () => {
   <button onClick={() => navigate('/admin/add-caroussele')}>➕ Ajouter une annonce , fait divers , vente(2e carousel)</button>
   <button onClick={() => navigate('/admin/liste-caroussele')} id='listes'>📝 Gérer les annonces(page accueil)</button>
 
+  <button onClick={() => navigate('/admin/add-live')}>➕ Ajouter un Live</button>
+<button onClick={() => navigate('/admin/liste-live')} id='listes'>📝 Gérer les Lives</button>
 
 
     <button onClick={() => navigate('/admin/add-article')}>➕ Ajouter un article(page article)</button>

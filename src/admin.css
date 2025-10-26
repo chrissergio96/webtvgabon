@@ -249,6 +249,130 @@
   position: sticky; /* Reste visible quand on scroll */
 }
 
+/* ====== Styles généraux pour le panneau admin ====== */
+.admin-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px 40px;
+  transition: all 0.3s ease;
+}
+
+.admin-form-container:hover {
+  transform: translateY(-2px);
+}
+
+.admin-form-container h2 {
+  text-align: center;
+  color: #0a5c36;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* ====== Formulaire ====== */
+.admin-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-form-container label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.admin-form-container input[type="text"],
+.admin-form-container input[type="url"],
+.admin-form-container input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.admin-form-container input[type="text"]:focus,
+.admin-form-container input[type="url"]:focus,
+.admin-form-container input[type="date"]:focus {
+  border-color: #0a5c36;
+  box-shadow: 0 0 5px rgba(10, 92, 54, 0.3);
+}
+
+.admin-form-container input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+}
+
+/* ====== Bouton ====== */
+.admin-form-container button {
+  background: #0a5c36;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-form-container button:hover {
+  background: #088a4b;
+  transform: translateY(-2px);
+}
+
+/* ====== Liste des Lives ====== */
+.liste-live-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.liste-live-container h2 {
+  text-align: center;
+  color: #0a5c36;
+  margin-bottom: 25px;
+}
+
+.live-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.live-item:last-child {
+  border-bottom: none;
+}
+
+.live-item span {
+  font-size: 16px;
+  color: #333;
+}
+
+.live-item button {
+  background: #ff4747;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.live-item button:hover {
+  background: #d93636;
+}
 
 
 .sidebar-ads .ads-list {

@@ -45,6 +45,8 @@ import EditSanteArticle from './Admin/EditSanteArticle.js';
 import ListeArticleSante from './Admin/ListeArticleSante.js';
 import PrivateRoute from './PrivateRoute.js';
 import AddBreakingNews from './Admin/AddBreakingNews.js';
+ import AddLive from './Admin/AddLive';
+import ListeLive from './Admin/ListeLive';
 
 function App() {
   return (
@@ -80,6 +82,10 @@ function App() {
       <Route path="/admin/liste-podcasts" element={<ListePodcasts />} />
       <Route path="/admin/add-sante-article" element={<AddSanteArticle />} />
       <Route path="/admin/liste-sante" element={<ListeArticleSante />} />
+     
+
+      <Route path="/admin/add-live" element={<AddLive />} />
+      <Route path="/admin/liste-live" element={<ListeLive />} />
 
 
       <Route
