@@ -3,6 +3,7 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const ListeFocus = () => {
   const [focusArticles, setFocusArticles] = useState([]);
@@ -43,6 +44,7 @@ setFocusArticles(articles);
 
   return (
     <div className="admin-list">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Liste des articles Focus</h2>
       {focusArticles.length === 0 && <p>Aucun article trouvé.</p>}
       {focusArticles.map((item) => {

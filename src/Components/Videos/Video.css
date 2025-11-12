@@ -167,3 +167,31 @@
 }
 
 }
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.page-button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.page-button:hover {
+  background-color: #f0f0f0;
+}
+
+.page-button.active {
+  background-color: #4caf50; /* couleur active, peut changer selon ton thème */
+  color: white;
+  border-color: #4caf50;
+}

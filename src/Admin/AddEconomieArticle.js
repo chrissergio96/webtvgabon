@@ -5,7 +5,7 @@ import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore"
 import { db } from '../firebaseConf';
 import AdminNavButtons from './AdminNavButtons';
 
-const  AddSanteArticle = () => {
+const AddEconomieArticle = () => {
   const navigate = useNavigate();
   const [article, setArticle] = useState({
     titre: '',
@@ -23,12 +23,11 @@ const  AddSanteArticle = () => {
     if (!isLoggedIn) {
       navigate('/admin/login');
     }
-
     fetchArticles();
   }, [navigate]);
 
   const fetchArticles = async () => {
-    const querySnapshot = await getDocs(collection(db, "sante"));
+    const querySnapshot = await getDocs(collection(db, "economie"));
     const data = querySnapshot.docs.map(doc => ({
       id: doc.id,
       ...doc.data()
@@ -44,8 +43,8 @@ const  AddSanteArticle = () => {
     e.preventDefault();
 
     try {
-      await addDoc(collection(db, "sante"), article);
-      alert('Article santé ajouté avec succès !');
+      await addDoc(collection(db, "economie"), article);
+      alert('Article économie ajouté avec succès !');
       setArticle({
         titre: '',
         resume: '',
@@ -66,7 +65,7 @@ const  AddSanteArticle = () => {
     if (!confirmDelete) return;
 
     try {
-      await deleteDoc(doc(db, "sante", id));
+      await deleteDoc(doc(db, "economie", id));
       fetchArticles();
       alert("Article supprimé");
     } catch (error) {
@@ -76,13 +75,19 @@ const  AddSanteArticle = () => {
 
   return (
     <div className="admin-login-container">
-         <AdminNavButtons /> {/* <-- boutons permanents */}
       <form className="admin-login-form" onSubmit={handleSubmit}>
-        <h2>Ajouter un article (santé)</h2>
+        <h2>Ajouter un article (Économie)</h2>
 
         <input type="text" name="titre" placeholder="Titre" value={article.titre} onChange={handleChange} required />
         <textarea name="resume" placeholder="Résumé" rows="3" value={article.resume} onChange={handleChange} required></textarea>
-        <textarea name="introduction" placeholder="Introduction" rows="3" value={article.introduction} onChange={handleChange} required></textarea>
+        <textarea
+          name="introduction"
+          placeholder="Introduction (tu peux espacer les paragraphes)"
+          rows="5"
+          value={article.introduction}
+          onChange={handleChange}
+          required
+        ></textarea>
         <input type="text" name="auteur" placeholder="Auteur" value={article.auteur} onChange={handleChange} required />
         <input type="date" name="date" value={article.date} onChange={handleChange} required />
         <input type="text" name="image" placeholder="URL de l’image" value={article.image} onChange={handleChange} />
@@ -91,20 +96,20 @@ const  AddSanteArticle = () => {
       </form>
 
       <div className="admin-list-section">
+           <AdminNavButtons /> {/* <-- boutons permanents */}
         <h3>Articles existants</h3>
         <ul>
-  {articles.map((a) => (
-    <li key={a.id} className="admin-article-item">
-      <strong>{a.titre}</strong> - {a.date}
-      <button onClick={() => handleDelete(a.id)} className="delete-btn">Supprimer</button>
-      <button onClick={() => navigate(`/admin/sante/edit/${a.id}`)} className="edit-btn">Modifier</button>
-    </li>
-  ))}
-</ul>
-
+          {articles.map((a) => (
+            <li key={a.id} className="admin-article-item">
+              <strong>{a.titre}</strong> - {a.date}
+              <button onClick={() => handleDelete(a.id)} className="delete-btn">Supprimer</button>
+              <button onClick={() => navigate(`/admin/economie/edit/${a.id}`)} className="edit-btn">Modifier</button>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
-export default AddSanteArticle;
+export default AddEconomieArticle;

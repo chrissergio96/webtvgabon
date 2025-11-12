@@ -20,14 +20,13 @@ const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
 
-    const fetchFocusArticles = async () => {
+     const fetchFocusArticles = async () => {
       const snapshot = await getDocs(collection(db, 'focusArticles'));
       const data = snapshot.docs.map(doc => {
         const docData = doc.data();
         return {
           id: doc.id,
           ...docData,
-          // Conversion du timestamp Firestore en date lisible
           date: docData.date?.toDate 
             ? docData.date.toDate().toLocaleDateString('fr-FR') 
             : docData.date || ''
@@ -35,29 +34,46 @@ const Home = () => {
       });
       setFocusArticles(data);
     };
-    const fetchAds = async () => {
-  const snapshot = await getDocs(collection(db, 'publicite'));
-  const data = snapshot.docs.map(doc => {
-    const d = doc.data();
-    return {
-      id: doc.id,
-      image: d.image,
-      url: d.url,
-      // si tu veux un ordre précis :
-      date: d.date?.toDate ? d.date.toDate() : null
-    };
-  });
-  setAds(data);
-};
 
+    const fetchAds = async () => {
+      const snapshot = await getDocs(collection(db, 'publicite'));
+      const data = snapshot.docs.map(doc => {
+        const d = doc.data();
+        return {
+          id: doc.id,
+          image: d.image,
+          url: d.url,
+          date: d.date?.toDate ? d.date.toDate() : null
+        };
+      });
+      setAds(data);
+    };
 
     const fetchVideos = async () => {
       const snapshot = await getDocs(collection(db, 'videos'));
-      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setVideos(data);
+      const data = snapshot.docs.map(doc => {
+        const docData = doc.data();
+        return {
+          id: doc.id,
+          ...docData,
+          date: docData.date?.toDate ? docData.date.toDate() : null
+        };
+      });
+
+      // Tri par date décroissante : les plus récentes en premier
+      data.sort((a, b) => b.date - a.date);
+
+      // Formatage pour affichage
+      const formattedData = data.map(video => ({
+        ...video,
+        date: video.date ? video.date.toLocaleString('fr-FR') : ''
+      }));
+
+      setVideos(formattedData);
     };
 
     fetchFocusArticles();
+    fetchAds();
     fetchVideos();
   }, []);
 
@@ -80,7 +96,7 @@ const Home = () => {
             </div>
           </div>
           <div className='plus3'>
-            <h2>ÉCONOMIE</h2>
+            <h2>ÉCO - POLITIQUE</h2>
             <div className='plus3enf'>
               <Link to='/économie'>
                 <h1>ÉCONOMIE</h1>
@@ -90,8 +106,8 @@ const Home = () => {
             </div>
             <div className='plus3en'>
              
-              <Link to='/économie'>
-                <h1>ÉCONOMIE</h1>
+              <Link to='/politique'>
+                <h1>POLITIQUE</h1>
                 <h4>Lutte contre la vie chère : le Gabon créé une centrale d’achat des denrées alimentaires</h4>
                 <p>13 août 2025 </p>
               </Link>
@@ -150,7 +166,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="video-section">
+ <section className="video-section">
           <h2 style={{ textTransform: 'uppercase' }}>Dernières Vidéos</h2>
           <div className="video-grid">
             {videos.map((video, index) => (
@@ -164,6 +180,9 @@ const Home = () => {
                   allowFullScreen
                 ></iframe>
                 <p>{video.description}</p>
+                <small style={{ color: '#555' }}>
+                  Publié le : {video.date}
+                </small>
               </div>
             ))}
           </div>

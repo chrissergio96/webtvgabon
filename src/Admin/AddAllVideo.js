@@ -4,6 +4,7 @@ import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const AddAllVideo = () => {
   const [lien, setLien] = useState('');
@@ -32,6 +33,7 @@ const AddAllVideo = () => {
 
   return (
     <div className="form-container">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Ajouter une vidéo à la collection AllVideo</h2>
       <form onSubmit={handleSubmit}>
         <input

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebaseConf';
-import './SanteDetail.css';
+import './EconomieDetail.css';
 
-const SanteDetail = () => {
+const EconomieDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [article, setArticle] = useState(null);
@@ -13,7 +13,7 @@ const SanteDetail = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const docRef = doc(db, 'sante', id);
+        const docRef = doc(db, 'economie', id);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -35,21 +35,21 @@ const SanteDetail = () => {
   if (!article) return <p>Aucun article trouvé.</p>;
 
   return (
-    <div className="sante-detail-container">
+    <div className="economie-detail-container">
       <button className="back-button" onClick={() => navigate(-1)}>← Retour</button>
 
       <h1>{article.titre}</h1>
       <p className="article-date">Publié le : {article.date}</p>
       <img src={article.image} alt={article.titre} className="article-detail-image" />
       <p><strong>Auteur :</strong> {article.auteur}</p>
-     <h3>Introduction</h3>
-    <p className="sante-detail-content">{article.introduction}</p>
 
-   <h3>Résumé</h3>
-   <p className="sante-detail-content">{article.resume}</p>
+      <h3>Introduction</h3>
+      <p className="article-content">{article.introduction}</p>
 
+      <h3>Résumé</h3>
+      <p className="article-content">{article.resume}</p>
     </div>
   );
 };
 
-export default SanteDetail;
+export default EconomieDetail;

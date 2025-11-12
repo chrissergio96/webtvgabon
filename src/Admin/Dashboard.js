@@ -72,7 +72,16 @@ const Dashboard = () => {
       <button onClick={() => navigate('/admin/liste-allvideos')} id='listes'>📝 Gérer les Vidéos (Toutes les videos de la page video)</button>
 
 
-    
+    <button onClick={() => navigate('/admin/add-politique-article')}>
+      ➕ Ajouter un article Politique (page Politique)
+    </button>
+    <button onClick={() => navigate('/admin/liste-politique')} id='listes'>
+      📝 Gérer les articles Politique
+    </button>
+
+<button onClick={() => navigate('/admin/add-economie-article')}>➕ Ajouter un article Économie</button>
+<button onClick={() => navigate('/admin/liste-economie')} id='listes'>📝 Gérer les articles Économie</button>
+
 
   <button onClick={() => navigate('/admin/add-pub')}>➕ Ajouter une publicité</button>
     <button onClick={() => navigate('/admin/liste-publicite')} id='listes'>📝 Gérer les Publicités</button>

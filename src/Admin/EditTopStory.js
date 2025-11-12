@@ -3,6 +3,7 @@ import '../admin.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from '../firebaseConf';
+import AdminNavButtons from './AdminNavButtons';
 
 const EditTopStory = () => {
   const { id } = useParams();
@@ -50,6 +51,7 @@ const EditTopStory = () => {
 
   return (
     <div className="admin-login-container">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <form className="admin-login-form" onSubmit={handleSubmit}>
         <h2>Modifier la Top Story</h2>
 

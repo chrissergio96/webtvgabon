@@ -4,6 +4,7 @@ import { db } from "../firebaseConf";
 import { collection, getDocs, deleteDoc, doc, query, orderBy } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import "../admin.css";
+import AdminNavButtons from "./AdminNavButtons";
 
 const ListePodcast = () => {
   const [podcasts, setPodcasts] = useState([]);
@@ -36,6 +37,7 @@ const ListePodcast = () => {
 
   return (
     <div className="admin-list">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Liste des Podcasts</h2>
       {podcasts.length === 0 && <p>Aucun podcast trouvé.</p>}
       {podcasts.map(p => (
