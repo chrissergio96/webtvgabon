@@ -4,6 +4,7 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const ListeAllVideo = () => {
   const [videos, setVideos] = useState([]);
@@ -31,6 +32,7 @@ const ListeAllVideo = () => {
 
   return (
     <div className="admin-list">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Liste des Vidéos (Collection AllVideo)</h2>
       {videos.length === 0 && <p>Aucune vidéo trouvée.</p>}
       {videos.map((video) => (

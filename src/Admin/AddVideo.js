@@ -4,6 +4,7 @@ import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const AddVideo = () => {
   const [url, setUrl] = useState('');
@@ -28,6 +29,7 @@ const AddVideo = () => {
 
   return (
     <div className="form-container">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Ajouter une vidéo YouTube</h2>
       <form onSubmit={handleSubmit}>
         <input

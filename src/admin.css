@@ -197,7 +197,7 @@
 
 .dashboard-buttons button {
   background-color:green;
-  border: none;
+  border: solid white;
   color: white;
   padding: 14px 20px;
   font-size: 1rem;
@@ -212,7 +212,7 @@
   gap: 8px;
 }
 #listes{
-    background-color:black;
+    background-color:rgba(0, 0, 0, 0.514);
 
 }
 
@@ -741,4 +741,138 @@ button.edit:hover {
 .sidebar-ads .ad-img{
   width: 100%;
 }
+}
+/* === STYLE DE BASE === */
+.admin-form-container {
+  background: #fff;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-form-container h2 {
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.admin-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-form-container label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.admin-form-container input,
+.admin-form-container textarea {
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-form-container input:focus,
+.admin-form-container textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.admin-form-container textarea {
+  resize: vertical;
+}
+
+.btn-save {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s ease;
+}
+
+.btn-cancel {
+  background-color: #ddd;
+  color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancel:hover {
+  background-color: #bbb;
+}
+
+/* === VERSION MOBILE === */
+@media (max-width: 768px) {
+  .admin-form-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .admin-form-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .admin-form-container label {
+    font-size: 14px;
+  }
+
+  .admin-form-container input,
+  .admin-form-container textarea {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* === VERSION PETIT ÉCRAN (SMARTPHONES) === */
+@media (max-width: 480px) {
+  .admin-form-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .admin-form-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .admin-form-container input,
+  .admin-form-container textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    font-size: 14px;
+    padding: 9px;
+  }
 }

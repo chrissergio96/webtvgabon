@@ -1,0 +1,62 @@
+.politique-detail-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.back-button {
+  background-color: green;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #046604;
+}
+
+.politique-detail-container h1 {
+  text-align: center;
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+.article-date {
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.article-detail-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.article-content {
+  white-space: pre-line; /* ✅ garde les retours à la ligne */
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #222;
+  margin-top: 10px;
+}
+
+/* ✅ Version mobile */
+@media (max-width: 768px) {
+  .politique-detail-container {
+    padding: 10px;
+  }
+
+  .back-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .article-content {
+    font-size: 1rem;
+  }
+}

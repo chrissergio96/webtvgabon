@@ -3,6 +3,7 @@ import '../admin.css';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useParams, useNavigate } from 'react-router-dom';
+import AdminNavButtons from './AdminNavButtons';
 
 const EditSanteArticle = () => {
   const { id } = useParams();
@@ -60,6 +61,7 @@ const EditSanteArticle = () => {
 
   return (
     <div className="admin-login-container">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <form className="admin-login-form" onSubmit={handleUpdate}>
         <h2>Modifier l'article santé</h2>
         

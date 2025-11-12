@@ -4,6 +4,7 @@ import { db } from '../firebaseConf';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const EditAllVideo = () => {
   const [lien, setLien] = useState('');
@@ -51,6 +52,7 @@ const EditAllVideo = () => {
 
   return (
     <div className="form-container">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Modifier la vidéo</h2>
       <form onSubmit={handleUpdate}>
         <input

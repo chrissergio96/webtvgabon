@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../firebaseConf';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const EditFocusArticle = () => {
   const { id } = useParams();
@@ -50,6 +51,7 @@ const EditFocusArticle = () => {
 
   return (
     <div className="form-container">
+         <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Modifier l’article Focus</h2>
       <form onSubmit={handleUpdate}>
         <input
