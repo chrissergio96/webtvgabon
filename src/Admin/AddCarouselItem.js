@@ -4,6 +4,7 @@ import '../admin.css';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import AdminNavButtons from './AdminNavButtons';
 
 const AddCarouselItem = () => {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ const AddCarouselItem = () => {
 
   return (
     <div className="form-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Ajouter une info internationnal ou autres (1er carousel)</h2>
       <form onSubmit={handleSubmit}>
         <input name="secteur" placeholder="Secteur" value={slide.secteur} onChange={handleChange} required/>

@@ -3,6 +3,7 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const ListeTopStories = () => {
   const [stories, setStories] = useState([]);
@@ -34,6 +35,7 @@ const ListeTopStories = () => {
 
   return (
     <div className="admin-articles-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Liste des Top Stories</h2>
       {stories.length === 0 && <p>Aucune Top Story trouvée.</p>}
       {stories.map(story => (

@@ -3,6 +3,7 @@ import '../admin.css';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import AdminNavButtons from './AdminNavButtons';
 
 
 const AddTopStories = () => {
@@ -55,6 +56,7 @@ const AddTopStories = () => {
 
   return (
     <div className="admin-login-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <form className="admin-login-form" onSubmit={handleSubmit}>
         <h2>Ajouter une Top Actu</h2>
 

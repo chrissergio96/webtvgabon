@@ -4,6 +4,7 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const ListePublicite = () => {
   const [ads, setAds] = useState([]);
@@ -37,6 +38,7 @@ const ListePublicite = () => {
 
   return (
     <div className="admin-list">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Liste des Publicités</h2>
       {ads.length === 0 && <p>Aucune publicité trouvée.</p>}
       {ads.map((ad) => {

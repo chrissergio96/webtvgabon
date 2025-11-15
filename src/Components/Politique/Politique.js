@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../../firebaseConf';
-import './Economie.css';
+import './Politique.css';
 import { motion } from 'framer-motion';
 
-const Economie = () => {
+const Politique = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,7 +17,7 @@ const Economie = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "economie"));
+        const querySnapshot = await getDocs(collection(db, "politique"));
         const articlesData = querySnapshot.docs
           .map(doc => ({
             id: doc.id,
@@ -27,7 +27,7 @@ const Economie = () => {
 
         setArticles(articlesData);
       } catch (error) {
-        console.error("Erreur lors de la récupération des articles économie :", error);
+        console.error("Erreur lors de la récupération des articles politique :", error);
       } finally {
         setLoading(false);
       }
@@ -37,12 +37,12 @@ const Economie = () => {
   }, []);
 
   if (loading) {
-    return <p>Chargement des articles économie...</p>;
+    return <p>Chargement des articles politique...</p>;
   }
 
   return (
     <div className="articles-wrapper">
-      <h1 style={{ textAlign: 'center' }}>Nos Articles Économie</h1>
+      <h1 style={{ textAlign: 'center' }}>Nos Articles Politique</h1>
 
       <div className="articles-container">
         {articles.map(article => (
@@ -58,7 +58,7 @@ const Economie = () => {
               <h2>{article.titre}</h2>
               <p>{truncateText(article.resume, 100)}</p>
               <p className="article-date">{article.date}</p>
-              <Link to={`/economie/${article.id}`} className="btn-voir-plus">
+              <Link to={`/politique/${article.id}`} className="btn-voir-plus">
                 <span>
                   Voir plus
                   <svg id='svgy' xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
@@ -74,4 +74,4 @@ const Economie = () => {
   );
 };
 
-export default Economie;
+export default Politique;

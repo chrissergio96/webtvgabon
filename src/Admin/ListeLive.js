@@ -1,9 +1,9 @@
-// src/admin/ListeLive.js
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebaseConf";
 import { useNavigate } from "react-router-dom";
 import "../admin.css";
+import AdminNavButtons from "./AdminNavButtons";
 
 const ListeLive = () => {
   const [lives, setLives] = useState([]);
@@ -11,10 +11,14 @@ const ListeLive = () => {
 
   const fetchLives = async () => {
     const querySnapshot = await getDocs(collection(db, "live"));
-    const data = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+    const data = querySnapshot.docs.map((doc) => {
+      const docData = doc.data();
+      return {
+        id: doc.id,
+        ...docData,
+        date: docData.date?.toDate ? docData.date.toDate().toLocaleString("fr-FR") : ""
+      };
+    });
     setLives(data);
   };
 
@@ -56,6 +60,7 @@ const ListeLive = () => {
 
   return (
     <div className="admin-articles-container">
+      <AdminNavButtons />
       <h2>Liste des Lives</h2>
 
       {lives.length === 0 ? (
@@ -65,7 +70,12 @@ const ListeLive = () => {
           <div key={live.id} className="admin-article-card">
             <h3>{live.titre}</h3>
             <p><strong>Date :</strong> {live.date}</p>
-            <p><strong>URL :</strong> <a href={live.url} target="_blank" rel="noreferrer">{live.url}</a></p>
+            <p>
+              <strong>URL :</strong>{" "}
+              <a href={live.url} target="_blank" rel="noreferrer">
+                {live.url}
+              </a>
+            </p>
             <p><strong>Statut :</strong> {live.actif ? "🟢 Actif" : "🔴 Inactif"}</p>
 
             <div className="admin-actions">
@@ -73,7 +83,9 @@ const ListeLive = () => {
               <button onClick={() => handleToggleActif(live.id, live.actif)}>
                 {live.actif ? "Désactiver" : "Activer"}
               </button>
-              <button onClick={() => handleDelete(live.id)} className="danger">Supprimer</button>
+              <button onClick={() => handleDelete(live.id)} className="danger">
+                Supprimer
+              </button>
             </div>
           </div>
         ))

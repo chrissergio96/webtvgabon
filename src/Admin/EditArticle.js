@@ -3,6 +3,7 @@ import '../admin.css';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useParams, useNavigate } from 'react-router-dom';
+import AdminNavButtons from './AdminNavButtons';
 
 const EditArticle = () => {
   const { id } = useParams();
@@ -40,6 +41,7 @@ const EditArticle = () => {
 
   return (
     <div className="admin-login-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <form className="admin-login-form" onSubmit={handleUpdate}>
         <h2>Modifier l'article</h2>
         <input type="text" name="titre" placeholder="Titre" value={article.titre} onChange={handleChange} required />

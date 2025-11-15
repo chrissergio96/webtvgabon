@@ -9,6 +9,7 @@ import {
   updateDoc,
   doc
 } from 'firebase/firestore';
+import AdminNavButtons from './AdminNavButtons';
 
 const AddBreakingNews = () => {
   const [text, setText] = useState('');
@@ -80,6 +81,7 @@ const AddBreakingNews = () => {
 
   return (
     <div className="admin-login-container2">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <form className="admin-login-form2" onSubmit={handleAddOrUpdate}>
         <h2>{editMode ? "Modifier une Breaking News" : "Ajouter une Breaking News"}</h2>
         {message && <p>{message}</p>}

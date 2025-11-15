@@ -1,17 +1,26 @@
-// src/admin/ListeVideos.js
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, doc, orderBy, query } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const ListeVideos = () => {
   const [videos, setVideos] = useState([]);
   const navigate = useNavigate();
 
   const fetchVideos = async () => {
-    const snapshot = await getDocs(collection(db, 'videos'));
-    setVideos(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    const q = query(collection(db, 'videos'), orderBy('date', 'desc')); // tri du plus récent au plus ancien
+    const snapshot = await getDocs(q);
+    const data = snapshot.docs.map(doc => {
+      const docData = doc.data();
+      return {
+        id: doc.id,
+        ...docData,
+        date: docData.date?.toDate ? docData.date.toDate().toLocaleString('fr-FR') : ''
+      };
+    });
+    setVideos(data);
   };
 
   useEffect(() => {
@@ -31,6 +40,7 @@ const ListeVideos = () => {
 
   return (
     <div className="admin-list">
+      <AdminNavButtons />
       <h2>Liste des Vidéos</h2>
       {videos.length === 0 && <p>Aucune vidéo trouvée.</p>}
       {videos.map((video) => (
@@ -45,6 +55,7 @@ const ListeVideos = () => {
             height="180"
           ></iframe>
           <p>{video.description}</p>
+          <small style={{ color: '#555' }}>Publié le : {video.date}</small>
           <div className="admin-actions">
             <button onClick={() => handleEdit(video.id)}>Modifier</button>
             <button onClick={() => handleDelete(video.id)} className="danger">Supprimer</button>

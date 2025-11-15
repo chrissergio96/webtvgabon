@@ -3,6 +3,7 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const ListeArticleSante = () => {
   const [articles, setArticles] = useState([]);
@@ -45,6 +46,7 @@ const ListeArticleSante = () => {
 
   return (
     <div className="admin-articles-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Liste des articles santé</h2>
       {articles.length === 0 ? (
         <p>Aucun article disponible pour le moment.</p>
