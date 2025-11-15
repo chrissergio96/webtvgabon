@@ -4,6 +4,7 @@ import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const AddFocusArticle = () => {
   const [titre, setTitre] = useState('');
@@ -32,6 +33,7 @@ const AddFocusArticle = () => {
 
   return (
     <div className="form-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Ajouter un article Récent</h2>
       <form onSubmit={handleSubmit}>
         <input

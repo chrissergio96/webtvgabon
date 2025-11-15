@@ -3,6 +3,7 @@ import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const AddPublicite = () => {
   const [imageUrl, setImageUrl] = useState('');
@@ -28,6 +29,7 @@ const AddPublicite = () => {
 
   return (
     <div className="form-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Ajouter une publicité</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Image URL" value={imageUrl} onChange={e => setImageUrl(e.target.value)} required />

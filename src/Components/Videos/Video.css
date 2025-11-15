@@ -1,169 +1,164 @@
+/* src/components/Video/Video.css */
+
 .videos-section {
   padding: 40px 20px;
-  background-color: #f9f9f9;
-  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
 }
 
 .videos-title {
   text-align: center;
-  color: red;
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  font-size: 2rem;
-  font-family: The Antiqua B, Georgia, Droid-serif, serif;
+  color: #222;
 }
 
+/* Barre de recherche */
 .search-bar {
-  display: block;
-  margin: 0 auto 20px;
+  width: 100%;
   padding: 10px 15px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  width: 80%;
-  max-width: 400px;
   font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  outline: none;
+  transition: 0.3s;
 }
 
+.search-bar:focus {
+  border-color: red;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Filtre de catégories */
 .filter-bar {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-
-.filter-button {
-  background: #e9ecef;
-  color: #333;
-  border: none;
-  padding: 8px 16px;
-  margin: 5px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.filter-button.active,
-.filter-button:hover {
-  background: red;
-  color: #fff;
-}
-
-.videos-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: space-around;
+  margin-bottom: 30px;
+  justify-content: center;
 }
 
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid red;
+  border-radius: 20px;
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.filter-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.filter-button.active {
+  background-color: red;
+  color: #fff;
+}
+
+/* Grille des vidéos */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Carte vidéo */
 .video-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-radius: 10px;
   overflow: hidden;
-  width: 220px;
-  transition: transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .video-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .video-frame {
   width: 100%;
-  height: 180px;
+  height: 200px;
   border: none;
 }
 
+/* Info vidéo */
 .video-info {
   padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .video-info h2 {
-  font-size: 1.1rem;
-  color: red;
-  margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
 }
 
 .video-info p {
   font-size: 0.95rem;
-  color: #444;
-  margin: 0;
+  color: #555;
+  margin-bottom: 10px;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.video-info small {
+  font-size: 0.8rem;
+  color: #777;
 }
 
-.video-card-modern {
-  animation: fadeUp 0.6s ease forwards;
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+.page-button {
+  padding: 8px 14px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.page-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.page-button.active {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Message aucun résultat */
 .no-results {
   text-align: center;
-  font-size: 1.1rem;
-  color: #999;
-  margin-top: 30px;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  .modal-content iframe {
-    height: 250px;
+/* Responsive */
+@media (max-width: 768px) {
+  .video-frame {
+    height: 180px;
   }
-  .videos-grid {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+@media (max-width: 480px) {
+  .video-frame {
+    height: 150px;
   }
-.video-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 100%;
-  transition: transform 0.2s ease;
-  display: flex;
-  height: max-content;
-  margin-bottom: 10px;
-  flex-direction: column;
-}
-
-.video-card:hover {
-  transform: translateY(-5px);
-}
-
-.video-frame {
-  width: 100%;
-  height: 180px;
-  border: none;
-}
-
-.video-info {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.video-info h2 {
-  font-size: 1.1rem;
-  color: red;
-  margin: 0;
-}
-
-.video-info p {
-  font-size: 0.95rem;
-  color: #444;
-  margin: 0;
-}
-
 }

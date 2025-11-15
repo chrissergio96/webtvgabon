@@ -1,85 +1,66 @@
 import React, { useState, useEffect } from 'react';
-import '../admin.css';
 import { useNavigate } from 'react-router-dom';
-import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
+import '../admin.css';
+import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import AdminNavButtons from './AdminNavButtons';
 
-const  AddSanteArticle = () => {
+const AddEconomieArticle = () => {
   const navigate = useNavigate();
   const [article, setArticle] = useState({
     titre: '',
     resume: '',
+    introduction: '',
     auteur: '',
     date: '',
-    image: '',
-    introduction: ''
+    image: ''
   });
 
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    if (!isLoggedIn) {
-      navigate('/admin/login');
-    }
-
+    if (!isLoggedIn) navigate('/admin/login');
     fetchArticles();
   }, [navigate]);
 
   const fetchArticles = async () => {
-    const querySnapshot = await getDocs(collection(db, "sante"));
-    const data = querySnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }));
+    const querySnapshot = await getDocs(collection(db, "economie"));
+    const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     setArticles(data);
   };
 
-  const handleChange = (e) => {
-    setArticle({ ...article, [e.target.name]: e.target.value });
-  };
+  const handleChange = e => setArticle({ ...article, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-
     try {
-      await addDoc(collection(db, "sante"), article);
-      alert('Article santé ajouté avec succès !');
-      setArticle({
-        titre: '',
-        resume: '',
-        auteur: '',
-        date: '',
-        image: '',
-        introduction: ''
-      });
+      await addDoc(collection(db, "economie"), article);
+      alert('Article Économie ajouté !');
+      setArticle({ titre: '', resume: '', introduction: '', auteur: '', date: '', image: '' });
       fetchArticles();
-    } catch (error) {
-      console.error("Erreur lors de l'ajout :", error);
-      alert("Erreur lors de l'ajout");
+    } catch (err) {
+      console.error(err);
+      alert('Erreur lors de l’ajout');
     }
   };
 
-  const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Supprimer cet article ?");
-    if (!confirmDelete) return;
-
+  const handleDelete = async id => {
+    if (!window.confirm('Supprimer cet article ?')) return;
     try {
-      await deleteDoc(doc(db, "sante", id));
+      await deleteDoc(doc(db, 'economie', id));
       fetchArticles();
-      alert("Article supprimé");
-    } catch (error) {
-      console.error("Erreur suppression :", error);
+      alert('Article supprimé !');
+    } catch (err) {
+      console.error(err);
     }
   };
 
   return (
     <div className="admin-login-container">
-        <AdminNavButtons /> {/* <-- boutons permanents */}
+          <AdminNavButtons /> {/* <-- boutons permanents */}
       <form className="admin-login-form" onSubmit={handleSubmit}>
-        <h2>Ajouter un article (santé)</h2>
-
+        <h2>Ajouter un article Économie</h2>
         <input type="text" name="titre" placeholder="Titre" value={article.titre} onChange={handleChange} required />
         <textarea name="resume" placeholder="Résumé" rows="3" value={article.resume} onChange={handleChange} required></textarea>
         <textarea name="introduction" placeholder="Introduction" rows="3" value={article.introduction} onChange={handleChange} required></textarea>
@@ -93,18 +74,17 @@ const  AddSanteArticle = () => {
       <div className="admin-list-section">
         <h3>Articles existants</h3>
         <ul>
-  {articles.map((a) => (
-    <li key={a.id} className="admin-article-item">
-      <strong>{a.titre}</strong> - {a.date}
-      <button onClick={() => handleDelete(a.id)} className="delete-btn">Supprimer</button>
-      <button onClick={() => navigate(`/admin/sante/edit/${a.id}`)} className="edit-btn">Modifier</button>
-    </li>
-  ))}
-</ul>
-
+          {articles.map(a => (
+            <li key={a.id} className="admin-article-item">
+              <strong>{a.titre}</strong> — {a.date}
+              <button onClick={() => navigate(`/admin/economie/edit/${a.id}`)} className="edit-btn">Modifier</button>
+              <button onClick={() => handleDelete(a.id)} className="delete-btn">Supprimer</button>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
-export default AddSanteArticle;
+export default AddEconomieArticle;

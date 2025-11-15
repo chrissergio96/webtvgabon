@@ -4,6 +4,7 @@ import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const AddVideo = () => {
   const [url, setUrl] = useState('');
@@ -17,10 +18,11 @@ const AddVideo = () => {
       await addDoc(collection(db, 'videos'), {
         url,
         description,
-        date: serverTimestamp(),
+        date: serverTimestamp(),   // ⬅️ Date + heure automatique (comme AddAllVideo)
       });
+
       alert('Vidéo ajoutée !');
-      navigate('/admin/liste-videos');
+      navigate('/admin/liste-videos'); // Redirection
     } catch (error) {
       console.error('Erreur ajout vidéo:', error);
     }
@@ -28,7 +30,10 @@ const AddVideo = () => {
 
   return (
     <div className="form-container">
+      <AdminNavButtons />
+
       <h2>Ajouter une vidéo YouTube</h2>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -37,12 +42,14 @@ const AddVideo = () => {
           onChange={(e) => setUrl(e.target.value)}
           required
         />
+
         <textarea
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
         />
+
         <button type="submit">Ajouter</button>
       </form>
     </div>

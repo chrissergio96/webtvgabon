@@ -118,6 +118,7 @@ const Navbar = () => {
           <li><Link to="/podcasts">Podcasts</Link></li>
           <li><Link to="/videos">Vidéos</Link></li>
           <li><Link to="/live">Live</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
 
         <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
@@ -136,6 +137,7 @@ const Navbar = () => {
         <li><Link to="/podcasts">Podcasts</Link></li>
         <li><Link to="/videos">Vidéos</Link></li>
         <li><Link to="/live">Live</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
     </nav>
   );

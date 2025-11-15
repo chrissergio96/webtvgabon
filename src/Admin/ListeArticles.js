@@ -3,6 +3,7 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConf';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const ListeArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -35,6 +36,7 @@ const ListeArticles = () => {
 
   return (
     <div className="admin-articles-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Liste des articles</h2>
       {articles.map(article => (
         <div key={article.id} className="admin-article-card">

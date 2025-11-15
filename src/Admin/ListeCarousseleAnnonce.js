@@ -4,6 +4,7 @@ import { collection, getDocs, deleteDoc, doc, query, orderBy } from 'firebase/fi
 import { db } from '../firebaseConf';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const ListeCarousseleAnnonce = () => {
   const [slides, setSlides] = useState([]);
@@ -31,6 +32,7 @@ const ListeCarousseleAnnonce = () => {
 
   return (
     <div className="admin-list">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Liste des annonces (Carrousel)</h2>
       {slides.length === 0 && <p>Aucune annonce trouvée.</p>}
       {slides.map(item => (

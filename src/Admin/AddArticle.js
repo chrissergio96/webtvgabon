@@ -3,6 +3,7 @@ import '../admin.css';
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../firebaseConf'; // adapte le chemin
+import AdminNavButtons from './AdminNavButtons';
 
 const AddArticle = () => {
   const navigate = useNavigate();
@@ -47,6 +48,8 @@ sessionStorage.setItem('isLoggedIn', 'true');
 
   return (
     <div className="admin-login-container">
+
+  <AdminNavButtons /> {/* <-- boutons permanents */}
       <form className="admin-login-form" onSubmit={handleSubmit}>
         <h2>Ajouter un article(page article)</h2>
 

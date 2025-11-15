@@ -4,6 +4,7 @@ import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import '../admin.css';
+import AdminNavButtons from './AdminNavButtons';
 
 const AddCarousseleAnnonce = () => {
   const [secteur, setSecteur] = useState('');
@@ -33,6 +34,7 @@ const AddCarousseleAnnonce = () => {
 
   return (
     <div className="form-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Ajouter une annonce , fait divers , vente(2e carousel)</h2>
       <form onSubmit={handleSubmit}>
         <input name="secteur" placeholder="Secteur (ex: Football)" value={secteur} onChange={e => setSecteur(e.target.value)} required />

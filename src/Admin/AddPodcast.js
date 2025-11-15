@@ -5,6 +5,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import "../admin.css";
+import AdminNavButtons from "./AdminNavButtons";
 
 const AddPodcast = () => {
   const [title, setTitle] = useState("");
@@ -73,6 +74,7 @@ const AddPodcast = () => {
 
   return (
     <div className="form-container">
+        <AdminNavButtons /> {/* <-- boutons permanents */}
       <h2>Ajouter un podcast</h2>
       <form onSubmit={handleSubmit}>
         <input

@@ -90,10 +90,10 @@ const Home = () => {
             </div>
             <div className='plus3en'>
              
-              <Link to='/économie'>
-                <h1>ÉCONOMIE</h1>
+              <Link to='/politique'>
+                <h1>POLITIQUE</h1>
                 <h4>Lutte contre la vie chère : le Gabon créé une centrale d’achat des denrées alimentaires</h4>
-                <p>13 août 2025 </p>
+                <p>12 Novembre 2025 </p>
               </Link>
             </div>
           </div>
@@ -152,9 +152,9 @@ const Home = () => {
 
         <section className="video-section">
           <h2 style={{ textTransform: 'uppercase' }}>Dernières Vidéos</h2>
-          <div className="video-grid">
+          <div className="video-gride">
             {videos.map((video, index) => (
-              <div key={video.id} className="video-card">
+              <div key={video.id} className="video-carde">
                 <iframe
                   loading="lazy"
                   src={video.url}
