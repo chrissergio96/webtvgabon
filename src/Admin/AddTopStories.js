@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../firebaseConf';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import AdminNavButtons from './AdminNavButtons';
-
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
 
 const AddTopStories = () => {
   const navigate = useNavigate();
+
   const [story, setStory] = useState({
     titre: '',
     category: '',
@@ -16,7 +18,17 @@ const AddTopStories = () => {
     description: '',
     date: '',
   });
-  
+
+  const editor = useEditor({
+    extensions: [StarterKit],
+    content: '',
+    onUpdate: ({ editor }) => {
+      setStory(prev => ({
+        ...prev,
+        description: editor.getHTML(),
+      }));
+    },
+  });
 
   useEffect(() => {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
@@ -24,7 +36,6 @@ const AddTopStories = () => {
       navigate('/admin/login');
     }
   }, [navigate]);
-  
 
   const handleChange = (e) => {
     setStory({ ...story, [e.target.name]: e.target.value });
@@ -35,11 +46,12 @@ const AddTopStories = () => {
 
     try {
       await addDoc(collection(db, "topStories"), {
-  ...story,
-  createdAt: serverTimestamp()
-});
+        ...story,
+        createdAt: serverTimestamp(),
+      });
 
       alert('Top Story ajoutée avec succès !');
+
       setStory({
         titre: '',
         category: '',
@@ -48,22 +60,26 @@ const AddTopStories = () => {
         description: '',
         date: '',
       });
+
+      editor.commands.setContent('');
+
     } catch (error) {
-      console.error("Erreur lors de l'ajout de la top story :", error);
-      alert("Erreur lors de l'ajout de la top story");
+      console.error("Erreur lors de l'ajout :", error);
+      alert("Erreur lors de l'ajout");
     }
   };
 
   return (
     <div className="admin-login-container">
-        <AdminNavButtons /> {/* <-- boutons permanents */}
+      <AdminNavButtons />
+
       <form className="admin-login-form" onSubmit={handleSubmit}>
         <h2>Ajouter une Top Actu</h2>
 
         <input
           type="text"
           name="titre"
-          placeholder="Titre de l'article"
+          placeholder="Titre"
           value={story.titre}
           onChange={handleChange}
           required
@@ -72,19 +88,21 @@ const AddTopStories = () => {
         <input
           type="text"
           name="category"
-          placeholder="Catégorie (ex: Politique, Sport...)"
+          placeholder="Catégorie"
           value={story.category}
           onChange={handleChange}
           required
         />
+
         <input
           type="text"
           name="categoryColor"
-          placeholder="Couleur catégorie (ex: red, #00ff00)"
+          placeholder="Couleur catégorie (ex: red, #ff0000)"
           value={story.categoryColor}
           onChange={handleChange}
           required
         />
+
         <input
           type="text"
           name="image"
@@ -93,7 +111,27 @@ const AddTopStories = () => {
           onChange={handleChange}
           required
         />
-        <textarea
+
+        <h3>Description</h3>
+
+        <div className="toolbar">
+          <button type="button" onClick={() => editor.chain().focus().toggleBold().run()}>
+            Gras
+          </button>
+          <button type="button" onClick={() => editor.chain().focus().toggleItalic().run()}>
+            Italique
+          </button>
+          <button type="button" onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}>
+            Titre
+          </button>
+          <button type="button" onClick={() => editor.chain().focus().toggleBulletList().run()}>
+            Liste
+          </button>
+        </div>
+
+        <div className="editor-container">
+          <EditorContent editor={editor} />
+            <textarea
           name="description"
           placeholder="Description"
           rows="4"
@@ -101,6 +139,8 @@ const AddTopStories = () => {
           onChange={handleChange}
           required
         />
+        </div>
+
         <input
           type="date"
           name="date"

@@ -1,4 +1,17 @@
+.articles-page {
+  display: flex;
+  width: 100%;
+  font-family: The Antiqua B, Georgia, Droid-serif, serif;
+}
 
+.articles-main {
+  flex: 3;
+  padding: 20px;
+}
+
+.articles-page .sidebar-ads {
+  flex: 1;
+}
 .articles-wrapper {
   padding: 20px;
   font-family: The Antiqua B, Georgia, Droid-serif, serif;
@@ -119,4 +132,9 @@
   margin-left: 5px;
   margin-top: 3px;
 }
+}
+@media screen and (max-width: 768px) {
+  .articles-page {
+    flex-direction: column;
+  }
 }

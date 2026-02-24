@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './PopUp.css';
-import AdSlot from '../AdSlot/AdSlot';
 
 const PopUp = () => {
   const [showPop, setShowPop] = useState(false);

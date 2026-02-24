@@ -1,19 +1,45 @@
-// src/admin/Dashboard.js
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../admin.css';
 import { auth } from '../firebaseConf';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 
+/* Imports composants admin */
+import AddTopStories from './AddTopStories';
+import ListeTopStories from './ListeTopStories';
+import AddVideo from './AddVideo';
+import ListeVideos from './ListeVideos';
+import AddFocusArticle from './AddFocusArticle';
+import ListeFocus from './ListeFocus';
+import AddCarouselItem from './AddCarouselItem';
+import AddCarousseleAnnonce from './AddCarousseleAnnonce';
+import ListeCarousseleAnnonce from './ListeCarousseleAnnonce';
+import AddLive from './AddLive';
+import ListeLive from './ListeLive';
+import AddArticle from './AddArticle';
+import ListeArticles from './ListeArticles';
+import AddSanteArticle from './AddSanteArticle';
+import ListeArticleSante from './ListeArticleSante';
+import AddAllVideo from './AddAllVideo';
+import ListeAllVideo from './ListeAllVideo';
+import AddPolitiqueArticle from './AddPolitiqueArticle';
+import ListePolitique from './ListePolitique';
+import AddEconomieArticle from './AddEconomieArticle';
+import ListeEconomie from './ListeEconomie';
+import AddPublicite from './AddPublicite';
+import ListePublicite from './ListePublicite';
+import AddPodcast from './AddPodcast';
+import ListePodcasts from './ListePodcasts';
+import AddBreakingNews from './AddBreakingNews';
+
 const Dashboard = () => {
-  const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState('');
+  const [activeView, setActiveView] = useState('home');
 
   const handleLogout = async () => {
     await signOut(auth);
     sessionStorage.removeItem('isLoggedIn');
     sessionStorage.removeItem('userEmail');
-    navigate('/admin/login');
+    window.location.href = '/admin/login';
   };
 
   useEffect(() => {
@@ -25,74 +51,118 @@ const Dashboard = () => {
       } else {
         sessionStorage.removeItem('isLoggedIn');
         sessionStorage.removeItem('userEmail');
-        navigate('/admin/login');
+        window.location.href = '/admin/login';
       }
     });
 
-    return () => unsubscribe(); // Cleanup subscription on unmount
-  }, [navigate]);
+    return () => unsubscribe();
+  }, []);
+
+  const renderView = () => {
+    switch (activeView) {
+      case 'add-topstory': return <AddTopStories />;
+      case 'list-topstory': return <ListeTopStories />;
+      case 'add-video': return <AddVideo />;
+      case 'list-video': return <ListeVideos />;
+      case 'add-focus': return <AddFocusArticle />;
+      case 'list-focus': return <ListeFocus />;
+      case 'add-carousel': return <AddCarouselItem />;
+      case 'add-annonce': return <AddCarousseleAnnonce />;
+      case 'list-annonce': return <ListeCarousseleAnnonce />;
+      case 'add-live': return <AddLive />;
+      case 'list-live': return <ListeLive />;
+      case 'add-article': return <AddArticle />;
+      case 'list-article': return <ListeArticles />;
+      case 'add-sante': return <AddSanteArticle />;
+      case 'list-sante': return <ListeArticleSante />;
+      case 'add-allvideo': return <AddAllVideo />;
+      case 'list-allvideo': return <ListeAllVideo />;
+      case 'add-politique': return <AddPolitiqueArticle />;
+      case 'list-politique': return <ListePolitique />;
+      case 'add-economie': return <AddEconomieArticle />;
+      case 'list-economie': return <ListeEconomie />;
+      case 'add-pub': return <AddPublicite />;
+      case 'list-pub': return <ListePublicite />;
+      case 'add-podcast': return <AddPodcast />;
+      case 'list-podcast': return <ListePodcasts />;
+      case 'add-breaking': return <AddBreakingNews />;
+      default:
+        return (
+          <div>
+            <h1>Tableau de bord</h1>
+            {userEmail && (
+              <p>
+                Connecté en tant que : <strong>{userEmail}</strong>
+              </p>
+            )}
+            <p>Sélectionnez une action dans le menu à gauche.</p>
+          </div>
+        );
+    }
+  };
+
+  const menuButton = (key, label) => (
+    <button
+      className={activeView === key ? 'active' : ''}
+      onClick={() => setActiveView(key)}
+    >
+      {label}
+    </button>
+  );
 
   return (
     <div className="dashboard-container">
-      <h1>Tableau de bord Administrateur</h1>
-      {userEmail && (
-        <p>
-          Connecté en tant que : <strong>{userEmail}</strong>
-        </p>
-      )}
-     <div className="dashboard-buttons">
-  <button onClick={() => navigate('/admin/add-topstory')}>➕ Ajouter une Top Actu(page d'accueil)</button>
-    <button onClick={() => navigate('/admin/liste-topstories')} id='listes'>📝 Gérer les Top Actus(page accueil)</button>
+      
+      {/* SIDEBAR */}
+      <aside className="dashboard-sidebar">
+        <h2>WEB TV GABON</h2>
 
-   <button onClick={() => navigate('/admin/add-video')}>➕ Ajouter une Vidéo(page d'accueil)</button>
-     <button onClick={() => navigate('/admin/liste-videos')} id='listes'>📝 Gérer les Vidéos</button>
+        {menuButton('add-topstory', '📰 Ajouter Top Actu')}
+        {menuButton('list-topstory', '📋 Gérer Top Actus')}
 
+        {menuButton('add-video', '🎬 Ajouter Vidéo Accueil')}
+        {menuButton('list-video', '📋 Gérer Vidéos')}
 
-  <button onClick={() => navigate('/admin/add-focus')}>➕ Ajouter un article recent(page d'accueil)</button>
-    <button onClick={() => navigate('/admin/liste-focus')} id='listes'>📝 Gérer les artiles recents(page accueil)</button>
+        {menuButton('add-focus', '🆕 Ajouter Article Récent')}
+        {menuButton('list-focus', '📋 Gérer Articles Récents')}
 
+        {menuButton('add-carousel', '🌍 Ajouter Carousel Info')}
+        {menuButton('add-annonce', '📢 Ajouter Annonce')}
+        {menuButton('list-annonce', '📋 Gérer Annonces')}
 
-    <button onClick={() => navigate('/admin/add-carousel')}>➕ Ajouter une info internationnal ou autres (1er carousel)</button>
+        {menuButton('add-live', '📡 Ajouter Live')}
+        {menuButton('list-live', '📋 Gérer Lives')}
 
-  <button onClick={() => navigate('/admin/add-caroussele')}>➕ Ajouter une annonce , fait divers , vente(2e carousel)</button>
-  <button onClick={() => navigate('/admin/liste-caroussele')} id='listes'>📝 Gérer les annonces(page accueil)</button>
+        {menuButton('add-article', '✍️ Ajouter Article')}
+        {menuButton('list-article', '📋 Gérer Articles')}
 
-  <button onClick={() => navigate('/admin/add-live')}>➕ Ajouter un Live</button>
-<button onClick={() => navigate('/admin/liste-live')} id='listes'>📝 Gérer les Lives</button>
+        {menuButton('add-sante', '🏥 Ajouter Santé')}
+        {menuButton('list-sante', '📋 Gérer Santé')}
 
+        {menuButton('add-allvideo', '🎥 Ajouter Vidéo Page Vidéo')}
+        {menuButton('list-allvideo', '📋 Gérer Toutes Vidéos')}
 
-    <button onClick={() => navigate('/admin/add-article')}>➕ Ajouter un article(page article)</button>
-      <button onClick={() => navigate('/admin/liste-articles')} id='listes'>📝 Gérer les articles(Tous les articles de la page article)</button>
+        {menuButton('add-politique', '🏛 Ajouter Politique')}
+        {menuButton('list-politique', '📋 Gérer Politique')}
 
-        <button onClick={() => navigate('/admin/add-sante-article')}>➕ Ajouter un article santé(page Santé)</button>
-          <button onClick={() => navigate('/admin/liste-sante')} id='listes'>📝 Gérer les articles santé</button>
+        {menuButton('add-economie', '💼 Ajouter Économie')}
+        {menuButton('list-economie', '📋 Gérer Économie')}
 
+        {menuButton('add-pub', '📢 Ajouter Publicité')}
+        {menuButton('list-pub', '📋 Gérer Publicités')}
 
-    <button onClick={() => navigate('/admin/add-allvideo')}>➕ Ajouter une Vidéo ( page video)</button>
-      <button onClick={() => navigate('/admin/liste-allvideos')} id='listes'>📝 Gérer les Vidéos (Toutes les videos de la page video)</button>
+        {menuButton('add-podcast', '🎧 Ajouter Podcast')}
+        {menuButton('list-podcast', '📋 Gérer Podcasts')}
 
-<button onClick={() => navigate('/admin/add-politique-article')}>➕ Ajouter un article Politique</button>
-<button onClick={() => navigate('/admin/liste-politique')} id='listes'>📝 Gérer les articles Politique</button>
+        {menuButton('add-breaking', '🚨 Ajouter Breaking News')}
 
-<button onClick={() => navigate('/admin/add-economie-article')}>➕ Ajouter un article Économie</button>
-<button onClick={() => navigate('/admin/liste-economie')} id='listes'>📝 Gérer les articles Économie</button>
+        <button onClick={handleLogout} className="danger">🚪 Déconnexion</button>
+      </aside>
 
-    
-
-  <button onClick={() => navigate('/admin/add-pub')}>➕ Ajouter une publicité</button>
-    <button onClick={() => navigate('/admin/liste-publicite')} id='listes'>📝 Gérer les Publicités</button>
-
-  <button onClick={() => navigate('/admin/add-podcast')}>➕ Ajouter un Podcast(pas dispo)</button>
-  <button onClick={() => navigate('/admin/liste-podcasts')} id='listes'>📝 Gerer les Podcasts(pas dispo)</button>
-
-
-
-<button onClick={() => navigate('/admin/add-breakingnews')}>➕ Ajouter une Breaking News</button>
-<button onClick={() => navigate('/admin/liste-breakingnews')} id='listes'>📝 Gérer les Breaking News</button>
-
-
-  <button onClick={handleLogout} className="danger">🚪 Se déconnecter</button>
-</div>
+      {/* CONTENU DYNAMIQUE */}
+      <main className="dashboard-main">
+        {renderView()}
+      </main>
 
     </div>
   );

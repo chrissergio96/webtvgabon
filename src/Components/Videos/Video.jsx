@@ -8,7 +8,7 @@ const Video = () => {
   const [selectedCategory, setSelectedCategory] = useState('Toutes');
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const videosPerPage = 10;
+  const videosPerPage = 9;
 
   useEffect(() => {
     const fetchVideos = async () => {

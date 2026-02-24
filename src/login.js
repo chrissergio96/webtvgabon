@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from './firebaseConf';
 
-
 const Login = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('');  
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-   const handleForgotPassword = () => {
+
+  const handleForgotPassword = () => {
     alert("Fonction mot de passe oublié à implémenter !");
   };
 
@@ -35,7 +35,7 @@ const Login = () => {
       }
 
       sessionStorage.setItem('isLoggedIn', 'true');
-      sessionStorage.setItem('userEmail', user.email); // stocker l'email
+      sessionStorage.setItem('userEmail', user.email);
       navigate('/admin/dashboard');
     } catch (error) {
       console.error('Erreur de connexion :', error.message);
@@ -43,6 +43,7 @@ const Login = () => {
     }
   };
 
+  // ⚡ On utilise maintenant la fonction pour que le build passe
   const handlePasswordReset = async () => {
     if (!email) {
       setError("Veuillez entrer votre adresse email pour réinitialiser le mot de passe.");
@@ -79,12 +80,15 @@ const Login = () => {
           required
         />
         <button type="submit">Se connecter</button>
-    <a href="#" className="forgot-password" onClick={(e) => {
-    e.preventDefault();
-    handlePasswordReset();
-    }}>
-    Mot de passe oublié ?
-   </a>
+
+        <button onClick={handleForgotPassword} className="link-style" type="button">
+          Mot de passe oublié ?
+        </button>
+
+        {/* ⚡ Nouveau bouton pour le reset */}
+        <button onClick={handlePasswordReset} className="link-style" type="button">
+          Réinitialiser le mot de passe
+        </button>
 
       </form>
     </div>

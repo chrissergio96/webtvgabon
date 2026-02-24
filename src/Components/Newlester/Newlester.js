@@ -7,12 +7,12 @@ import 'aos/dist/aos.css';
 const Newlester = () => {
 
 
-const [showPop, setShowPop] = useState(false);
+const setShowPop = useState(false);
 
 useEffect(() => {
   const timer = setTimeout(() => setShowPop(true), 5000);
   return () => clearTimeout(timer);
-}, []);
+}, );
 
   return (
         
