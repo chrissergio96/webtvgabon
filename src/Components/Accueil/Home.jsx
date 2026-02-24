@@ -15,7 +15,7 @@ import CarousseleAnnonce from '../Caroussele/CarousseleAnnonce';
 const Home = () => {
   const [focusArticles, setFocusArticles] = useState([]);
   const [videos, setVideos] = useState([]);
-  const [ads, setAds] = useState([]);
+  // const [ads, setAds] = useState([]);
 
   // ---------------------
   // Fonction pour convertir les URLs en embed
@@ -70,19 +70,19 @@ const Home = () => {
       setFocusArticles(data);
     };
 
-    const fetchAds = async () => {
-      const snapshot = await getDocs(collection(db, 'publicite'));
-      const data = snapshot.docs.map((doc) => {
-        const d = doc.data();
-        return {
-          id: doc.id,
-          image: d.image,
-          url: d.url,
-          date: d.date?.toDate ? d.date.toDate() : null,
-        };
-      });
-      setAds(data);
-    };
+    // const fetchAds = async () => {
+    //   const snapshot = await getDocs(collection(db, 'publicite'));
+    //   const data = snapshot.docs.map((doc) => {
+    //     const d = doc.data();
+    //     return {
+    //       id: doc.id,
+    //       image: d.image,
+    //       url: d.url,
+    //       date: d.date?.toDate ? d.date.toDate() : null,
+    //     };
+    //   });
+    //   setAds(data);
+    // };
 
     const fetchVideos = async () => {
       const snapshot = await getDocs(collection(db, 'videos'));
@@ -91,7 +91,7 @@ const Home = () => {
     };
 
     fetchFocusArticles();
-    fetchAds();       // appel de fetchAds pour supprimer le warning
+    // fetchAds();       // appel de fetchAds pour supprimer le warning
     fetchVideos();
   }, []);
 
@@ -226,7 +226,7 @@ const Home = () => {
 
         <Newlester />
       </section>
-
+      
       <AdsSidebar />
     </div>
   );
