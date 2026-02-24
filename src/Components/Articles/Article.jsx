@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from '../../firebaseConf';
 import './Articles.css';
 import { motion } from 'framer-motion';
+import AdsSidebar from '../AdsSidebar/AdsSidebar';
 
 const Article = () => {
   const [articles, setArticles] = useState([]);
@@ -41,7 +42,9 @@ const Article = () => {
   }
 
   return (
-    <div className="articles-wrapper">
+  <div className="articles-page">
+
+    <div className="articles-main">
       <h1 style={{ textAlign: 'center' }}>Nos Articles</h1>
 
       <div className="articles-container">
@@ -56,7 +59,7 @@ const Article = () => {
             <img src={article.image} alt={article.titre} className="article-image" />
             <div className="article-content">
               <h2>{article.titre}</h2>
-             <p>{truncateText(article.resume, 100)}</p>
+              <p>{truncateText(article.resume, 100)}</p>
               <p className="article-date">{article.date}</p>
               <Link to={`/article/${article.id}`} className="btn-voir-plus">
                 <span>
@@ -71,7 +74,11 @@ const Article = () => {
         ))}
       </div>
     </div>
-  );
+
+    <AdsSidebar />
+
+  </div>
+);
 };
 
 export default Article;

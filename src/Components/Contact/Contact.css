@@ -1,10 +1,20 @@
-.contact-wrapper {
+/* Conteneur principal avec sidebar */
+.contact-wrapper-with-sidebar {
+  display: flex;
+  gap: 2rem;
   padding: 2rem;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   font-family: 'Arial', sans-serif;
 }
 
+/* Contenu principal */
+.contact-main {
+  flex: 3; /* 75% largeur */
+}
+
+
+/* TITRES */
 h1, h2 {
   margin-bottom: 1.5rem;
 }
@@ -53,7 +63,7 @@ h1, h2 {
 .email .icon { background: #FF5F6D; }
 .location .icon { background: #FFA500; }
 
-/* TITRE */
+/* TITRE DES CARTES */
 .info-card h3 {
   margin: 0.5rem 0;
   font-size: 1.1rem;
@@ -71,7 +81,7 @@ h1, h2 {
 }
 
 .info-card a::after {
-  content: '↗'; /* petite icône pour inciter à cliquer */
+  content: '↗';
   font-size: 0.9rem;
   color: #555;
   transition: transform 0.2s;
@@ -128,4 +138,13 @@ h1, h2 {
   font-weight: bold;
   text-align: center;
   color: green;
+}
+
+/* MOBILE */
+@media screen and (max-width: 1024px) {
+  .contact-wrapper-with-sidebar {
+    flex-direction: column;
+  }
+
+  
 }

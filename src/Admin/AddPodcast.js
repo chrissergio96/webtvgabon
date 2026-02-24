@@ -1,119 +1,100 @@
-// src/Admin/AddPodcast.js
 import React, { useState } from "react";
 import { db, storage } from "../firebaseConf";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { useNavigate } from "react-router-dom";
-import "../admin.css";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import AdminNavButtons from "./AdminNavButtons";
+import "../admin.css";
 
 const AddPodcast = () => {
   const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [category, setCategory] = useState("");
-  const [mediaFile, setMediaFile] = useState(null);
-  const [thumbnailFile, setThumbnailFile] = useState(null);
-  const [mediaPreview, setMediaPreview] = useState("");
-  const [thumbnailPreview, setThumbnailPreview] = useState("");
-  const navigate = useNavigate();
+  const [description, setDescription] = useState("");
+  const [link, setLink] = useState("");
+  const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleMediaChange = (e) => {
-    const file = e.target.files[0];
-    setMediaFile(file);
-    setMediaPreview(URL.createObjectURL(file));
+  const detectType = (url) => {
+    if (url.includes("youtube.com") || url.includes("youtu.be")) return "youtube";
+    if (url.match(/\.(mp3|wav|ogg)$/i)) return "audio";
+    if (url.match(/\.(mp4|webm)$/i)) return "video";
+    return "audio";
   };
 
-  const handleThumbnailChange = (e) => {
-    const file = e.target.files[0];
-    setThumbnailFile(file);
-    setThumbnailPreview(URL.createObjectURL(file));
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      let mediaUrl = link;
+      let type = detectType(link);
+
+      // ✅ Upload fichier local
+      if (file) {
+        const storageRef = ref(storage, `podcasts/audio/${Date.now()}_${file.name}`);
+        await uploadBytes(storageRef, file);
+        mediaUrl = await getDownloadURL(storageRef);
+        type = "audio";
+      }
+
+      await addDoc(collection(db, "podcasts"), {
+        title,
+        description,
+        mediaUrl,
+        type,
+        createdAt: serverTimestamp(),
+      });
+
+      alert("Podcast ajouté !");
+      setTitle("");
+      setDescription("");
+      setLink("");
+      setFile(null);
+    } catch (err) {
+      console.error("Erreur ajout podcast :", err);
+      alert("Erreur lors de l'ajout");
+    }
+
+    setLoading(false);
   };
-
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!mediaFile || !thumbnailFile) {
-    alert("Télécharger un fichier média et une miniature.");
-    return;
-  }
-  try {
-    const mediaRef = ref(storage, `podcasts/${Date.now()}_${mediaFile.name}`);
-    const thumbRef = ref(storage, `thumbnails/${Date.now()}_${thumbnailFile.name}`);
-
-    const uploadMedia = uploadBytesResumable(mediaRef, mediaFile);
-    const uploadThumb = uploadBytesResumable(thumbRef, thumbnailFile);
-
-    // Attendre fin des uploads et obtenir URLs
-    const [mediaSnap, thumbSnap] = await Promise.all([
-      uploadMedia,
-      uploadThumb
-    ]);
-    const mediaUrl = await getDownloadURL(mediaSnap.ref);
-    const thumbnailUrl = await getDownloadURL(thumbSnap.ref);
-
-    // Envoi des données à Firestore
-    await addDoc(collection(db, "podcasts"), {
-      title,
-      desc,
-      mediaUrl,
-      thumbnailUrl,
-      category,
-      duration: mediaFile.size / 5000,
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
-    });
-
-    alert("Podcast ajouté !");
-    navigate("/admin/liste-podcasts");
-
-  } catch (err) {
-    console.error("Erreur ajout podcast :", err);
-    alert("Erreur lors de la publication");
-  }
-};
-
 
   return (
     <div className="form-container">
-        <AdminNavButtons /> {/* <-- boutons permanents */}
+      <AdminNavButtons />
       <h2>Ajouter un podcast</h2>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          placeholder="Titre du podcast"
           value={title}
-          onChange={e => setTitle(e.target.value)}
-          placeholder="Titre"
+          onChange={(e) => setTitle(e.target.value)}
           required
         />
+
         <textarea
-          value={desc}
-          onChange={e => setDesc(e.target.value)}
           placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
           required
         />
+
         <input
           type="text"
-          value={category}
-          onChange={e => setCategory(e.target.value)}
-          placeholder="Catégorie"
-          required
+          placeholder="Lien média (YouTube, mp3, mp4...) — optionnel"
+          value={link}
+          onChange={(e) => setLink(e.target.value)}
         />
+
+        <p style={{ textAlign: "center", margin: "10px 0" }}>OU</p>
+
         <input
           type="file"
-          accept="audio/*,video/*"
-          onChange={handleMediaChange}
-          required
+          accept="audio/*"
+          onChange={(e) => setFile(e.target.files[0])}
         />
-        {mediaPreview && <p>Aperçu média sélectionné</p>}
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleThumbnailChange}
-          required
-        />
-        {thumbnailPreview && (
-          <img src={thumbnailPreview} alt="Miniature podcast" style={{ maxWidth: "200px", margin: "10px 0" }} />
-        )}
-        <button type="submit">Publier</button>
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Ajout en cours..." : "Ajouter"}
+        </button>
       </form>
     </div>
   );

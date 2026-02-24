@@ -119,15 +119,15 @@ const Home = () => {
             <div className="plus3enf">
               <Link to="/économie">
                 <h1>ÉCONOMIE</h1>
-                <h4>Trésor Public : 𝗶𝗻𝗮𝘂𝗴𝘂𝗿ation d𝗲 𝗹𝗮 p𝗲𝗿𝗰𝗲𝗽𝘁𝗶𝗼𝗻 𝗱𝗲 𝗞𝗮𝗻𝗴𝗼</h4>
-                <p>14 août 2025 </p>
+                <h4>Banque : Inauguration ce mardi du nouveau siège de la CDC </h4>
+                <p>16 février 2026  </p>
               </Link>
             </div>
             <div className="plus3en">
               <Link to="/politique">
                 <h1>POLITIQUE</h1>
-                <h4>Lutte contre la vie chère : le Gabon créé une centrale d’achat des denrées alimentaires</h4>
-                <p>12 Novembre 2025 </p>
+                <h4>Iloko Boussengui : « L’arrogance a toujours précédé la chute d’un système » </h4>
+                <p>16 février 2026  </p>
               </Link>
             </div>
           </div>

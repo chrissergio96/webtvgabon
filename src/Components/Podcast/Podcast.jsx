@@ -1,60 +1,62 @@
-// src/components/Podcast.js
-import React, { useState, useEffect } from 'react';
-import './Podcast.css';
-
-const PODCASTS = [
- 
-  {
-    id: 1,
-    title: "Activités Portuaires",
-    desc: "L'urgence de réglementer le métier de transitaire au Gabon",
-    mediaUrl: "https://www.youtube.com/embed/vAaeie-kg0Y"
-  },
-   {
-    id: 2,
-    title: "Activités Portuaires",
-    desc: "L'urgence de réglementer le métier de transitaire au Gabon",
-    mediaUrl: "/EP01_Laika_Mba_la_transformation_digitale_entre_Libreville_et_10_28_2024-15.mp3"
-  },
-];
+import React, { useEffect, useState } from "react";
+import { db } from "../../firebaseConf";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import "./Podcast.css";
+import AdsSidebar from "../AdsSidebar/AdsSidebar";
 
 const Podcast = () => {
   const [pods, setPods] = useState([]);
 
   useEffect(() => {
-    setPods(PODCASTS);
+    const fetchPods = async () => {
+      const q = query(collection(db, "podcasts"), orderBy("createdAt", "desc"));
+      const snap = await getDocs(q);
+      setPods(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    };
+
+    fetchPods();
   }, []);
 
   return (
-    <div className="podcast-page">
-      <h2>Podcasts</h2>
-      <div className="podcast-list">
-        {pods.map(p => (
-          <div className="podcast-card" key={p.id}>
-            <h3>{p.title}</h3>
-            <p>{p.desc}</p>
-            {p.mediaUrl && (
-              p.mediaUrl.includes("youtube.com/embed") ? (
+  <div className="podcast-layout">
+
+    <div className="podcast-main">
+      <div className="podcast-page">
+        <h2>Podcasts</h2>
+
+        <div className="podcast-list">
+          {pods.map(p => (
+            <div className="podcast-card" key={p.id}>
+              <h3>{p.title}</h3>
+              <p>{p.description}</p>
+
+              {p.type === "youtube" && (
                 <iframe
-                  width="100%"
                   height="200"
-                  src={p.mediaUrl}
+                  src={p.mediaUrl.replace("watch?v=", "embed/")}
                   title={p.title}
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-              ) : p.mediaUrl.match(/\.(mp3|wav)$/i) ? (
+              )}
+
+              {p.type === "audio" && (
                 <audio controls src={p.mediaUrl} className="pod-audio" />
-              ) : (
-                <video controls src={p.mediaUrl} style={{ maxWidth: '100%' }} />
-              )
-            )}
-          </div>
-        ))}
+              )}
+
+              {p.type === "video" && (
+                <video controls src={p.mediaUrl} />
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  );
+
+    <AdsSidebar />
+
+  </div>
+);
 };
 
 export default Podcast;
