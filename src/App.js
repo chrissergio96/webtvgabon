@@ -21,7 +21,6 @@ import TopStoryDetail from './Components/TopStoryDetail/TopStoryDetail';
 import AllNav from './Components/AllNav/AllNav';
 import Footer from './Components/Footer/Footer';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
-import PopUp from './Components/PopUp/PopUp';
 import { SearchProvider } from './Components/SearchContent/SearchContent';
 
 // Pages / composants admin
@@ -73,7 +72,6 @@ function App() {
       <Router>
         <ScrollToTop />
         <AllNav />
-        <PopUp />
 
         <Routes>
           {/* Routes publiques */}
